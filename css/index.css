@@ -24,6 +24,9 @@ body {
  .ff {
    color: #865700
  }
+ .formulario {
+   background: #f4f4f4
+ }
 .tamanho {
   width: 1100px;
   max-width: 90%
@@ -49,4 +52,20 @@ body {
 footer {
   padding-top: 50px;
   padding-bottom: 30px
+}
+.container-form {
+  display: flex;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.box-form {
+  flex-grow: 1;
+  flex-basis: 33.3333%;
+  margin: 10px;
+}
+.box-form input {
+  width: 100%
 }

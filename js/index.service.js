@@ -6,7 +6,15 @@ angular
         salvar: salvar,
         getProdutos: getProdutos,
         produtos: [
-
+          {
+              nome: "teste",
+              title: "titulo da minha pagina",
+              description: "descricao da minha pagina",
+              author: "autor da minha pagina",
+              canonical: "canonicallll",
+              robots: "index/follow",
+              image: "http://meusite.com.br/image.png"
+          }
         ]
     };
     return Produto;

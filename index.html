@@ -21,50 +21,56 @@
       </div>
     </div>
     <div>
-      <div class="formulario tamanho margin">
+      <div class="formulario">
         <form name="prodForm" ng-submit="salvar(prod)">
-          <p>
-            <label for="nome">Nome</label>
-            <br>
-            <input type="text" name="nome" ng-model="prod.nome" placeholder="Nome do SEO" ng-minlength="1" required>
-          </p>
-          <p>
-            <label for="nome">Title</label>
-            <br>
-            <input type="text" name="title" ng-model="prod.title"  placeholder="Ex: Titulo do meu site" ng-minlength="1" required>
-          </p>
-          <p>
-            <label for="nome">Descricao</label>
-            <br>
-            <input type="text" name="description" ng-model="prod.description"  placeholder="Ex: Meu site faz muitas coisas legais" ng-minlength="1" required>
-          </p>
-          <p>
-            <label for="nome">Author</label>
-            <br>
-            <input type="text" name="author" ng-model="prod.author" ng-minlength="1" placeholder="Ex: Joaozinho" required>
-          </p>
-          <p>
-            <label for="nome">Imagem</label>
-            <br>
-            <input type="text" name="image" ng-model="prod.image" ng-minlength="1" placeholder="Ex: Joaozinho" required>
-          </p>
-          <p>
-            <label for="nome">Canonical</label>
-            <br>
-            <input type="text" name="canonical" ng-model="prod.canonical" placeholder="Ex: http://sua-url.com.br" ng-minlength="1" required>
-          </p>
-          <p>
-            <label for="nome">Robots</label>
-            <br>
-            <input type="text" name="robots" ng-model="prod.robots" ng-minlength="1" placeholder="Ex: index/follow" required>
-          </p>
-          <p>
-            <button type="submit" class="btn btn-success" ng-disabled="prodForm.$invalid">Salvar</button>
+          <div class="container-form tamanho margin">
+            <div class="box-form">
+              <label for="nome">Nome</label><br>
+              <input type="text" name="nome" ng-model="prod.nome" placeholder="Nome do SEO" ng-minlength="1" required>
+            </div>
+
+            <div class="box-form">
+              <label for="title">Title</label><br>
+              <input type="text" name="title" ng-model="prod.title"  placeholder="Ex: Titulo do meu site" ng-minlength="1" required>
+            </div>
+
+            <div class="box-form">
+              <label for="nome">Descricao</label><br>
+              <input type="text" name="description" ng-model="prod.description"  placeholder="Ex: Meu site faz muitas coisas legais" ng-minlength="1" required>
+            </div>
+
+            <div class="box-form">
+              <label for="nome">Author</label><br>
+              <input type="text" name="author" ng-model="prod.author" ng-minlength="1" placeholder="Ex: Joaozinho" required>
+            </div>
+
+            <div class="box-form">
+              <label for="nome">Imagem</label><br>
+              <input type="text" name="image" ng-model="prod.image" ng-minlength="1" placeholder="Ex: Joaozinho" required>
+            </div>
+
+            <div class="box-form">
+              <label for="nome">Canonical</label><br>
+              <input type="text" name="canonical" ng-model="prod.canonical" placeholder="Ex: http://sua-url.com.br" ng-minlength="1" required>
+            </div>
+
+            <div class="box-form">
+              <label for="nome">Robots</label><br>
+              <input type="text" name="robots" ng-model="prod.robots" ng-minlength="1" placeholder="Ex: index/follow" required>
+            </div>
+
+            <div class="box-form">
+              <button type="submit" class="btn btn-success" ng-disabled="prodForm.$invalid">Salvar</button>
+            </div>
+
+          </div>
+
+
           </p>
         </form>
       </div>
       <div class="tabela">
-        <div ng-repeat="x in produtos track by $index" class="tamanho margin">
+        <div ng-repeat="x in produtos | orderBy: reverse" class="tamanho margin">
           <h1>{{x.nome}}</h1>
           <pre>
 <span class="ff">&lt;title&gt;</span>{{x.title}}<span class="ff">&lt;/title&gt;</span>
