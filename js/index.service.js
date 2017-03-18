@@ -7,13 +7,17 @@ angular
         getProdutos: getProdutos,
         produtos: [
           {
-              nome: "teste",
+              name: "teste",
               title: "titulo da minha pagina",
               description: "descricao da minha pagina",
               author: "autor da minha pagina",
               canonical: "canonicallll",
               robots: "index/follow",
-              image: "http://meusite.com.br/image.png"
+              image: "http://meusite.com.br/image.png",
+              fbadmins: 99999,
+              type: "website",
+              appid: 12321312323,
+              ttcard: "summary"
           }
         ]
     };

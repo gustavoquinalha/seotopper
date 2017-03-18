@@ -2,11 +2,13 @@
 <html ng-app="app">
   <head>
     <title>seotopper</title>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
     <script type="text/javascript" src="js/assets/angular.min.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/index.controller.js"></script>
     <script type="text/javascript" src="js/index.service.js"></script>
+    <script type="text/javascript" src="js/assets/clipboard.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/index.css">
   </head>
   <body ng-controller="IndexController">
@@ -15,93 +17,146 @@
         <div class="box tamanho">
           <h1>SEOTOPPER</h1>
           <p>
-            Um lindo gerador de SEO para seu site. Com Facebook, Twitter e Google+
+            Um lindo gerador de SEO para seu site.<br>Com Facebook, Twitter e Google+
           </p>
+          <div class="ex">
+<pre>
+  <span class="comment">&lt;!-- um simples exemplo --&gt;</span>
+  <span class="ff">&lt;title&gt;</span>Titulo da sua pagina<span class="ff">&lt;/title&gt;</span>
+  <span class="ff">&lt;meta</span> name="<span class="resul">description</span>" content="<span class="resul">Descricao da sua pagina</span>"<span class="ff">/&gt;</span>
+  <span class="ff">&lt;meta</span> name="<span class="resul">author</span>" content="<span class="resul">Voce</span>"<span class="ff">/&gt;</span>
+  <span class="comment">&lt;!-- e muito mais TEY! --&gt;</span>
+</pre>
+          </div>
         </div>
       </div>
     </div>
-    <div>
       <div class="formulario">
         <form name="prodForm" ng-submit="salvar(prod)">
-          <div class="container-form tamanho margin">
-            <div class="box-form">
-              <label for="nome">Nome</label><br>
-              <input type="text" name="nome" ng-model="prod.nome" placeholder="Nome do SEO" ng-minlength="1" required>
-            </div>
+          <div class="bg tamanho margin">
+            <h2>Geral</h2>
+            <div class="container-form">
+              <div class="box-form">
+                <label for="title">Title</label><br>
+                <input type="text" name="title" ng-model="prod.title"  placeholder="Ex: Titulo do meu site" ng-minlength="1" required>
+              </div>
 
-            <div class="box-form">
-              <label for="title">Title</label><br>
-              <input type="text" name="title" ng-model="prod.title"  placeholder="Ex: Titulo do meu site" ng-minlength="1" required>
-            </div>
+              <div class="box-form">
+                <label for="nome">Descricao</label><br>
+                <input type="text" name="description" ng-model="prod.description"  placeholder="Ex: Meu site faz muitas coisas legais" ng-minlength="1" required>
+              </div>
 
-            <div class="box-form">
-              <label for="nome">Descricao</label><br>
-              <input type="text" name="description" ng-model="prod.description"  placeholder="Ex: Meu site faz muitas coisas legais" ng-minlength="1" required>
-            </div>
+              <div class="box-form">
+                <label for="nome">Author</label><br>
+                <input type="text" name="author" ng-model="prod.author" ng-minlength="1" placeholder="Ex: Joaozinho" required>
+              </div>
 
-            <div class="box-form">
-              <label for="nome">Author</label><br>
-              <input type="text" name="author" ng-model="prod.author" ng-minlength="1" placeholder="Ex: Joaozinho" required>
-            </div>
+              <div class="box-form">
+                <label for="nome">Imagem</label><br>
+                <input type="text" name="image" ng-model="prod.image" ng-minlength="1" placeholder="Ex: Joaozinho" required>
+              </div>
 
-            <div class="box-form">
-              <label for="nome">Imagem</label><br>
-              <input type="text" name="image" ng-model="prod.image" ng-minlength="1" placeholder="Ex: Joaozinho" required>
-            </div>
+              <div class="box-form">
+                <label for="nome">Canonical</label><br>
+                <input type="text" name="canonical" ng-model="prod.canonical" placeholder="Ex: http://sua-url.com.br" ng-minlength="1" required>
+              </div>
 
-            <div class="box-form">
-              <label for="nome">Canonical</label><br>
-              <input type="text" name="canonical" ng-model="prod.canonical" placeholder="Ex: http://sua-url.com.br" ng-minlength="1" required>
+              <div class="box-form">
+                <label for="nome">Robots</label><br>
+                <input type="text" name="robots" ng-model="prod.robots" ng-minlength="1" placeholder="Ex: index/follow" required>
+              </div>
             </div>
-
-            <div class="box-form">
-              <label for="nome">Robots</label><br>
-              <input type="text" name="robots" ng-model="prod.robots" ng-minlength="1" placeholder="Ex: index/follow" required>
-            </div>
-
-            <div class="box-form">
-              <button type="submit" class="btn btn-success" ng-disabled="prodForm.$invalid">Salvar</button>
-            </div>
-
           </div>
 
+          <div class="bg margin tamanho">
+            <h2>Facebook</h2>
+            <div class="container-form ">
+              <div class="box-form">
+                <label for="title">Site name</label><br>
+                <input type="text" name="name" ng-model="prod.name"  placeholder="Ex: Titulo do meu site" ng-minlength="1" required>
+              </div>
 
-          </p>
+              <div class="box-form">
+                <label for="nome">Tipo</label><br>
+                <input type="text" name="type" ng-model="prod.type" ng-minlength="1" placeholder="Ex: website" required>
+              </div>
+
+              <div class="box-form">
+                <label for="nome">APP ID</label><br>
+                <input type="text" name="appid" ng-model="prod.appid" ng-minlength="1" placeholder="Ex: 99989797" required>
+              </div>
+
+              <div class="box-form">
+                <label for="nome">fb-admins</label><br>
+                <input type="text" name="fbadmins" ng-model="prod.fbadmins" ng-minlength="1" placeholder="Ex: 111111111111" required>
+              </div>
+            </div>
+          </div>
+          <div class="bg margin tamanho">
+            <h2>Twitter</h2>
+            <div class="container-form">
+              <div class="box-form">
+                <label for="nome">Twitter card</label><br>
+                <input type="text" name="ttcard" ng-model="prod.ttcard" ng-minlength="1" placeholder="Ex: Summary" required>
+              </div>
+
+            </div>
+          </div>
+          <div class="container-form margin tamanho">
+            <div class="box-form">
+              <button class="box-form-button" type="submit" class="btn btn-success" ng-disabled="prodForm.$invalid">GERAR SEO</button>
+            </div>
+          </div>
         </form>
-      </div>
-      <div class="tabela">
         <div ng-repeat="x in produtos | orderBy: reverse" class="tamanho margin">
-          <h1>{{x.nome}}</h1>
-          <pre>
+
+          <pre id="foo">
 <span class="ff">&lt;title&gt;</span>{{x.title}}<span class="ff">&lt;/title&gt;</span>
-<span class="ff">&lt;meta</span> http-equiv="Content-Type" content="<span class="resul">text/html; charset=UTF-8"</span><span class="ff">/&gt;</span>
-<span class="ff">&lt;meta</span> name="<span class="resul">viewport</span>" content="<span class="resul">width=device-width,initial-scale=1,user-scalable=no"</span><span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> http-equiv="Content-Type" content="<span class="resul">text/html; charset=UTF-8</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> name="<span class="resul">viewport</span>" content="<span class="resul">width=device-width,initial-scale=1,user-scalable=no</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> name="<span class="resul">description</span>" content="<span class="resul">{{x.description}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> name="<span class="resul">author</span>" content="<span class="resul">{{x.author}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;link</span> rel="<span class="resul">canonical</span>" href="<span class="resul">{{x.canonical}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> name="<span class="resul">robots</span>" content="<span class="resul">{{x.robots}}</span>"<span class="ff">/&gt;</span>
-<!-- Schema.org markup for Google+ -->
-<span class="ff">&lt;meta</span> itemprop="name" content="<span class="resul">{{x.title}}</span>"/&gt;</span>
-<span class="ff">&lt;meta</span> itemprop="description" content="<span class="resul">{{x.description}}</span>"/&gt;</span>
-<span class="ff">&lt;meta</span> itemprop="image" content="<span class="resul">{{x.image}}</span>"/&gt;</span>
+
+<span class="comment">&lt;!-- Schema.org markup for Google+ --&gt;</span>
+<span class="ff">&lt;meta</span> itemprop="<span class="resul">name</span>" content="<span class="resul">{{x.title}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> itemprop="<span class="resul">description</span>" content="<span class="resul">{{x.description}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> itemprop="<span class="resul">image</span>" content="<span class="resul">{{x.image}}</span>"<span class="ff">/&gt;</span>
+
+<span class="comment">&lt;!-- markup for facebook --&gt;</span>
+<span class="ff">&lt;meta</span> property="<span class="resul">og:title</span>" content="<span class="resul">{{x.title}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> property="<span class="resul">fb:app_id</span>" content="<span class="resul">{{x.appid}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> property="<span class="resul">og:type</span>" content="<span class="resul">{{x.type}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> property="<span class="resul">og:url</span>" content="<span class="resul">{{x.canonical}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> property="<span class="resul">og:image</span>" content="<span class="resul">{{x.image}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> property="<span class="resul">og:description</span>" content="<span class="resul">{{x.description}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> property="<span class="resul">og:site_name</span>" content="<span class="resul">{{x.name}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> property="<span class="resul">fb:admins</span>" content="<span class="resul">{{x.fbadmins}}</span>"<span class="ff">/&gt;</span>
+
+<span class="comment">&lt;!-- markup for twitter --&gt;</span>
+<span class="ff">&lt;meta</span> name="<span class="resul">twitter:card</span>" content="<span class="resul">{{x.ttcard}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> name="<span class="resul">twitter:title</span>" content="<span class="resul">{{x.title}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> name="<span class="resul">twitter:description</span>" content="<span class="resul">{{x.description}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> name="<span class="resul">twitter:creator</span>" content="<span class="resul">{{x.author}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> name="<span class="resul">twitter:image</span>" content="<span class="resul">{{x.image}}</span>"<span class="ff">/&gt;</span>
         </pre>
-          <hr>
-          <!--pre style='color:#55cc66;background:#001800; width: 50%;  overflow-y: hidden'><span style='color:#865700;'>&lt;</span><span style='color:#5f5035; '>title</span><span style='color:#865700; '>></span>Bichinhos - Pet Code<span style='color:#865700; '>&lt;/</span><span style='color:#5f5035; '>title</span><span style='color:#865700; '>></span>
-            <span style='color:#865700; '>&lt;</span><span style='color:#5f5035; '>link</span> <span style='color:#477766; '>rel</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#cc5555; '>stylesheet</span><span style='color:#800000; '>"</span> <span style='color:#477766; '>href</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#cc5555; '>css/bichinhos.css</span><span style='color:#800000; '>"</span><span style='color:#865700; '>></span>
-            <span style='color:#865700; '>&lt;</span><span style='color:#5f5035; '>meta</span> <span style='color:#477766; '>http-equiv</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#cc5555; '>Content-Type</span><span style='color:#800000; '>"</span> <span style='color:#477766; '>content</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#cc5555; '>text/html; charset=UTF-8</span><span style='color:#800000; '>"</span> <span style='color:#865700; '>/></span>
-            <span style='color:#865700; '>&lt;</span><span style='color:#5f5035; '>meta</span> <span style='color:#477766; '>name</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#cc5555; '>viewport</span><span style='color:#800000; '>"</span> <span style='color:#477766; '>content</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#cc5555; '>width=device-width,initial-scale=1,user-scalable=no</span><span style='color:#800000; '>"</span> <span style='color:#865700; '>/></span>
-            <span style='color:#865700; '>&lt;</span><span style='color:#5f5035; '>meta</span> <span style='color:#477766; '>name</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#cc5555; '>description</span><span style='color:#800000; '>"</span> <span style='color:#477766; '>content</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#cc5555; '>Pet Code é uma das ferramentas disponiveis em nosso APP. Enquanto não estamos prontos, disponibilizamos ela para todos os bichinhos continuarem seguros.</span><span style='color:#800000; '>"</span><span style='color:#865700; '>></span>
-            <span style='color:#865700; '>&lt;</span><span style='color:#5f5035; '>link</span> <span style='color:#477766; '>rel</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#cc5555; '>canonical</span><span style='color:#800000; '>"</span> <span style='color:#477766; '>href</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#cc5555; '>http://quinalha.me/qr-pet/</span><span style='color:#800000; '>"</span><span style='color:#865700; '>></span>
-            <span style='color:#865700; '>&lt;</span><span style='color:#5f5035; '>meta</span> <span style='color:#477766; '>name</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#cc5555; '>author</span><span style='color:#800000; '>"</span> <span style='color:#477766; '>content</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#cc5555; '>bichinhos</span><span style='color:#800000; '>"</span><span style='color:#865700; '>></span>
-            <span style='color:#865700; '>&lt;</span><span style='color:#5f5035; '>meta</span> <span style='color:#477766; '>name</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#cc5555; '>robots</span><span style='color:#800000; '>"</span> <span style='color:#477766; '>content</span><span style='color:#808030; '>=</span><span style='color:#800000; '>"</span><span style='color:#cc5555; '>index</span><span style='color:#800000; '>"</span><span style='color:#865700; '>></span>
-            </pre-->
+        <div class="cc">
+          <button class="btn" data-clipboard-target="#foo">
+              copy to clipboard
+          </button>
+        </div>
+
         </div>
       </div>
-    </div>
+
     <footer>
       <div class="tamanho margin">
         <small>Todos os direitos reservados.</small>
       </div>
     </footer>
+    <script type="text/javascript">
+      new Clipboard('.btn');
+    </script>
   </body>
 </html>
