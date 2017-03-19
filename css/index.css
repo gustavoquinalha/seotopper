@@ -102,7 +102,7 @@ footer {
 }
 .bg h2 {
   margin-left: 10px;
-  color: #FF906F;
+  color: #FF5F6D;
   padding-top: 10px
 }
 .container-form {
@@ -146,7 +146,7 @@ footer {
 .box-form-button {
   background: #55cc66;
   color: #fff;
-  width: 100%;
+  width: 300px;
   border: none;
   height: 50px;
   font-size: 20px;
