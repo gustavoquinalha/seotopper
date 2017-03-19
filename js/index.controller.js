@@ -1,12 +1,12 @@
 angular
     .module('app')
-    .controller('IndexController', function($scope, Produto) {
-    $scope.prod = {};
-    $scope.salvar = function(prod) {
-        Produto.salvar($scope.prod);
-        $scope.prod = {};
-        console.log("LOG PROD ======"+JSON.stringify(Produto.getProdutos(), null, 3)+"======");
+    .controller('IndexController', function($scope, Seo) {
+    $scope.seo = {};
+    $scope.salvar = function(seo) {
+        Seo.salvar($scope.seo);
+        $scope.seo = {};
+        console.log("LOG PROD ======"+JSON.stringify(Seo.getSeos(), null, 3)+"======");
     }
 
-    $scope.produtos = Produto.produtos;
+    $scope.seos = Seo.seos;
 })
