@@ -6,7 +6,7 @@ angular
         salvar: salvar,
         getSeos: getSeos,
         seos: [
-          {
+          /*{
               id: 0,
               name: "teste",
               title: "titulo da minha pagina",
@@ -19,9 +19,9 @@ angular
               type: "website",
               appid: 12321312323,
               ttcard: "summary"
-          }
+          }*/
         ],
-        id: 1
+        id: 0
     };
     return Seo;
 
@@ -39,7 +39,7 @@ angular
                 type: seo.type,
                 appid: seo.appid,
                 fbadmins: seo.fbadmins,
-                ttcard: seo.ttcard                
+                ttcard: seo.ttcard
             }
         );
         Seo.id++;
