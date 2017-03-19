@@ -6,7 +6,7 @@ angular
         salvar: salvar,
         getProdutos: getProdutos,
         produtos: [
-          {
+        /*  {
               name: "teste",
               title: "titulo da minha pagina",
               description: "descricao da minha pagina",
@@ -18,7 +18,7 @@ angular
               type: "website",
               appid: 12321312323,
               ttcard: "summary"
-          }
+          }*/
         ]
     };
     return Produto;

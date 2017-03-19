@@ -31,86 +31,78 @@
         </div>
       </div>
     </div>
-      <div class="formulario">
-        <form name="prodForm" ng-submit="salvar(prod)">
-          <div class="bg tamanho margin">
-            <h2>Geral</h2>
-            <div class="container-form">
-              <div class="box-form">
-                <label for="title">Title</label><br>
-                <input type="text" name="title" ng-model="prod.title"  placeholder="Ex: Titulo do meu site" ng-minlength="1" required>
-              </div>
-
-              <div class="box-form">
-                <label for="nome">Descricao</label><br>
-                <input type="text" name="description" ng-model="prod.description"  placeholder="Ex: Meu site faz muitas coisas legais" ng-minlength="1" required>
-              </div>
-
-              <div class="box-form">
-                <label for="nome">Author</label><br>
-                <input type="text" name="author" ng-model="prod.author" ng-minlength="1" placeholder="Ex: Joaozinho" required>
-              </div>
-
-              <div class="box-form">
-                <label for="nome">Imagem</label><br>
-                <input type="text" name="image" ng-model="prod.image" ng-minlength="1" placeholder="Ex: Joaozinho" required>
-              </div>
-
-              <div class="box-form">
-                <label for="nome">Canonical</label><br>
-                <input type="text" name="canonical" ng-model="prod.canonical" placeholder="Ex: http://sua-url.com.br" ng-minlength="1" required>
-              </div>
-
-              <div class="box-form">
-                <label for="nome">Robots</label><br>
-                <input type="text" name="robots" ng-model="prod.robots" ng-minlength="1" placeholder="Ex: index/follow" required>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg margin tamanho">
-            <h2>Facebook</h2>
-            <div class="container-form ">
-              <div class="box-form">
-                <label for="title">Site name</label><br>
-                <input type="text" name="name" ng-model="prod.name"  placeholder="Ex: Titulo do meu site" ng-minlength="1" required>
-              </div>
-
-              <div class="box-form">
-                <label for="nome">Tipo</label><br>
-                <input type="text" name="type" ng-model="prod.type" ng-minlength="1" placeholder="Ex: website" required>
-              </div>
-
-              <div class="box-form">
-                <label for="nome">APP ID</label><br>
-                <input type="text" name="appid" ng-model="prod.appid" ng-minlength="1" placeholder="Ex: 99989797" required>
-              </div>
-
-              <div class="box-form">
-                <label for="nome">fb-admins</label><br>
-                <input type="text" name="fbadmins" ng-model="prod.fbadmins" ng-minlength="1" placeholder="Ex: 111111111111" required>
-              </div>
-            </div>
-          </div>
-          <div class="bg margin tamanho">
-            <h2>Twitter</h2>
-            <div class="container-form">
-              <div class="box-form">
-                <label for="nome">Twitter card</label><br>
-                <input type="text" name="ttcard" ng-model="prod.ttcard" ng-minlength="1" placeholder="Ex: Summary" required>
-              </div>
-
-            </div>
-          </div>
-          <div class="container-form margin tamanho">
+    <div class="formulario">
+      <div class="texto-intro tamanho margin">
+        <h2>Apenas digite os dados e gere as meta tags para seu site</h2>
+      </div>
+      <form name="prodForm" ng-submit="salvar(prod)">
+        <div class="bg tamanho margin">
+          <h2>Geral</h2>
+          <div class="container-form">
             <div class="box-form">
-              <button class="box-form-button" type="submit" class="btn btn-success" ng-disabled="prodForm.$invalid">GERAR SEO</button>
+              <label for="title">Título da sua página</label><br>
+              <input type="text" name="title" ng-model="prod.title"  placeholder="Ex: Titulo do meu site" ng-minlength="1" required>
+            </div>
+            <div class="box-form">
+              <label for="nome">Descrição da sua página</label><br>
+              <input type="text" name="description" ng-model="prod.description"  placeholder="Ex: Meu site faz muitas coisas legais" ng-minlength="1" required>
+            </div>
+            <div class="box-form">
+              <label for="nome">Autor da página</label><br>
+              <input type="text" name="author" ng-model="prod.author" ng-minlength="1" placeholder="Ex: Joaozinho" required>
+            </div>
+            <div class="box-form">
+              <label for="nome">Imagem</label><br>
+              <input type="text" name="image" ng-model="prod.image" ng-minlength="1" placeholder="Ex: Joaozinho" required>
+            </div>
+            <div class="box-form">
+              <label for="nome">Canonical</label><br>
+              <input type="text" name="canonical" ng-model="prod.canonical" placeholder="Ex: http://sua-url.com.br" ng-minlength="1" required>
+            </div>
+            <div class="box-form">
+              <label for="nome">Robots</label><br>
+              <input type="text" name="robots" ng-model="prod.robots" ng-minlength="1" placeholder="Ex: index/follow" required>
             </div>
           </div>
-        </form>
-        <div ng-repeat="x in produtos | orderBy: reverse" class="tamanho margin">
-
-          <pre id="foo">
+        </div>
+        <div class="bg margin tamanho">
+          <h2>Facebook</h2>
+          <div class="container-form ">
+            <div class="box-form">
+              <label for="title">Site name</label><br>
+              <input type="text" name="name" ng-model="prod.name"  placeholder="Ex: Titulo do meu site" ng-minlength="1">
+            </div>
+            <div class="box-form">
+              <label for="nome">Tipo</label><br>
+              <input type="text" name="type" ng-model="prod.type" ng-minlength="1" placeholder="Ex: website">
+            </div>
+            <div class="box-form">
+              <label for="nome">APP ID</label><br>
+              <input type="text" name="appid" ng-model="prod.appid" ng-minlength="1" placeholder="Ex: 99989797">
+            </div>
+            <div class="box-form">
+              <label for="nome">fb-admins</label><br>
+              <input type="text" name="fbadmins" ng-model="prod.fbadmins" ng-minlength="1" placeholder="Ex: 111111111111" >
+            </div>
+          </div>
+        </div>
+        <div class="bg margin tamanho">
+          <h2>Twitter</h2>
+          <div class="container-form">
+            <div class="box-form">
+              <label for="nome">Twitter card</label><br>
+              <input type="text" name="ttcard" ng-model="prod.ttcard" ng-minlength="1" placeholder="Ex: Summary">
+            </div>
+          </div>
+        </div>
+        <div class="container-form margin tamanho">
+          <div class="box-form">
+            <button class="box-form-button" type="submit" class="btn btn-success" ng-disabled="prodForm.$invalid">GERAR SEO</button>
+          </div>
+        </div>
+      </form>
+      <div ng-repeat="x in produtos | orderBy: reverse" class="tamanho margin">
+        <pre id="foo">
 <span class="ff">&lt;title&gt;</span>{{x.title}}<span class="ff">&lt;/title&gt;</span>
 <span class="ff">&lt;meta</span> http-equiv="Content-Type" content="<span class="resul">text/html; charset=UTF-8</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> name="<span class="resul">viewport</span>" content="<span class="resul">width=device-width,initial-scale=1,user-scalable=no</span>"<span class="ff">/&gt;</span>
@@ -118,12 +110,10 @@
 <span class="ff">&lt;meta</span> name="<span class="resul">author</span>" content="<span class="resul">{{x.author}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;link</span> rel="<span class="resul">canonical</span>" href="<span class="resul">{{x.canonical}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> name="<span class="resul">robots</span>" content="<span class="resul">{{x.robots}}</span>"<span class="ff">/&gt;</span>
-
 <span class="comment">&lt;!-- Schema.org markup for Google+ --&gt;</span>
 <span class="ff">&lt;meta</span> itemprop="<span class="resul">name</span>" content="<span class="resul">{{x.title}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> itemprop="<span class="resul">description</span>" content="<span class="resul">{{x.description}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> itemprop="<span class="resul">image</span>" content="<span class="resul">{{x.image}}</span>"<span class="ff">/&gt;</span>
-
 <span class="comment">&lt;!-- markup for facebook --&gt;</span>
 <span class="ff">&lt;meta</span> property="<span class="resul">og:title</span>" content="<span class="resul">{{x.title}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> property="<span class="resul">fb:app_id</span>" content="<span class="resul">{{x.appid}}</span>"<span class="ff">/&gt;</span>
@@ -133,7 +123,6 @@
 <span class="ff">&lt;meta</span> property="<span class="resul">og:description</span>" content="<span class="resul">{{x.description}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> property="<span class="resul">og:site_name</span>" content="<span class="resul">{{x.name}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> property="<span class="resul">fb:admins</span>" content="<span class="resul">{{x.fbadmins}}</span>"<span class="ff">/&gt;</span>
-
 <span class="comment">&lt;!-- markup for twitter --&gt;</span>
 <span class="ff">&lt;meta</span> name="<span class="resul">twitter:card</span>" content="<span class="resul">{{x.ttcard}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> name="<span class="resul">twitter:title</span>" content="<span class="resul">{{x.title}}</span>"<span class="ff">/&gt;</span>
@@ -143,13 +132,11 @@
         </pre>
         <div class="cc">
           <button class="btn" data-clipboard-target="#foo">
-              copy to clipboard
+          copy to clipboard
           </button>
         </div>
-
-        </div>
       </div>
-
+    </div>
     <footer>
       <div class="tamanho margin">
         <small>Todos os direitos reservados.</small>
