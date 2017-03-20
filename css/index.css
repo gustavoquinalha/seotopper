@@ -10,6 +10,11 @@ body {
     height: 100%;
     font-family: 'PT Sans', sans-serif;
 }
+a {
+  text-decoration: none;
+  color: #FF5F6D;
+  font-weight: bold
+}
 form {
   padding-bottom: 20px
 }
@@ -22,9 +27,11 @@ form {
    background:#001800!important;
    width: 99%;
    overflow: auto;
+   overflow-y: hidden;
    text-align: left;
    padding: 10px;
    border-radius: 3px;
+   margin: 0 auto;
  }
  pre::-webkit-scrollbar {
     width: 1em;
@@ -97,8 +104,10 @@ footer {
 .bg {
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  margin-bottom: 10px;
-  border-left: 5px solid #FF5F6D
+  margin-bottom: 20px;
+  border-left: 5px solid #FF5F6D;
+  box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 4px
 }
 .bg h2 {
   margin-left: 10px;
@@ -136,7 +145,12 @@ footer {
   font-size: 14px;
   outline: none;
   border: none;
+  transition: 2s;
+  color: rgba(0, 0, 0, 0.5);;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.box-form input:focus {
+  border-bottom: 1px solid #FF5F6D;
 }
 .box-form label {
   font-weight: 700;
@@ -145,7 +159,7 @@ footer {
 .box-form-button {
   background: #55cc66;
   color: #fff;
-  width: 300px;
+  width: 100%;
   border: none;
   height: 50px;
   font-size: 20px;
@@ -191,4 +205,13 @@ footer {
   line-height: 25px;
   color: rgba(0, 0, 0, 0.6);
   font-size: 14px
+}
+
+@media only screen and (max-width: 400px) {
+    .some {
+        display: none
+    }
+    pre {
+      width: 80%
+    }
 }
