@@ -63,6 +63,14 @@
               <label for="nome">Robots</label><br>
               <input type="text" name="robots" ng-model="seo.robots" ng-minlength="1" placeholder="Ex: index/follow" required>
             </div>
+            <div class="box-form">
+              <label for="nome">Base</label><br>
+              <input type="text" name="base" ng-model="seo.base" ng-minlength="1" placeholder="Ex: minha url" required>
+            </div>
+            <div class="box-form">
+              <label for="nome">Site Map</label><br>
+              <input type="text" name="sitemap" ng-model="seo.sitemap" ng-minlength="1" placeholder="Ex:site map" required>
+            </div>
           </div>
         </div>
         <div class="bg margin tamanho">
@@ -83,6 +91,10 @@
             <div class="box-form">
               <label for="nome">fb-admins</label><br>
               <input type="text" name="fbadmins" ng-model="seo.fbadmins" ng-minlength="1" placeholder="Ex: 111111111111" >
+            </div>
+            <div class="box-form">
+              <label for="nome">Locale</label><br>
+              <input type="text" name="locale" ng-model="seo.locale" ng-minlength="1" placeholder="Ex: pt_BR" >
             </div>
           </div>
         </div>
@@ -128,18 +140,26 @@
               <label for="nome">Robots</label><br>
               <input type="text" name="robots" ng-model="seo.robots" ng-minlength="1" placeholder="Ex: index/follow" required>
             </div>
+            <div class="box-form">
+              <label for="nome">Base</label><br>
+              <input type="text" name="base" ng-model="seo.base" ng-minlength="1" placeholder="Ex: minha url" required>
+            </div>
+            <div class="box-form">
+              <label for="nome">Site Map</label><br>
+              <input type="text" name="sitemap" ng-model="seo.sitemap" ng-minlength="1" placeholder="Ex: Site map" required>
+            </div>
           </div>
         </div>
         <div class="bg margin tamanho">
           <h2>Facebook</h2>
           <div class="container-form ">
             <div class="box-form">
-              <label for="title">Site name</label><br>
-              <input type="text" name="name" ng-model="seo.name"  placeholder="Ex: Titulo do meu site" ng-minlength="1">
-            </div>
-            <div class="box-form">
               <label for="nome">Tipo</label><br>
               <input type="text" name="type" ng-model="seo.type" ng-minlength="1" placeholder="Ex: website">
+            </div>
+            <div class="box-form">
+              <label for="title">Site name</label><br>
+              <input type="text" name="name" ng-model="seo.name"  placeholder="Ex: Titulo do meu site" ng-minlength="1">
             </div>
             <div class="box-form">
               <label for="nome">APP ID</label><br>
@@ -148,6 +168,10 @@
             <div class="box-form">
               <label for="nome">fb-admins</label><br>
               <input type="text" name="fbadmins" ng-model="seo.fbadmins" ng-minlength="1" placeholder="Ex: 111111111111" >
+            </div>
+            <div class="box-form">
+              <label for="nome">Locale</label><br>
+              <input type="text" name="locale" ng-model="seo.locale" ng-minlength="1" placeholder="Ex: pt_BR" >
             </div>
           </div>
         </div>
@@ -168,24 +192,25 @@
         <h2>{{x.name}}</h2>
         <pre id="foo">
 <span class="ff">&lt;title&gt;</span>{{x.title}}<span class="ff">&lt;/title&gt;</span>
-<span class="ff">&lt;meta</span> http-equiv="Content-Type" content="<span class="resul">text/html; charset=UTF-8</span>"<span class="ff">/&gt;</span>
-<span class="ff">&lt;meta</span> name="<span class="resul">viewport</span>" content="<span class="resul">width=device-width,initial-scale=1,user-scalable=no</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> name="<span class="resul">description</span>" content="<span class="resul">{{x.description}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> name="<span class="resul">author</span>" content="<span class="resul">{{x.author}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;link</span> rel="<span class="resul">base</span>" href="<span class="resul">{{x.base}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;link</span> rel="<span class="resul">canonical</span>" href="<span class="resul">{{x.canonical}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> rel="<span class="resul">sitemap</span>" type="<span class="resul">application/xml</span>" content="<span class="resul">{{x.sitemap}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> name="<span class="resul">robots</span>" content="<span class="resul">{{x.robots}}</span>"<span class="ff">/&gt;</span>
 <span class="comment">&lt;!-- Schema.org markup for Google+ --&gt;</span>
 <span class="ff">&lt;meta</span> itemprop="<span class="resul">name</span>" content="<span class="resul">{{x.title}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> itemprop="<span class="resul">description</span>" content="<span class="resul">{{x.description}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> itemprop="<span class="resul">image</span>" content="<span class="resul">{{x.image}}</span>"<span class="ff">/&gt;</span>
 <span class="comment">&lt;!-- markup for facebook --&gt;</span>
-<span class="ff">&lt;meta</span> property="<span class="resul">og:title</span>" content="<span class="resul">{{x.title}}</span>"<span class="ff">/&gt;</span>
-<span class="ff">&lt;meta</span> property="<span class="resul">fb:app_id</span>" content="<span class="resul">{{x.appid}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> property="<span class="resul">og:type</span>" content="<span class="resul">{{x.type}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> property="<span class="resul">og:title</span>" content="<span class="resul">{{x.title}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> property="<span class="resul">og:url</span>" content="<span class="resul">{{x.canonical}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> property="<span class="resul">og:site_name</span>" content="<span class="resul">{{x.name}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> property="<span class="resul">og:image</span>" content="<span class="resul">{{x.image}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> property="<span class="resul">og:description</span>" content="<span class="resul">{{x.description}}</span>"<span class="ff">/&gt;</span>
-<span class="ff">&lt;meta</span> property="<span class="resul">og:site_name</span>" content="<span class="resul">{{x.name}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> property="<span class="resul">og:locale</span>" content="<span class="resul">{{x.locale}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> property="<span class="resul">fb:app_id</span>" content="<span class="resul">{{x.appid}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> property="<span class="resul">fb:admins</span>" content="<span class="resul">{{x.fbadmins}}</span>"<span class="ff">/&gt;</span>
 <span class="comment">&lt;!-- markup for twitter --&gt;</span>
 <span class="ff">&lt;meta</span> name="<span class="resul">twitter:card</span>" content="<span class="resul">{{x.ttcard}}</span>"<span class="ff">/&gt;</span>

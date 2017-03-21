@@ -11,15 +11,18 @@ angular
           {
               id: 0,
               name: "Exemplo",
-              title: "titulo da minha pagina",
-              description: "descricao da minha pagina",
-              author: "autor da minha pagina",
-              canonical: "canonicallll",
+              title: "Título da minha página",
+              description: "Descrição da minha página",
+              author: "Autor da minha página",
+              canonical: "http://meusite.com.br",
               robots: "index/follow",
               image: "http://meusite.com.br/image.png",
-              fbadmins: 99999,
+              fbadmins: 123456789,
+              base: "http://meusite.com.br",
+              sitemap: "http://meusite.com.br/sitemap.xml",
+              locale: "pt_BR",
               type: "website",
-              appid: 12321312323,
+              appid: 012345,
               ttcard: "summary"
           }
         ],
@@ -35,8 +38,11 @@ angular
                 description: seo.description,
                 author: seo.author,
                 image: seo.image,
+                base: seo.base,
+                sitemap: seo.sitemap,
                 canonical: seo.canonical,
                 robots: seo.robots,
+                locale: seo.locale,
                 name: seo.name,
                 type: seo.type,
                 appid: seo.appid,
@@ -65,6 +71,9 @@ angular
         Seo.seos[n].image = x.image;
         Seo.seos[n].canonical = x.canonical;
         Seo.seos[n].robots = x.robots;
+        Seo.seos[n].locale = x.locale;
+        Seo.seos[n].base = x.base;
+        Seo.seos[n].sitemap = x.sitemap;
         Seo.seos[n].name = x.name;
         Seo.seos[n].type = x.type;
         Seo.seos[n].appid = x.appid;
