@@ -10,7 +10,7 @@ angular
         seos: [
           {
               id: 0,
-              name: "teste",
+              name: "Exemplo",
               title: "titulo da minha pagina",
               description: "descricao da minha pagina",
               author: "autor da minha pagina",
