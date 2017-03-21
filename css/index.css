@@ -13,7 +13,11 @@ body {
 a {
   text-decoration: none;
   color: #FF5F6D;
-  font-weight: bold
+  font-weight: bold;
+  opacity: 0.5
+}
+a:hover {
+  opacity: 1
 }
 form {
   padding-bottom: 20px

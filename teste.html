@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2016 by anonymous (http://jsbin.com/vipubujuge/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html ng-app="exemploApp">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      .painel-de-usuario {
+        background-color: AntiqueWhite;
+        border: 2px solid black;
+        border-radius: 12px;
+        padding: 12px;
+        margin-bottom: 6px;
+      }
+      .perfil-de-usuario {
+        background-color: #ecc7c7;
+        padding: 16px;
+        border: 3px solid blue;
+        border-radius: 9px;
+      }
+    </style>
+  </head>
+  <body>
+    <div ui-view></div>
+
+    <!-- AngularJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
+    <!-- Angular UI Router -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+
+    <script type="text/ng-template" id="usuarios.tmpl.html">
+      <h1>Lista de usuários</h1>
+      <div class="painel-de-usuario" ng-repeat="usuario in ctrl.usuarios">
+        <p>
+          Id: {{usuario.id}}
+        </p>
+        <p>
+          Nome: {{usuario.nome}}
+        </p>
+        <p>
+          Idade: {{usuario.idade}}
+        </p>
+        <a href="#/usuarios/{{usuario.id}}">Ver perfil</a>
+      </div>
+
+      <h4>Debug:</h4>
+      {{ctrl}}
+    </script>
+
+    <script type="text/ng-template" id="perfil.tmpl.html">
+      <h1>Ver Perfil</h1>
+      <p>
+        Esse é o perfil do usuário com identificação {{ctrl.perfil.id}}
+      </p>
+
+      <div class="perfil-de-usuario">
+        <p>
+          <strong>Nome:</strong> {{ctrl.perfil.nome}}
+        </p>
+        <p>
+          <strong>Idade:</strong> {{ctrl.perfil.idade}}
+        </p>
+      </div>
+
+      <a ui-sref="usuarios">Voltar pra lista de usuarios</a>
+
+      <h4>Debug:</h4>
+      {{ctrl}}
+    </script>
+
+    <script>
+      angular.module('exemploApp', ['ui.router'])
+        .config(function($stateProvider, $urlRouterProvider) {
+          // Pra onde ir se nenhuma rota definida foi pedida
+          $urlRouterProvider.otherwise("/home");
+
+          // Defina todos os states aqui (aka routes (rotas))
+          $stateProvider
+            .state('home', {
+              url: "/home",
+              template: `
+                <h1>Bem vindos!</h1>
+                <a ui-sref="usuarios">Usuarios</a>
+              `
+            })
+            .state('usuarios', {
+              url: "/usuarios",
+              templateUrl: "usuarios.tmpl.html",
+              controller: "UsuariosCtrl",
+              controllerAs: "ctrl",
+            })
+            .state('perfil', {
+              url: "/usuarios/:id",
+              templateUrl: "perfil.tmpl.html",
+              controller: "PerfilCtrl",
+              controllerAs: "ctrl",
+            })
+          ;
+        })
+
+        .controller('UsuariosCtrl', ['UsuariosModel', function(UsuariosModel) {
+          var ctrl = this;
+
+          function getUsers() {
+            // Para carregar os usuarios usando o service
+            UsuariosModel.all()
+              .then(function(response) {
+                ctrl.usuarios = response;
+
+              })
+              .catch(function(error) {
+                console.log("Erro carregando usuarios");
+                console.log(error);
+              });
+          }
+
+          // Carrega todos os usuarios
+          getUsers();
+        }])
+
+        .controller('PerfilCtrl', ['UsuariosModel', '$stateParams', function(UsuariosModel, $stateParams) {
+          var ctrl = this;
+
+          // Para carregar o perfil de um usuario especifico
+          function getUser(userId) {
+            UsuariosModel.get(userId)
+              .then(function(response) {
+                ctrl.perfil = response;
+              })
+              .catch(function(error) {
+                console.log("Problema ao carregar perfil do usuario " + userId);
+                console.log(error);
+              });
+          }
+
+          // Carrega perfil do usuario
+          getUser($stateParams.id);
+        }])
+
+        .service('UsuariosModel', ['$http', '$q', function($http, $q) {
+          var service = this;
+
+          // Dados fake so de exemplo
+          // Normalmente, os dados estariam em um banco de dados no backend
+          var DATA = [
+            { id: 1, nome: "Pedro", idade: 22 },
+            { id: 2, nome: "James", idade: 32 },
+            { id: 3, nome: "Ana", idade: 19 },
+            { id: 4, nome: "Timothy", idade: 45 },
+            { id: 5, nome: "Yumiko", idade: 28 },
+            { id: 6, nome: "Xiaoyu", idade: 33 },
+          ];
+
+          service.all = function() {
+            // NOTA: estou usando $q pra retornar uma promessa com os dados
+            // que estao na variavel DATA; isso não é necessário se você tiver
+            // um backend, em qual caso você só iria precisar do $http
+            // (então remova $q das dependências se estiver usando $http)
+            var deferred = $q.defer();
+
+            deferred.resolve(DATA);
+
+            return deferred.promise;
+
+            // Normalmente, você usaria isso se tivesse um backend
+            // return $http.get(URL_DO_SEU_BACKEND + "usuarios/").then(extract);
+
+            // Onde extract é definido (no começo do service) como
+            // function extract(result) {
+            //   return result.data;
+            // }
+          };
+
+          service.get = function(userId) {
+            var deferred = $q.defer();
+
+            deferred.resolve(DATA[userId - 1]);
+
+            return deferred.promise;
+
+            // Normalmente, você usaria isso se tivesse um backend
+            // return $http.get(URL_DO_SEU_BACKEND + "usuarios/" + userId).then(extract);
+
+            // Onde extract é definido (no começo do service) como
+            // function extract(result) {
+            //   return result.data;
+            // }
+          };
+
+        }])
+      ;
+
+    </script>
+
+
+  </body>
+</html>
