@@ -159,6 +159,10 @@ footer {
 .box-form label {
   font-weight: 700;
   color: rgba(0, 0, 0, 0.5);
+font-size: 20px
+}
+.box-form span {
+color: #FFC371
 }
 .box-form-button {
   background: #55cc66;
