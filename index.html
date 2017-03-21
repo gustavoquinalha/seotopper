@@ -1,246 +1,278 @@
 <!DOCTYPE html>
 <html ng-app="app">
-  <head>
-    <title>seotopper</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
-    <script type="text/javascript" src="js/assets/angular.min.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
-    <script type="text/javascript" src="js/index.controller.js"></script>
-    <script type="text/javascript" src="js/index.service.js"></script>
-    <script type="text/javascript" src="js/assets/clipboard.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/index.css">
-  </head>
-  <body ng-controller="IndexController">
-    <div class="intro">
-      <div class="flex">
-        <div class="box tamanho">
-          <h1>SEOTOPPER</h1>
-          <p>
-            Um lindo gerador de SEO para seu site.<br>Com Facebook, Twitter e Google+
-          </p>
-          <div class="ex">
-<pre>
+
+<head>
+  <title>seotopper</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+  <script type="text/javascript" src="js/assets/angular.min.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/index.controller.js"></script>
+  <script type="text/javascript" src="js/index.service.js"></script>
+  <script type="text/javascript" src="js/assets/clipboard.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+
+<body ng-controller="IndexController">
+  <div class="intro">
+    <div class="flex">
+      <div class="box tamanho">
+        <h1>SEOTOPPER</h1>
+        <p>
+          Um gerador de SEO bem legal para seu site.
+          <br>Com Facebook, Twitter e Google+
+        </p>
+        <div class="ex">
+          <pre>
   <span class="comment">&lt;!-- um simples exemplo --&gt;</span>
   <span class="ff">&lt;title&gt;</span>Titulo da sua pagina<span class="ff">&lt;/title&gt;</span>
   <span class="ff">&lt;meta</span> name="<span class="resul">description</span>" content="<span class="resul">Descricao da sua pagina</span>"<span class="ff">/&gt;</span>
   <span class="ff">&lt;meta</span> name="<span class="resul">author</span>" content="<span class="resul">Voce</span>"<span class="ff">/&gt;</span>
   <span class="comment">&lt;!-- e muito mais TEY! --&gt;</span>
 </pre>
-          </div>
         </div>
       </div>
     </div>
-    <div class="formulario">
-      <div class="texto-intro tamanho margin">
-        <h2>Apenas digite os dados e gere as meta tags para seu site</h2>
+  </div>
+  <div class="formulario">
+    <div class="texto-intro tamanho margin">
+      <h2>Apenas digite os dados e gere as meta tags para seu site</h2>
+    </div>
+    <form name="seoForm" ng-submit="salvar(seo)" ng-show="sv">
+      <div class="bg tamanho margin">
+        <h2>Geral</h2>
+        <div class="container-form">
+          <div class="box-form">
+            <label for="title">Título da sua página</label>
+            <br>
+            <input type="text" name="title" ng-model="seo.title" placeholder="Ex: Titulo do meu site" ng-minlength="1" required>
+            <span>Para ficar legal use no máximo 57 caracteres.</span>
+          </div>
+          <div class="box-form">
+            <label for="nome">Descrição da sua página</label>
+            <br>
+            <input type="text" name="description" ng-model="seo.description" placeholder="Ex: Meu site faz muitas coisas legais" ng-minlength="1" required>
+            <span>Para ficar legal use no máximo 160 caracteres.</span>
+          </div>
+          <div class="box-form">
+            <label for="nome">Autor da página</label>
+            <br>
+            <input type="text" name="author" ng-model="seo.author" ng-minlength="1" placeholder="Ex: Joaozinho" required>
+          </div>
+          <div class="box-form">
+            <label for="nome">Imagem</label>
+            <br>
+            <input type="text" name="image" ng-model="seo.image" ng-minlength="1" placeholder="Ex: Joaozinho" required>
+          </div>
+          <div class="box-form">
+            <label for="nome">Canonical</label>
+            <br>
+            <input type="text" name="canonical" ng-model="seo.canonical" placeholder="Ex: http://sua-url.com.br" ng-minlength="1" required>
+          </div>
+          <div class="box-form">
+            <label for="nome">Robots</label>
+            <br>
+            <input type="text" name="robots" ng-model="seo.robots" ng-minlength="1" placeholder="Ex: index/follow" required>
+          </div>
+          <div class="box-form">
+            <label for="nome">Base</label>
+            <br>
+            <input type="text" name="base" ng-model="seo.base" ng-minlength="1" placeholder="Ex: minha url" required>
+          </div>
+          <div class="box-form">
+            <label for="nome">Site Map</label>
+            <br>
+            <input type="text" name="sitemap" ng-model="seo.sitemap" ng-minlength="1" placeholder="Ex:site map" required>
+          </div>
+        </div>
       </div>
-      <form name="seoForm" ng-submit="salvar(seo)" ng-show="sv">
-        <div class="bg tamanho margin">
-          <h2>Geral</h2>
-          <div class="container-form">
-            <div class="box-form">
-              <label for="title">Título da sua página</label><br>
-              <input type="text" name="title" ng-model="seo.title"  placeholder="Ex: Titulo do meu site" ng-minlength="1" required>
-            </div>
-            <div class="box-form">
-              <label for="nome">Descrição da sua página</label><br>
-              <input type="text" name="description" ng-model="seo.description"  placeholder="Ex: Meu site faz muitas coisas legais" ng-minlength="1" required>
-            </div>
-            <div class="box-form">
-              <label for="nome">Autor da página</label><br>
-              <input type="text" name="author" ng-model="seo.author" ng-minlength="1" placeholder="Ex: Joaozinho" required>
-            </div>
-            <div class="box-form">
-              <label for="nome">Imagem</label><br>
-              <input type="text" name="image" ng-model="seo.image" ng-minlength="1" placeholder="Ex: Joaozinho" required>
-            </div>
-            <div class="box-form">
-              <label for="nome">Canonical</label><br>
-              <input type="text" name="canonical" ng-model="seo.canonical" placeholder="Ex: http://sua-url.com.br" ng-minlength="1" required>
-            </div>
-            <div class="box-form">
-              <label for="nome">Robots</label><br>
-              <input type="text" name="robots" ng-model="seo.robots" ng-minlength="1" placeholder="Ex: index/follow" required>
-            </div>
-            <div class="box-form">
-              <label for="nome">Base</label><br>
-              <input type="text" name="base" ng-model="seo.base" ng-minlength="1" placeholder="Ex: minha url" required>
-            </div>
-            <div class="box-form">
-              <label for="nome">Site Map</label><br>
-              <input type="text" name="sitemap" ng-model="seo.sitemap" ng-minlength="1" placeholder="Ex:site map" required>
-            </div>
+      <div class="bg margin tamanho">
+        <h2>Facebook</h2>
+        <div class="container-form ">
+          <div class="box-form">
+            <label for="title">Site name</label>
+            <br>
+            <input type="text" name="name" ng-model="seo.name" placeholder="Ex: Titulo do meu site" ng-minlength="1">
+          </div>
+          <div class="box-form">
+            <label for="nome">Tipo</label>
+            <br>
+            <input type="text" name="type" ng-model="seo.type" ng-minlength="1" placeholder="Ex: website">
+          </div>
+          <div class="box-form">
+            <label for="nome">APP ID</label>
+            <br>
+            <input type="text" name="appid" ng-model="seo.appid" ng-minlength="1" placeholder="Ex: 99989797">
+          </div>
+          <div class="box-form">
+            <label for="nome">fb-admins</label>
+            <br>
+            <input type="text" name="fbadmins" ng-model="seo.fbadmins" ng-minlength="1" placeholder="Ex: 111111111111">
+          </div>
+          <div class="box-form">
+            <label for="nome">Locale</label>
+            <br>
+            <input type="text" name="locale" ng-model="seo.locale" ng-minlength="1" placeholder="Ex: pt_BR">
           </div>
         </div>
-        <div class="bg margin tamanho">
-          <h2>Facebook</h2>
-          <div class="container-form ">
-            <div class="box-form">
-              <label for="title">Site name</label><br>
-              <input type="text" name="name" ng-model="seo.name"  placeholder="Ex: Titulo do meu site" ng-minlength="1">
-            </div>
-            <div class="box-form">
-              <label for="nome">Tipo</label><br>
-              <input type="text" name="type" ng-model="seo.type" ng-minlength="1" placeholder="Ex: website">
-            </div>
-            <div class="box-form">
-              <label for="nome">APP ID</label><br>
-              <input type="text" name="appid" ng-model="seo.appid" ng-minlength="1" placeholder="Ex: 99989797">
-            </div>
-            <div class="box-form">
-              <label for="nome">fb-admins</label><br>
-              <input type="text" name="fbadmins" ng-model="seo.fbadmins" ng-minlength="1" placeholder="Ex: 111111111111" >
-            </div>
-            <div class="box-form">
-              <label for="nome">Locale</label><br>
-              <input type="text" name="locale" ng-model="seo.locale" ng-minlength="1" placeholder="Ex: pt_BR" >
-            </div>
+      </div>
+      <div class="bg margin tamanho">
+        <h2>Twitter</h2>
+        <div class="container-form">
+          <div class="box-form">
+            <label for="nome">Twitter card</label>
+            <br>
+            <input type="text" name="ttcard" ng-model="seo.ttcard" ng-minlength="1" placeholder="Ex: Summary">
           </div>
         </div>
-        <div class="bg margin tamanho">
-          <h2>Twitter</h2>
-          <div class="container-form">
-            <div class="box-form">
-              <label for="nome">Twitter card</label><br>
-              <input type="text" name="ttcard" ng-model="seo.ttcard" ng-minlength="1" placeholder="Ex: Summary">
-            </div>
-          </div>
-        </div>
-        <div class="container-form margin tamanho">
+      </div>
+      <div class="container-form margin tamanho">
 
-            <button class="box-form-button" type="submit" class="btn btn-success" ng-disabled="seoForm.$invalid" ng-show="sv    ">GERAR SEO</button>
-        </div>
-      </form>
-      <form name="seoForm" ng-submit="editar(seo)" ng-show="editor">
-        <div class="bg tamanho margin">
-          <h2>Geral</h2>
-          <div class="container-form">
-            <div class="box-form">
-              <label for="title">Título da sua página</label><br>
-              <input type="text" name="title" ng-model="seo.title"  placeholder="Ex: Titulo do meu site" ng-minlength="1" required>
-            </div>
-            <div class="box-form">
-              <label for="nome">Descrição da sua página</label><br>
-              <input type="text" name="description" ng-model="seo.description"  placeholder="Ex: Meu site faz muitas coisas legais" ng-minlength="1" required>
-            </div>
-            <div class="box-form">
-              <label for="nome">Autor da página</label><br>
-              <input type="text" name="author" ng-model="seo.author" ng-minlength="1" placeholder="Ex: Joaozinho" required>
-            </div>
-            <div class="box-form">
-              <label for="nome">Imagem</label><br>
-              <input type="text" name="image" ng-model="seo.image" ng-minlength="1" placeholder="Ex: Joaozinho" required>
-            </div>
-            <div class="box-form">
-              <label for="nome">Canonical</label><br>
-              <input type="text" name="canonical" ng-model="seo.canonical" placeholder="Ex: http://sua-url.com.br" ng-minlength="1" required>
-            </div>
-            <div class="box-form">
-              <label for="nome">Robots</label><br>
-              <input type="text" name="robots" ng-model="seo.robots" ng-minlength="1" placeholder="Ex: index/follow" required>
-            </div>
-              <label for="nome">Base</label><br>
-              <input type="text" name="base" ng-model="seo.base" ng-minlength="1" placeholder="Ex: minha url" required>
-            </div>
-            <div class="box-form">
-              <label for="nome">Site Map</label><br>
-              <input type="text" name="sitemap" ng-model="seo.sitemap" ng-minlength="1" placeholder="Ex: Site map" required>
-            </div>
+        <button class="box-form-button" type="submit" class="btn btn-success" ng-disabled="seoForm.$invalid" ng-show="sv    ">GERAR SEO</button>
+      </div>
+    </form>
+    <form name="seoForm" ng-submit="editar(seo)" ng-show="editor">
+      <div class="bg tamanho margin">
+        <h2>Geral</h2>
+        <div class="container-form">
+          <div class="box-form">
+            <label for="title">Título da sua página</label>
+            <br>
+            <input type="text" name="title" ng-model="seo.title" placeholder="Ex: Titulo do meu site" ng-minlength="1" required>
+            <span>Para ficar legal use no máximo 57 caracteres.</span>
+          </div>
+          <div class="box-form">
+            <label for="nome">Descrição da sua página</label>
+            <br>
+            <input type="text" name="description" ng-model="seo.description" placeholder="Ex: Meu site faz muitas coisas legais" ng-minlength="1" required>
+            <span>Para ficar legal use no máximo 160 caracteres.</span>
+          </div>
+          <div class="box-form">
+            <label for="nome">Autor da página</label>
+            <br>
+            <input type="text" name="author" ng-model="seo.author" ng-minlength="1" placeholder="Ex: Joaozinho" required>
+          </div>
+          <div class="box-form">
+            <label for="nome">Imagem</label>
+            <br>
+            <input type="text" name="image" ng-model="seo.image" ng-minlength="1" placeholder="Ex: http://sua-url.com.br/image.jpg" required>
+          </div>
+          <div class="box-form">
+            <label for="nome">Canonical</label>
+            <br>
+            <input type="text" name="canonical" ng-model="seo.canonical" placeholder="Ex: http://sua-url.com.br" ng-minlength="1" required>
+          </div>
+          <div class="box-form">
+            <label for="nome">Robots</label>
+            <br>
+            <input type="text" name="robots" ng-model="seo.robots" ng-minlength="1" placeholder="Ex: index/follow" required>
+          </div>
+          <div class="box-form">
+            <label for="nome">Base</label>
+            <br>
+            <input type="text" name="base" ng-model="seo.base" ng-minlength="1" placeholder="Ex: minha url" required>
+          </div>
+          <div class="box-form">
+            <label for="nome">Site Map</label>
+            <br>
+            <input type="text" name="sitemap" ng-model="seo.sitemap" ng-minlength="1" placeholder="Ex:site map" required>
           </div>
         </div>
-        <div class="bg margin tamanho">
-          <h2>Facebook</h2>
-          <div class="container-form ">
-            <div class="box-form">
-              <label for="nome">Tipo</label><br>
-              <input type="text" name="type" ng-model="seo.type" ng-minlength="1" placeholder="Ex: website">
-            </div>
-            <div class="box-form">
-              <label for="title">Site name</label><br>
-              <input type="text" name="name" ng-model="seo.name"  placeholder="Ex: Titulo do meu site" ng-minlength="1">
-            </div>
-            <div class="box-form">
-              <label for="nome">Tipo</label><br>
-              <input type="text" name="type" ng-model="seo.type" ng-minlength="1" placeholder="Ex: website">
-            </div>
-            <div class="box-form">
-
-              <label for="nome">APP ID</label><br>
-              <input type="text" name="appid" ng-model="seo.appid" ng-minlength="1" placeholder="Ex: 99989797">
-            </div>
-            <div class="box-form">
-              <label for="nome">fb-admins</label><br>
-              <input type="text" name="fbadmins" ng-model="seo.fbadmins" ng-minlength="1" placeholder="Ex: 111111111111" >
-            </div>
-            <div class="box-form">
-              <label for="nome">Locale</label><br>
-              <input type="text" name="locale" ng-model="seo.locale" ng-minlength="1" placeholder="Ex: pt_BR" >
-            </div>
+      </div>
+      <div class="bg margin tamanho">
+        <h2>Facebook</h2>
+        <div class="container-form ">
+          <div class="box-form">
+            <label for="title">Site name</label>
+            <br>
+            <input type="text" name="name" ng-model="seo.name" placeholder="Ex: Titulo do meu site" ng-minlength="1">
+          </div>
+          <div class="box-form">
+            <label for="nome">Tipo</label>
+            <br>
+            <input type="text" name="type" ng-model="seo.type" ng-minlength="1" placeholder="Ex: website">
+          </div>
+          <div class="box-form">
+            <label for="nome">APP ID</label>
+            <br>
+            <input type="text" name="appid" ng-model="seo.appid" ng-minlength="1" placeholder="Ex: 99989797">
+          </div>
+          <div class="box-form">
+            <label for="nome">fb-admins</label>
+            <br>
+            <input type="text" name="fbadmins" ng-model="seo.fbadmins" ng-minlength="1" placeholder="Ex: 111111111111">
+          </div>
+          <div class="box-form">
+            <label for="nome">Locale</label>
+            <br>
+            <input type="text" name="locale" ng-model="seo.locale" ng-minlength="1" placeholder="Ex: pt_BR">
           </div>
         </div>
-        <div class="bg margin tamanho">
-          <h2>Twitter</h2>
-          <div class="container-form">
-            <div class="box-form">
-              <label for="nome">Twitter card</label><br>
-              <input type="text" name="ttcard" ng-model="seo.ttcard" ng-minlength="1" placeholder="Ex: Summary">
-            </div>
+      </div>
+      <div class="bg margin tamanho">
+        <h2>Twitter</h2>
+        <div class="container-form">
+          <div class="box-form">
+            <label for="nome">Twitter card</label>
+            <br>
+            <input type="text" name="ttcard" ng-model="seo.ttcard" ng-minlength="1" placeholder="Ex: Summary">
           </div>
         </div>
-        <div class="container-form margin tamanho">
-            <button class="box-form-button" ng-show="editor" style="background-color: cornflowerblue" ng-disabled="seoForm.$invalid" type="submit">EDITAR</button>
-        </div>
-      </form>
-      <div ng-repeat="x in seos | orderBy : '-id' " class="tamanho margin">
-        <h2>{{x.name}}</h2>
-        <pre id="foo">
-<span class="ff">&lt;title&gt;</span>{{x.title}}<span class="ff">&lt;/title&gt;</span>
-<span class="ff">&lt;meta</span> name="<span class="resul">description</span>" content="<span class="resul">{{x.description}}</span>"<span class="ff">/&gt;</span>
-<span class="ff">&lt;meta</span> name="<span class="resul">author</span>" content="<span class="resul">{{x.author}}</span>"<span class="ff">/&gt;</span>
-<span class="ff">&lt;link</span> rel="<span class="resul">base</span>" href="<span class="resul">{{x.base}}</span>"<span class="ff">/&gt;</span>
-<span class="ff">&lt;link</span> rel="<span class="resul">canonical</span>" href="<span class="resul">{{x.canonical}}</span>"<span class="ff">/&gt;</span>
-<span class="ff">&lt;meta</span> rel="<span class="resul">sitemap</span>" type="<span class="resul">application/xml</span>" content="<span class="resul">{{x.sitemap}}</span>"<span class="ff">/&gt;</span>
-<span class="ff">&lt;meta</span> name="<span class="resul">robots</span>" content="<span class="resul">{{x.robots}}</span>"<span class="ff">/&gt;</span>
-<span class="comment">&lt;!-- Schema.org markup for Google+ --&gt;</span>
-<span class="ff">&lt;meta</span> itemprop="<span class="resul">name</span>" content="<span class="resul">{{x.title}}</span>"<span class="ff">/&gt;</span>
-<span class="ff">&lt;meta</span> itemprop="<span class="resul">description</span>" content="<span class="resul">{{x.description}}</span>"<span class="ff">/&gt;</span>
-<span class="ff">&lt;meta</span> itemprop="<span class="resul">image</span>" content="<span class="resul">{{x.image}}</span>"<span class="ff">/&gt;</span>
-<span class="comment">&lt;!-- markup for facebook --&gt;</span>
-<span class="ff">&lt;meta</span> property="<span class="resul">og:type</span>" content="<span class="resul">{{x.type}}</span>"<span class="ff">/&gt;</span>
-<span class="ff">&lt;meta</span> property="<span class="resul">og:title</span>" content="<span class="resul">{{x.title}}</span>"<span class="ff">/&gt;</span>
-<span class="ff">&lt;meta</span> property="<span class="resul">og:url</span>" content="<span class="resul">{{x.canonical}}</span>"<span class="ff">/&gt;</span>
-<span class="ff">&lt;meta</span> property="<span class="resul">og:site_name</span>" content="<span class="resul">{{x.name}}</span>"<span class="ff">/&gt;</span>
-<span class="ff">&lt;meta</span> property="<span class="resul">og:image</span>" content="<span class="resul">{{x.image}}</span>"<span class="ff">/&gt;</span>
-<span class="ff">&lt;meta</span> property="<span class="resul">og:description</span>" content="<span class="resul">{{x.description}}</span>"<span class="ff">/&gt;</span>
-<span class="ff">&lt;meta</span> property="<span class="resul">og:locale</span>" content="<span class="resul">{{x.locale}}</span>"<span class="ff">/&gt;</span>
-<span class="ff">&lt;meta</span> property="<span class="resul">fb:app_id</span>" content="<span class="resul">{{x.appid}}</span>"<span class="ff">/&gt;</span>
-<span class="ff">&lt;meta</span> property="<span class="resul">fb:admins</span>" content="<span class="resul">{{x.fbadmins}}</span>"<span class="ff">/&gt;</span>
-<span class="comment">&lt;!-- markup for twitter --&gt;</span>
-<span class="ff">&lt;meta</span> name="<span class="resul">twitter:card</span>" content="<span class="resul">{{x.ttcard}}</span>"<span class="ff">/&gt;</span>
-<span class="ff">&lt;meta</span> name="<span class="resul">twitter:title</span>" content="<span class="resul">{{x.title}}</span>"<span class="ff">/&gt;</span>
-<span class="ff">&lt;meta</span> name="<span class="resul">twitter:description</span>" content="<span class="resul">{{x.description}}</span>"<span class="ff">/&gt;</span>
-<span class="ff">&lt;meta</span> name="<span class="resul">twitter:creator</span>" content="<span class="resul">{{x.author}}</span>"<span class="ff">/&gt;</span>
-<span class="ff">&lt;meta</span> name="<span class="resul">twitter:image</span>" content="<span class="resul">{{x.image}}</span>"<span class="ff">/&gt;</span>
-        </pre>
-        <div class="cc">
-          <button class="btn" data-clipboard-target="#foo">
+      </div>
+      <div class="container-form margin tamanho">
+        <button class="box-form-button" ng-show="editor" style="background-color: cornflowerblue" ng-disabled="seoForm.$invalid" type="submit">EDITAR</button>
+      </div>
+    </form>
+    <div ng-repeat="x in seos | orderBy : '-id' " class="tamanho margin">
+      <h2>{{x.name}}</h2>
+      <pre id="foo">
+      <span class="ff">&lt;title&gt;</span>{{x.title}}<span class="ff">&lt;/title&gt;</span>
+      <span class="ff">&lt;meta</span> name="<span class="resul">description</span>" content="<span class="resul">{{x.description}}</span>"<span class="ff">/&gt;</span>
+      <span class="ff">&lt;meta</span> name="<span class="resul">author</span>" content="<span class="resul">{{x.author}}</span>"<span class="ff">/&gt;</span>
+      <span class="ff">&lt;link</span> rel="<span class="resul">base</span>" href="<span class="resul">{{x.base}}</span>"<span class="ff">/&gt;</span>
+      <span class="ff">&lt;link</span> rel="<span class="resul">canonical</span>" href="<span class="resul">{{x.canonical}}</span>"<span class="ff">/&gt;</span>
+      <span class="ff">&lt;meta</span> rel="<span class="resul">sitemap</span>" type="<span class="resul">application/xml</span>" content="<span class="resul">{{x.sitemap}}</span>"<span class="ff">/&gt;</span>
+      <span class="ff">&lt;meta</span> name="<span class="resul">robots</span>" content="<span class="resul">{{x.robots}}</span>"<span class="ff">/&gt;</span>
+      <span class="comment">&lt;!-- Schema.org markup for Google+ --&gt;</span>
+      <span class="ff">&lt;meta</span> itemprop="<span class="resul">name</span>" content="<span class="resul">{{x.title}}</span>"<span class="ff">/&gt;</span>
+      <span class="ff">&lt;meta</span> itemprop="<span class="resul">description</span>" content="<span class="resul">{{x.description}}</span>"<span class="ff">/&gt;</span>
+      <span class="ff">&lt;meta</span> itemprop="<span class="resul">image</span>" content="<span class="resul">{{x.image}}</span>"<span class="ff">/&gt;</span>
+      <span class="comment">&lt;!-- markup for facebook --&gt;</span>
+      <span class="ff">&lt;meta</span> property="<span class="resul">og:type</span>" content="<span class="resul">{{x.type}}</span>"<span class="ff">/&gt;</span>
+      <span class="ff">&lt;meta</span> property="<span class="resul">og:title</span>" content="<span class="resul">{{x.title}}</span>"<span class="ff">/&gt;</span>
+      <span class="ff">&lt;meta</span> property="<span class="resul">og:url</span>" content="<span class="resul">{{x.canonical}}</span>"<span class="ff">/&gt;</span>
+      <span class="ff">&lt;meta</span> property="<span class="resul">og:site_name</span>" content="<span class="resul">{{x.name}}</span>"<span class="ff">/&gt;</span>
+      <span class="ff">&lt;meta</span> property="<span class="resul">og:image</span>" content="<span class="resul">{{x.image}}</span>"<span class="ff">/&gt;</span>
+      <span class="ff">&lt;meta</span> property="<span class="resul">og:description</span>" content="<span class="resul">{{x.description}}</span>"<span class="ff">/&gt;</span>
+      <span class="ff">&lt;meta</span> property="<span class="resul">og:locale</span>" content="<span class="resul">{{x.locale}}</span>"<span class="ff">/&gt;</span>
+      <span class="ff">&lt;meta</span> property="<span class="resul">fb:app_id</span>" content="<span class="resul">{{x.appid}}</span>"<span class="ff">/&gt;</span>
+      <span class="ff">&lt;meta</span> property="<span class="resul">fb:admins</span>" content="<span class="resul">{{x.fbadmins}}</span>"<span class="ff">/&gt;</span>
+      <span class="comment">&lt;!-- markup for twitter --&gt;</span>
+      <span class="ff">&lt;meta</span> name="<span class="resul">twitter:card</span>" content="<span class="resul">{{x.ttcard}}</span>"<span class="ff">/&gt;</span>
+      <span class="ff">&lt;meta</span> name="<span class="resul">twitter:title</span>" content="<span class="resul">{{x.title}}</span>"<span class="ff">/&gt;</span>
+      <span class="ff">&lt;meta</span> name="<span class="resul">twitter:description</span>" content="<span class="resul">{{x.description}}</span>"<span class="ff">/&gt;</span>
+      <span class="ff">&lt;meta</span> name="<span class="resul">twitter:creator</span>" content="<span class="resul">{{x.author}}</span>"<span class="ff">/&gt;</span>
+      <span class="ff">&lt;meta</span> name="<span class="resul">twitter:image</span>" content="<span class="resul">{{x.image}}</span>"<span class="ff">/&gt;</span>
+              </pre>
+      <div class="cc">
+        <button class="btn" data-clipboard-target="#foo">
           copy to clipboard
-          </button>
+        </button>
 
-          <button class="btn" ng-click="remover(x)" ng-hide="editor">Remover</button>
+        <button class="btn" ng-click="remover(x)" ng-hide="editor">Remover</button>
 
-          <button class="btn" ng-click="editando(x)" >Editar</button>
-        </div>
+        <button class="btn" ng-click="editando(x)">Editar</button>
       </div>
     </div>
-    <footer>
-      <div class="tamanho margin">
-        <small>create by <a href="https://github.com/gustavoquinalha" target="_blank">Quinalha</a> and <a href="https://github.com/usuarioJapa" target="_blank">Japa</a>.</small>
-      </div>
-    </footer>
-    <script type="text/javascript">
-      new Clipboard('.btn');
-    </script>
-  </body>
+  </div>
+  <footer>
+    <div class="tamanho margin">
+      <small>create by <a href="https://github.com/gustavoquinalha" target="_blank">Quinalha</a> and <a href="https://github.com/usuarioJapa" target="_blank">Japa</a>.</small>
+    </div>
+  </footer>
+  <script type="text/javascript">
+    new Clipboard('.btn');
+  </script>
+</body>
+
 </html>
