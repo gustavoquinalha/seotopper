@@ -29,6 +29,9 @@ angular
         $scope.seo.appid = $scope.seos[$scope.seos.indexOf(x)].appid;
         $scope.seo.fbadmins = $scope.seos[$scope.seos.indexOf(x)].fbadmins;
         $scope.seo.ttcard = $scope.seos[$scope.seos.indexOf(x)].ttcard;
+        $scope.seo.base = $scope.seos[$scope.seos.indexOf(x)].base;
+        $scope.seo.locale = $scope.seos[$scope.seos.indexOf(x)].locale;
+        $scope.seo.sitemap = $scope.seos[$scope.seos.indexOf(x)].sitemap;
         $scope.ind = $scope.seos.indexOf(x);
     }
     $scope.editar = function(x) {
