@@ -51,11 +51,11 @@
         </p>
         <div class="ex">
           <pre>
-  <span class="comment">&lt;!-- um simples exemplo --&gt;</span>
-  <span class="ff">&lt;title&gt;</span>Titulo da sua pagina<span class="ff">&lt;/title&gt;</span>
-  <span class="ff">&lt;meta</span> name="<span class="resul">description</span>" content="<span class="resul">Descricao da sua pagina</span>"<span class="ff">/&gt;</span>
-  <span class="ff">&lt;meta</span> name="<span class="resul">author</span>" content="<span class="resul">Voce</span>"<span class="ff">/&gt;</span>
-  <span class="comment">&lt;!-- e muito mais TEY! --&gt;</span>
+<span class="comment">&lt;!-- um simples exemplo --&gt;</span>
+<span class="ff">&lt;title&gt;</span>Título da minha página<span class="ff">&lt;/title&gt;</span>
+<span class="ff">&lt;meta</span> name="<span class="resul">description</span>" content="<span class="resul">Descrição da minha página</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> name="<span class="resul">author</span>" content="<span class="resul">Eu</span>"<span class="ff">/&gt;</span>
+<span class="comment">&lt;!-- e muito mais TEY! --&gt;</span>
           </pre>
         </div>
       </div>
@@ -155,7 +155,7 @@
         </div>
       </div>
       <div class="container-form margin tamanho">
-        <button class="box-form-button" type="submit" class="btn btn-success" ng-disabled="seoForm.$invalid" ng-show="sv    ">GERAR SEO</button>
+        <button class="box-form-button" type="submit" class="btn btn-success" ng-disabled="seoForm.$invalid" ng-show="sv    ">GERAR SEO TOP <img src="img/top.png" width="20" alt=""></button>
       </div>
     </form>
     <form name="seoForm" ng-submit="editar(seo)" ng-show="editor">
@@ -251,7 +251,7 @@
       </div>
     </form>
     <div ng-repeat="x in seos | orderBy : '-id' " class="tamanho margin">
-      <h2>{{x.name}}</h2>
+      <h2>{{x.name}} <img src="img/top.png" width="30" alt=""></h2>
       <pre id="foo">
 <span class="ff">&lt;title&gt;</span>{{x.title}}<span class="ff">&lt;/title&gt;</span>
 <span class="ff">&lt;meta</span> name="<span class="resul">description</span>" content="<span class="resul">{{x.description}}</span>"<span class="ff">/&gt;</span>

@@ -13,7 +13,7 @@ a {
     text-decoration: none;
     color: #5f72bd;
     font-weight: bold;
-    opacity: 0.7
+    opacity: 0.8
 }
 a:hover {
     opacity: 1
@@ -74,9 +74,9 @@ pre::-webkit-scrollbar-thumb {
     color: #fff;
     text-align: center;
     background: #5f72bd;
-    background: -webkit-linear-gradient(left, #5f72bd, #9b23ea);
-    background: linear-gradient(to right, #5f72bd, #9b23ea);
+    background: url(../img/pattern.png);
 }
+
 .flex {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -91,7 +91,9 @@ pre::-webkit-scrollbar-thumb {
 }
 .box {
     width: 500px;
-    max-width: 90%
+    max-width: 90%;
+padding-top: 0px;
+background: url(../img/bola.png) 100% top;
 }
 .ex {
     padding-top: 20px;
@@ -147,8 +149,7 @@ footer {
     -webkit-transition: 2s;
     transition: 2s;
     color: rgba(0, 0, 0, 0.5);
-    ;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 .box-form input:focus {
     border-bottom: 1px solid #5f72bd;
@@ -162,8 +163,7 @@ footer {
     color: #5f72bd
 }
 .box-form-button {
-    background: -webkit-linear-gradient(left, #5f72bd, #9b23ea);
-    background: linear-gradient(to right, #5f72bd, #9b23ea);
+  background: #5f72bd;
     color: #fff;
     width: 100%;
     border: none;
@@ -182,6 +182,10 @@ footer {
 .box-form-button[disabled] {
     opacity: 0.6;
     cursor: not-allowed;
+}
+.box-form label i {
+color: #cc5555;
+margin-left: -3px;;
 }
 .btn {
     background: #5f72bd;
