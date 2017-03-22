@@ -62,50 +62,52 @@
     </div>
     <form name="seoForm" ng-submit="salvar(seo)" ng-show="sv">
       <div class="bg tamanho margin">
-        <h2>Geral</h2>
-        <div class="container-form">
-          <div class="box-form">
-            <label for="title">Título da sua página<i>*</i></label> <i><span class="counter"><strong>{{57 - seo.title.length}}</strong> caracteres</span></i>
-            <br>
-            <input type="text" name="title" ng-model="seo.title" placeholder="Ex: Titulo do meu site" ng-minlength="1" ng-trim="false" maxlength="57" required>
-            <span>Para ficar legal use no máximo 57 caracteres.</span>
-          </div>
-          <div class="box-form">
-            <label for="nome">Descrição da sua página <i>*</i></label> <i><span class="counter"><strong>{{160 - seo.description.length}}</strong> caracteres</span></i>
-            <br>
-            <input type="text" name="description" ng-model="seo.description" placeholder="Ex: Meu site faz muitas coisas legais" ng-minlength="1" ng-trim="false" maxlength="160" required>
-            <span>Para ficar legal use no máximo 160 caracteres.</span>
-          </div>
-          <div class="box-form">
-            <label for="nome">Autor da página<i>*</i></label>
-            <br>
-            <input type="text" name="author" ng-model="seo.author" ng-minlength="1" placeholder="Ex: Joãozinho" required>
-          </div>
-          <div class="box-form">
-            <label for="nome">Imagem<i>*</i></label>
-            <br>
-            <input type="text" name="image" ng-model="seo.image" ng-minlength="1" placeholder="Ex: http://sua-url.com.br/img/intro.png" required>
-            <span>A imagem deve ter no máximo <strong>8 MB</strong>.</span>
-          </div>
-          <div class="box-form">
-            <label for="nome">Canonical<i>*</i></label>
-            <br>
-            <input type="text" name="canonical" ng-model="seo.canonical" placeholder="Ex: http://sua-url.com.br" ng-minlength="1" required>
-          </div>
-          <div class="box-form">
-            <label for="nome">Robots<i>*</i></label>
-            <br>
-            <input type="text" name="robots" ng-model="seo.robots" ng-minlength="1" placeholder="Ex: index/follow" required>
-          </div>
-          <div class="box-form">
-            <label for="nome">Base</label>
-            <br>
-            <input type="text" name="base" ng-model="seo.base" ng-minlength="1" placeholder="Ex: http://sua-url.com.br" required>
-          </div>
-          <div class="box-form">
-            <label for="nome">Site Map</label>
-            <br>
-            <input type="text" name="sitemap" ng-model="seo.sitemap" ng-minlength="1" placeholder="Ex: http://sua-url.com.br/sitemap.xml" required>
+        <div class="esp">
+          <h2>Geral</h2>
+          <div class="container-form">
+            <div class="box-form">
+              <label for="title">Título da sua página<i>*</i></label> <i><span class="counter"><strong>{{57 - seo.title.length}}</strong> caracteres</span></i>
+              <br>
+              <input type="text" name="title" ng-model="seo.title" placeholder="Ex: Titulo do meu site" ng-minlength="1" ng-trim="false" maxlength="57" required>
+              <span>Para ficar legal use no máximo 57 caracteres.</span>
+            </div>
+            <div class="box-form">
+              <label for="nome">Descrição da sua página <i>*</i></label> <i><span class="counter"><strong>{{160 - seo.description.length}}</strong> caracteres</span></i>
+              <br>
+              <input type="text" name="description" ng-model="seo.description" placeholder="Ex: Meu site faz muitas coisas legais" ng-minlength="1" ng-trim="false" maxlength="160" required>
+              <span>Para ficar legal use no máximo 160 caracteres.</span>
+            </div>
+            <div class="box-form">
+              <label for="nome">Autor da página<i>*</i></label>
+              <br>
+              <input type="text" name="author" ng-model="seo.author" ng-minlength="1" placeholder="Ex: Joãozinho" required>
+            </div>
+            <div class="box-form">
+              <label for="nome">Imagem<i>*</i></label>
+              <br>
+              <input type="text" name="image" ng-model="seo.image" ng-minlength="1" placeholder="Ex: http://sua-url.com.br/img/intro.png" required>
+              <span>A imagem deve ter no máximo <strong>8 MB</strong>.</span>
+            </div>
+            <div class="box-form">
+              <label for="nome">Canonical<i>*</i></label>
+              <br>
+              <input type="text" name="canonical" ng-model="seo.canonical" placeholder="Ex: http://sua-url.com.br" ng-minlength="1" required>
+            </div>
+            <div class="box-form">
+              <label for="nome">Robots<i>*</i></label>
+              <br>
+              <input type="text" name="robots" ng-model="seo.robots" ng-minlength="1" placeholder="Ex: index/follow" required>
+            </div>
+            <div class="box-form">
+              <label for="nome">Base</label>
+              <br>
+              <input type="text" name="base" ng-model="seo.base" ng-minlength="1" placeholder="Ex: http://sua-url.com.br" required>
+            </div>
+            <div class="box-form">
+              <label for="nome">Site Map</label>
+              <br>
+              <input type="text" name="sitemap" ng-model="seo.sitemap" ng-minlength="1" placeholder="Ex: http://sua-url.com.br/sitemap.xml" required>
+            </div>
           </div>
         </div>
       </div>
