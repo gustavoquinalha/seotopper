@@ -80,6 +80,7 @@ height: 100%;
     background: #5f72bd;
     background-color: #5f72bd;
     background: url(../img/top.svg) 50px;
+background-size: 100px;
     background-repeat: repeat;
     background-position: top left;
     -webkit-animation-name: anima;
