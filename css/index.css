@@ -12,9 +12,9 @@ body {
 }
 a {
   text-decoration: none;
-  color: #FF5F6D;
+  color: #5f72bd;
   font-weight: bold;
-  opacity: 0.5
+  opacity: 0.7
 }
 a:hover {
   opacity: 1
@@ -77,9 +77,9 @@ pre::-webkit-scrollbar-thumb {
   height: 100%;
   color: #fff;
   text-align: center;
-  background: #FF906F;
-  background: -webkit-linear-gradient(left, #FF5F6D, #FFC371);
-  background: linear-gradient(to right, #FF5F6D, #FFC371);
+  background: #5f72bd;
+  background: -webkit-linear-gradient(left, #5f72bd, #9b23ea);
+  background: linear-gradient(to right, #5f72bd, #9b23ea);
 }
 
 .flex {
@@ -109,13 +109,13 @@ footer {
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-  border-left: 5px solid #FF5F6D;
+  border-left: 5px solid #5f72bd;
   box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.1);
   border-radius: 4px
 }
 .bg h2 {
   margin-left: 10px;
-  color: #FF5F6D;
+  color: #5f72bd;
   padding-top: 10px
 }
 .container-form {
@@ -154,7 +154,7 @@ footer {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .box-form input:focus {
-  border-bottom: 1px solid #FF5F6D;
+  border-bottom: 1px solid #5f72bd;
 }
 .box-form label {
   font-weight: 700;
@@ -162,10 +162,11 @@ footer {
 font-size: 20px
 }
 .box-form span {
-color: #FFC371
+color: #5f72bd
 }
 .box-form-button {
-  background: #55cc66;
+  background: -webkit-linear-gradient(left, #5f72bd, #9b23ea);
+  background: linear-gradient(to right, #5f72bd, #9b23ea);
   color: #fff;
   width: 100%;
   border: none;
@@ -177,12 +178,16 @@ color: #FFC371
   transition: 1s;
   cursor: pointer;
 }
+.counter {
+font-size: 14px;
+opacity: 0.8
+}
 .box-form-button[disabled] {
   opacity: 0.6;
   cursor: not-allowed;
 }
 .btn {
-  background: #FF906F;
+  background: #5f72bd;
   color: #fff;
   margin-top: 10px;
   padding-left: 20px;
@@ -196,13 +201,22 @@ color: #FFC371
   transition: 1s;
   cursor: pointer;
 }
+.btn-remover {
+background: #cc5555
+}
+.btn-remover:hover {
+background: #ad4848
+}
+.logo {
+width: 300px;;
+}
 .t h2 {
-  color:#FF5F6D;
+  color:#5f72bd;
   font-size: 18px;
 }
 
 .btn:hover {
-  background: #FF5F6D;
+  background: #9b23ea;
 }
 .texto-intro {
   text-align: center;
