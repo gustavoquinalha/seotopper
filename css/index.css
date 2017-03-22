@@ -69,13 +69,17 @@ pre::-webkit-scrollbar-thumb {
 .margin {
     margin: 0 auto
 }
+.bg-intro {
+background: #5f72bd;
+height: 100%;
+}
 .intro {
     height: 100%;
     color: #fff;
     text-align: center;
     background: #5f72bd;
     background-color: #5f72bd;
-    background: url(../img/pattern.png);
+    background: url(../img/top.svg) 50px;
     background-repeat: repeat;
     background-position: top left;
     -webkit-animation-name: anima;

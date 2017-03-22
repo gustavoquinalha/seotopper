@@ -32,23 +32,17 @@
   <meta name="twitter:creator" content="Quinalha e Japa" />
   <meta name="twitter:image" content="http://quinalha.me/seotopper/img/intro.png" />
   <link rel="stylesheet" type="text/css" href="css/index.css">
-  <script type="text/javascript" src="js/assets/angular.min.js"></script>
-  <script type="text/javascript" src="js/app.js"></script>
-  <script type="text/javascript" src="js/index.controller.js"></script>
-  <script type="text/javascript" src="js/index.service.js"></script>
-  <script type="text/javascript" src="js/assets/clipboard.min.js"></script>
+
 
 </head>
 
 <body ng-controller="IndexController">
+<div class="bg-intro">
   <div class="intro">
     <div class="flex">
       <div class="box tamanho">
         <img src="img/logo-branca-01.svg" class="logo" alt="seo topper">
-        <p>
-          Um gerador de SEO bem legal para seu site.
-          <br>Com Facebook, Twitter e Google+
-        </p>
+
         <div class="ex">
           <pre>
 <span class="comment">&lt;!-- um simples exemplo --&gt;</span>
@@ -61,6 +55,7 @@
       </div>
     </div>
   </div>
+</div>
   <div class="formulario">
     <div class="texto-intro tamanho margin">
       <h2>Apenas digite os dados e gere as meta tags para seu site</h2>
@@ -155,7 +150,7 @@
         </div>
       </div>
       <div class="container-form margin tamanho">
-        <button class="box-form-button" type="submit" class="btn btn-success" ng-disabled="seoForm.$invalid" ng-show="sv    ">GERAR SEO TOP <img src="img/top.png" width="20" alt=""></button>
+        <button class="box-form-button" type="submit" class="btn btn-success" ng-disabled="seoForm.$invalid" ng-show="sv    ">Generate SEO</button>
       </div>
     </form>
     <form name="seoForm" ng-submit="editar(seo)" ng-show="editor">
@@ -247,11 +242,11 @@
         </div>
       </div>
       <div class="container-form margin tamanho">
-        <button class="box-form-button" ng-show="editor" style="background-color: cornflowerblue" ng-disabled="seoForm.$invalid" type="submit">EDITAR</button>
+        <button class="box-form-button" ng-show="editor" style="background-color: cornflowerblue" ng-disabled="seoForm.$invalid" type="submit">Save </button>
       </div>
     </form>
     <div ng-repeat="x in seos | orderBy : '-id' " class="tamanho margin">
-      <h2>{{x.name}} <img src="img/top.png" width="30" alt=""></h2>
+      <h2>{{x.name}}</h2>
       <pre id="foo">
 <span class="ff">&lt;title&gt;</span>{{x.title}}<span class="ff">&lt;/title&gt;</span>
 <span class="ff">&lt;meta</span> name="<span class="resul">description</span>" content="<span class="resul">{{x.description}}</span>"<span class="ff">/&gt;</span>
@@ -286,9 +281,9 @@
           copy to clipboard
         </button>
 
-        <button class="btn btn-remover" ng-click="remover(x)" ng-hide="editor">Remover</button>
+        <button class="btn btn-remover" ng-click="remover(x)" ng-hide="editor">remove</button>
 
-        <button class="btn" ng-click="editando(x)">Editar</button>
+        <button class="btn" ng-click="editando(x)">edit</button>
       </div>
     </div>
   </div>
@@ -297,6 +292,11 @@
       <small>create by <a href="https://github.com/gustavoquinalha" target="_blank">Quinalha</a> and <a href="https://github.com/usuarioJapa" target="_blank">Japa</a>.</small>
     </div>
   </footer>
+  <script type="text/javascript" src="js/assets/angular.min.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/index.controller.js"></script>
+  <script type="text/javascript" src="js/index.service.js"></script>
+  <script type="text/javascript" src="js/assets/clipboard.min.js"></script>
   <script type="text/javascript">
     new Clipboard('.btn');
   </script>
