@@ -75,6 +75,8 @@ pre::-webkit-scrollbar-thumb {
     text-align: center;
     background: #5f72bd;
     background: url(../img/pattern.png);
+background-repeat: repeat;
+background-position: center center
 }
 
 .flex {
@@ -93,7 +95,6 @@ pre::-webkit-scrollbar-thumb {
     width: 500px;
     max-width: 90%;
 padding-top: 0px;
-background: url(../img/bola.png) 100% top;
 }
 .ex {
     padding-top: 20px;
