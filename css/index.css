@@ -74,9 +74,28 @@ pre::-webkit-scrollbar-thumb {
     color: #fff;
     text-align: center;
     background: #5f72bd;
+    background-color: #5f72bd;
     background: url(../img/pattern.png);
-background-repeat: repeat;
-background-position: center center
+    background-repeat: repeat;
+    background-position: top left;
+    -webkit-animation-name: anima;
+            animation-name: anima;
+    -webkit-animation-duration: 30s;
+            animation-duration: 30s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+}
+@-webkit-keyframes anima {
+      0% {background-position: bottom left;}
+      100% {background-position: top right;}
+}
+@keyframes anima {
+      0% {background-position: bottom left;}
+      100% {background-position: top right;}
 }
 
 .flex {
