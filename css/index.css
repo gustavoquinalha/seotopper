@@ -25,6 +25,19 @@ form {
     text-align: right;
     padding-bottom: 20px;
 }
+::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.2);
+  font-style: italic;
+}
+:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.2);
+  font-style: italic;
+}
+::placeholder {
+  color: rgba(0, 0, 0, 0.2);
+  font-style: italic;
+}
+
 pre {
     color: #55cc66;
     background: #001800!important;
@@ -141,8 +154,7 @@ footer {
     padding-top: 10px
 }
 .container-form {
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin: 30px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -185,7 +197,8 @@ footer {
     font-size: 20px
 }
 .box-form span {
-    color: #5f72bd
+    color: rgba(0, 0, 0, .5);
+    font-size: 12px;
 }
 .box-form-button {
   background: #5f72bd;
@@ -202,11 +215,28 @@ footer {
 }
 .counter {
     font-size: 14px;
-    opacity: 0.8
+    opacity: 0.8;
 }
 .box-form-button[disabled] {
     opacity: 0.6;
     cursor: not-allowed;
+}
+.ttt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.flex1 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1
+}
+.carac {
+  width: 100%;
+  text-align: right;
 }
 .box-form label i {
 color: #cc5555;
@@ -235,13 +265,7 @@ margin-left: -3px;;
 }
 .logo {
     width: 300px;
-    animation-name: example;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-@keyframes example {
-      0% {transform: scale(1, 1);}
+    max-width: 80%;
 }
 .t h2 {
     color: #5f72bd;
@@ -263,11 +287,30 @@ margin-left: -3px;;
 .lolo {
   color: #FFDD67
 }
+.gt {
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #5f72bd;
+  color: #fff;
+  transition: 1s
+}
+.git {
+  max-width: 90%;
+  transition: 1s
+}
+.gt:hover .git {
+  transform: scale(2, 2);
+}
 @media only screen and (max-width: 400px) {
     .some {
         display: none
     }
     pre {
         width: 80%
+    }
+    .container-form {
+      margin: 10px
     }
 }
