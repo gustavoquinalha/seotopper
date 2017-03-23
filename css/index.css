@@ -9,6 +9,9 @@ body {
     height: 100%;
     font-family: 'PT Sans', sans-serif;
 }
+button:hover {
+  transform: scale(1.2, 1.2);
+}
 a {
     text-decoration: none;
     color: #5f72bd;
@@ -200,10 +203,17 @@ footer {
     color: rgba(0, 0, 0, .5);
     font-size: 12px;
 }
+.text-center {
+  text-align:
+}
 .box-form-button {
   background: #5f72bd;
     color: #fff;
-    width: 100%;
+    min-width: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
     border: none;
     height: 50px;
     font-size: 20px;
