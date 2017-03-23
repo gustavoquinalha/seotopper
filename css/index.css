@@ -80,7 +80,7 @@ height: 100%;
     background: #5f72bd;
     background-color: #5f72bd;
     background: url(../img/top.svg) 50px;
-background-size: 100px;
+    background-size: 100px;
     background-repeat: repeat;
     background-position: top left;
     -webkit-animation-name: anima;
@@ -235,7 +235,13 @@ margin-left: -3px;;
 }
 .logo {
     width: 300px;
-    ;
+    animation-name: example;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes example {
+      0% {transform: scale(1, 1);}
 }
 .t h2 {
     color: #5f72bd;
@@ -253,6 +259,9 @@ margin-left: -3px;;
     line-height: 25px;
     color: rgba(0, 0, 0, 0.6);
     font-size: 14px
+}
+.lolo {
+  color: #FFDD67
 }
 @media only screen and (max-width: 400px) {
     .some {
