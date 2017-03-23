@@ -311,7 +311,7 @@ margin-left: -3px;;
   transition: 1s
 }
 .gt:hover .git {
-  transform: scale(2, 2);
+  transform: scale(1.2, 1.2);
 }
 @media only screen and (max-width: 400px) {
     .some {
