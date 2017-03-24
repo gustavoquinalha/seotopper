@@ -58,26 +58,6 @@ angular
         console.log("LOG LISTA ====== "+JSON.stringify(Seo.seos, null, 12)+" ===============");
         return Seo.seos;
     }
-    
-    function remover(x) {
-        Seo.seos.splice(Seo.seos.indexOf(x),1);
-        console.log("LOG REMOVER ====== "+JSON.stringify(Seo.seos, null, 12)+" ===============");
-    }
-    
-    function editar(x,n) {
-        Seo.seos[n].title = x.title;
-        Seo.seos[n].description = x.description;
-        Seo.seos[n].author = x.author;
-        Seo.seos[n].image = x.image;
-        Seo.seos[n].canonical = x.canonical;
-        Seo.seos[n].robots = x.robots;
-        Seo.seos[n].name = x.name;
-        Seo.seos[n].type = x.type;
-        Seo.seos[n].appid = x.appid;  
-        Seo.seos[n].fbadmins = x.fbadmins;
-        Seo.seos[n].ttcard = x.ttcard;
-        console.log("LOG EDIT ========= "+JSON.stringify(Seo.seos, null, 12));
-    }
 
     function remover(x) {
         Seo.seos.splice(Seo.seos.indexOf(x),1);
