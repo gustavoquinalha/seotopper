@@ -1,4 +1,4 @@
 angular
-    .module('app', [])
+    .module('app', ["ngRoute"])
 
-    $scope.pa = "paaa"
+//    $scope.pa = "paaa"
