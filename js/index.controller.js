@@ -8,11 +8,10 @@ angular
         $scope.seo = {};
         console.log("LOG PROD ======"+JSON.stringify(Seo.getSeos(), null, 3)+"======");
     }
-    
+
     $scope.remover = function(x) {
         Seo.remover(x);
     }
-    
 
     $scope.ind = 0;
     $scope.editor = false;
@@ -30,18 +29,15 @@ angular
         $scope.seo.appid = $scope.seos[$scope.seos.indexOf(x)].appid;
         $scope.seo.fbadmins = $scope.seos[$scope.seos.indexOf(x)].fbadmins;
         $scope.seo.ttcard = $scope.seos[$scope.seos.indexOf(x)].ttcard;
-
         $scope.seo.base = $scope.seos[$scope.seos.indexOf(x)].base;
         $scope.seo.locale = $scope.seos[$scope.seos.indexOf(x)].locale;
         $scope.seo.sitemap = $scope.seos[$scope.seos.indexOf(x)].sitemap;
-
         $scope.ind = $scope.seos.indexOf(x);
     }
     $scope.editar = function(x) {
         Seo.editar(x, $scope.ind);
         $scope.editor = false;
-
-        $scope.sv = true; 
+        $scope.sv = true;
         $scope.seo = {};
     }
 
