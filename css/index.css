@@ -196,6 +196,12 @@ footer {
 .box-form input:focus {
     border-bottom: 1px solid #5f72bd;
 }
+.cl {
+width: 50px!important;
+}
+.clr {
+width: 100px!important;
+}
 .box-form label {
     font-weight: 700;
     color: rgba(0, 0, 0, 0.5);

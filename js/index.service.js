@@ -23,7 +23,8 @@ angular
               locale: "pt_BR",
               type: "website",
               appid: 012345,
-              ttcard: "summary"
+              ttcard: "summary",
+              color: "#FF4455"
           }
         ],
         id: 1,
@@ -94,7 +95,8 @@ angular
                 type: seo.type,
                 appid: seo.appid,
                 fbadmins: seo.fbadmins,
-                ttcard: seo.ttcard
+                ttcard: seo.ttcard,
+                color: seo.color
             }
         );
         Seo.id++;
@@ -126,6 +128,7 @@ angular
         Seo.seos[n].appid = x.appid;
         Seo.seos[n].fbadmins = x.fbadmins;
         Seo.seos[n].ttcard = x.ttcard;
+        Seo.seos[n].color = x.color;
         console.log("LOG EDIT ========= "+JSON.stringify(Seo.seos, null, 12));
     }
 
