@@ -7,6 +7,7 @@ angular
         Seo.salvar($scope.seo);
         $scope.seo = {};
         console.log("LOG PROD ======"+JSON.stringify(Seo.getSeos(), null, 3)+"======");
+        Seo.janela();
     }
 
     $scope.remover = function(x) {
@@ -30,7 +31,7 @@ angular
         $scope.seo.fbadmins = $scope.seos[$scope.seos.indexOf(x)].fbadmins;
         $scope.seo.ttcard = $scope.seos[$scope.seos.indexOf(x)].ttcard;
         $scope.seo.base = $scope.seos[$scope.seos.indexOf(x)].base;
-        $scope.seo.locale = $scope.seos[$scope.seos.indexOf(x)].locale;
+        $scope.seo.loSeo.janela();cale = $scope.seos[$scope.seos.indexOf(x)].locale;
         $scope.seo.sitemap = $scope.seos[$scope.seos.indexOf(x)].sitemap;
         $scope.ind = $scope.seos.indexOf(x);
     }
@@ -39,9 +40,11 @@ angular
         $scope.editor = false;
         $scope.sv = true;
         $scope.seo = {};
+        Seo.janela();
     }
 
     $scope.seos = Seo.seos;
     
     $scope.ops = Seo.ops;
+    
 })

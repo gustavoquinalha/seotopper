@@ -180,7 +180,7 @@ footer {
     margin-top: 0;
     padding-bottom: 10px;
 }
-.box-form input {
+.box-form input, select {
     width: 100%;
     height: 30px;
     font-size: 14px;
@@ -191,7 +191,7 @@ footer {
     color: rgba(0, 0, 0, 0.5);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
-.box-form input:focus {
+.box-form input, select:focus {
     border-bottom: 1px solid #5f72bd;
 }
 .box-form label {

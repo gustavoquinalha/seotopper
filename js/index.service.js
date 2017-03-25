@@ -85,5 +85,7 @@ angular
         Seo.seos[n].ttcard = x.ttcard;
         console.log("LOG EDIT ========= "+JSON.stringify(Seo.seos, null, 12));
     }
+    
+    
 
 });
