@@ -98,11 +98,11 @@ height: 90%;
     background: url(../img/bg-teste.svg);
     background-size: cover;
     background-repeat: repeat;
-    background-position: top left;
+    background-position: bottom;
     -webkit-animation-name: anima;
             animation-name: anima;
-    -webkit-animation-duration: 10s;
-            animation-duration: 10s;
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
     -webkit-animation-iteration-count: infinite;
             animation-iteration-count: infinite;
     -webkit-animation-direction: alternate;
@@ -111,12 +111,12 @@ height: 90%;
             animation-timing-function: linear;
 }
 @-webkit-keyframes anima {
-      0% {background-position: bottom left;}
-      100% {background-position: top right;}
+      0% {background-position: bottom;}
+      100% {background-position: center;}
 }
 @keyframes anima {
-      0% {background-position: bottom left;}
-      100% {background-position: top right;}
+      0% {background-position: bottom;}
+      100% {background-position: center;}
 }
 
 .flex {
