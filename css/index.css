@@ -141,7 +141,8 @@ padding-top: 0px;
 }
 footer {
     padding-top: 50px;
-    padding-bottom: 30px
+    padding-bottom: 30px;
+    font-size: 20px;
 }
 .bg {
     background: #fff;
@@ -309,7 +310,7 @@ margin-left: -3px;;
 .git {
   max-width: 90%;
   transition: 1s;
-
+  text-align: center;
 }
 .gt:hover .git {
   transform: scale(1.2, 1.2);
