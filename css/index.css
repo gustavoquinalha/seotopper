@@ -95,8 +95,8 @@ height: 90%;
     text-align: center;
     background: #5f72bd;
     background-color: #5f72bd;
-    background: url(../img/top.svg);
-    background-size: 100px;
+    background: url(../img/bg-teste.svg);
+    background-size: cover;
     background-repeat: repeat;
     background-position: top left;
     -webkit-animation-name: anima;
@@ -274,8 +274,8 @@ margin-left: -3px;;
     background: #ad4848
 }
 .logo {
-    width: 300px;
-    max-width: 80%;
+    width: 100%;
+    max-width: 90%;
 }
 .t h2 {
     color: #5f72bd;
@@ -308,7 +308,8 @@ margin-left: -3px;;
 }
 .git {
   max-width: 90%;
-  transition: 1s
+  transition: 1s;
+
 }
 .gt:hover .git {
   transform: scale(1.2, 1.2);

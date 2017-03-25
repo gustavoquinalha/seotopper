@@ -32,6 +32,8 @@
   <meta name="twitter:creator" content="Quinalha e Japa" />
   <meta name="twitter:image" content="http://quinalha.me/seotopper/img/intro.png" />
   <link rel="stylesheet" type="text/css" href="css/index.css">
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
 
 
   <!-- ****** favicons do faviconit.com ****** -->
@@ -60,35 +62,44 @@
 </head>
 
 <body ng-controller="IndexController">
-<div class="bg-intro">
-  <div class="intro">
-    <div class="flex">
-      <div class="box tamanho">
-        <!-- <div class="logo-logo">
-          <img src="img/logo-branca-01.svg" class="logo" alt="seo topper">
-        </div> -->
+  <div class="bg-intro">
+    <div class="intro">
+      <div class="flex">
+        <div class="box tamanho">
+          <div class="logo-logo">
+            <img src="img/logo-branca-01.svg" class="logo" alt="seo topper">
+            <!--img src="img/seotopp.svg" class="logo" alt="seo topper"-->
+          </div>
 
-        <div class="ex">
-          <pre>
-<span class="lolo">
+          <div class="ex">
+            <pre>
+<!--span class="lolo">
  ____           _____
 / ___|  ___  __|_   _|__  _ __  _ __   ___ _ __
 \___ \ / _ \/ _ \| |/ _ \| '_ \| '_ \ / _ \ '__|
  ___) |  __/ (_) | | (_) | |_) | |_) |  __/ |
 |____/ \___|\___/|_|\___/| .__/| .__/ \___|_|
                          |_|   |_|
-</span>
+</span-->
 <span class="comment">&lt;!-- um simples exemplo --&gt;</span>
 <span class="ff">&lt;title&gt;</span>Título da minha página<span class="ff">&lt;/title&gt;</span>
 <span class="ff">&lt;meta</span> name="<span class="resul">description</span>" content="<span class="resul">Descrição da minha página</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> name="<span class="resul">author</span>" content="<span class="resul">Eu</span>"<span class="ff">/&gt;</span>
 <span class="comment">&lt;!-- e muito mais TEY! --&gt;</span>
           </pre>
+            <br>
+            <!-- Place this tag where you want the button to render. -->
+            <a class="github-button" href="https://github.com/gustavoquinalha/seotopper" data-style="mega" data-count-href="/gustavoquinalha/seotopper/stargazers" data-count-api="/repos/gustavoquinalha/seotopper#stargazers_count" data-count-aria-label="# stargazers on GitHub"
+            aria-label="Star gustavoquinalha/seotopper on GitHub">Star</a>
+            <!-- Place this tag where you want the button to render. -->
+            <a class="github-button" href="https://github.com/gustavoquinalha/seotopper/fork" data-style="mega" data-count-href="/gustavoquinalha/seotopper/network" data-count-api="/repos/gustavoquinalha/seotopper#forks_count" data-count-aria-label="# forks on GitHub"
+            aria-label="Fork gustavoquinalha/seotopper on GitHub">Fork</a>
+            <br>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
   <div class="formulario">
     <div class="texto-intro tamanho margin">
       <h2>Apenas digite os dados e gere as meta tags para seu site</h2>
@@ -102,9 +113,9 @@
               <label for="title">Título da sua página<i>*</i></label>
               <br>
               <div class="ttt">
-              <div class="flex1">
-                <input type="text" name="title" ng-model="seo.title" placeholder="Ex: Titulo do meu site" ng-minlength="1" ng-trim="false" maxlength="57" required>
-              </div>
+                <div class="flex1">
+                  <input type="text" name="title" ng-model="seo.title" placeholder="Ex: Titulo do meu site" ng-minlength="1" ng-trim="false" maxlength="57" required>
+                </div>
                 <div class="">
                   <i><span class="counter">0{{seo.title.length}}/57</span></i>
                 </div>
@@ -345,13 +356,24 @@
       <small>create by <a href="https://github.com/gustavoquinalha" target="_blank">Quinalha</a> and <a href="https://github.com/usuarioJapa" target="_blank">Japa</a>.</small>
     </div>
   </footer>
-<a href="https://github.com/gustavoquinalha/seotopper" target="_blank">
+
   <div class="gt">
     <div class="git">
-      <h3>Conheça nosso projeto top no git <img src="img/top2.svg" width="20" alt="top"></h3>
+      <h2>Ajude nos</h2>
+      <!-- Place this tag where you want the button to render. -->
+      <a class="github-button" href="https://github.com/gustavoquinalha/seotopper" data-style="mega" data-count-href="/gustavoquinalha/seotopper/stargazers" data-count-api="/repos/gustavoquinalha/seotopper#stargazers_count" data-count-aria-label="# stargazers on GitHub"
+      aria-label="Star gustavoquinalha/seotopper on GitHub">Star</a>
+      <!-- Place this tag where you want the button to render. -->
+      <a class="github-button" href="https://github.com/gustavoquinalha/seotopper/fork" data-style="mega" data-count-href="/gustavoquinalha/seotopper/network" data-count-api="/repos/gustavoquinalha/seotopper#forks_count" data-count-aria-label="# forks on GitHub"
+      aria-label="Fork gustavoquinalha/seotopper on GitHub">Fork</a>
+      <br>
+      <!-- Place this tag where you want the button to render. -->
+      <a class="github-button" href="https://github.com/gustavoquinalha" data-style="mega" data-count-href="/gustavoquinalha/followers" data-count-api="/users/gustavoquinalha#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @gustavoquinalha on GitHub">Follow @gustavoquinalha</a>
+      <br>
+      <!-- Place this tag where you want the button to render. -->
+      <a class="github-button" href="https://github.com/usuarioJapa" data-style="mega" data-count-href="/usuarioJapa/followers" data-count-api="/users/usuarioJapa#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @usuarioJapa on GitHub">Follow @usuarioJapa</a>
     </div>
   </div>
-</a>
   <script type="text/javascript" src="js/assets/angular.min.js"></script>
   <script type="text/javascript" src="js/app.js"></script>
   <script type="text/javascript" src="js/index.controller.js"></script>
@@ -360,16 +382,22 @@
   <script type="text/javascript">
     new Clipboard('.btn');
   </script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-  ga('create', 'UA-96118424-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
+    ga('create', 'UA-96118424-1', 'auto');
+    ga('send', 'pageview');
+  </script>
 </body>
 
 </html>
