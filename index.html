@@ -170,7 +170,7 @@
               <input type="text" name="sitemap" ng-model="seo.sitemap" ng-minlength="1" placeholder="Ex: http://sua-url.com.br/sitemap.xml" required>
             </div>
             <div class="box-form">
-              <label for="nome">Site color</label>
+              <label for="nome">Theme color</label>
               <br>
               <input type="color" class="cl" name="color" ng-model="seo.color" value="#5f72bd" ng-value="#5f72bd">
               <input type="text" class="clr" name="color" ng-model="seo.color" value="#5f72bd">
@@ -274,6 +274,12 @@
             <br>
             <input type="text" name="sitemap" ng-model="seo.sitemap" ng-minlength="1" placeholder="Ex:site map" required>
           </div>
+          <div class="box-form">
+            <label for="nome">Theme color</label>
+            <br>
+            <input type="color" class="cl" name="color" ng-model="seo.color" value="#5f72bd" ng-value="#5f72bd">
+            <input type="text" class="clr" name="color" ng-model="seo.color" value="#5f72bd">
+          </div>
         </div>
       </div>
       <div class="bg margin tamanho">
@@ -334,6 +340,9 @@
 <span class="ff">&lt;meta</span> name="<span class="resul">robots</span>" content="<span class="resul">{{x.robots}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> name="<span class="resul">googlebot</span>" content="<span class="resul">{{x.robots}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> name="<span class="resul">theme-color</span>" content="<span class="resul">{{x.color}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> name="<span class="resul">msapplication-navbutton-color</span>" content="<span class="resul">{{x.color}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> name="<span class="resul">apple-mobile-web-app-status-bar-style</span>" content="<span class="resul">{{x.color}}</span>"<span class="ff">/&gt;</span>
+
 <span class="comment">&lt;!-- Schema.org markup for Google+ --&gt;</span>
 <span class="ff">&lt;meta</span> itemprop="<span class="resul">name</span>" content="<span class="resul">{{x.title}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> itemprop="<span class="resul">description</span>" content="<span class="resul">{{x.description}}</span>"<span class="ff">/&gt;</span>
