@@ -26,7 +26,54 @@ angular
               ttcard: "summary"
           }
         ],
-        id: 1
+        id: 1,
+        ops: [
+            "website",
+            "blog",
+            "article",
+            "activity",
+            "sport",
+            "company",
+            "restaurant",
+            "hotel",
+            "cause",
+            "band",
+            "government",
+            "non_profit",
+            "school",
+            "university",
+            "actor",
+            "athlete",
+            "city",
+            "country",
+            "album",
+            "book",
+            "drink",
+            "game",
+            "product",
+            "song",
+            "movie",
+        ],
+        rops: [
+            "index/follow",
+            "noindex/follow",
+            "index/nofollow",
+            "noarchive",
+            "nosnippet",
+            "noodp",
+            "notranslate",
+            "noimageindex",
+            "none"
+        ],
+        tt: [
+            "Summary",
+            "Product",
+            "Photo",
+            "Summary Large Image",
+            "Player",
+            "App",
+            "Gallery"
+        ]
     };
     return Seo;
 
@@ -81,5 +128,7 @@ angular
         Seo.seos[n].ttcard = x.ttcard;
         console.log("LOG EDIT ========= "+JSON.stringify(Seo.seos, null, 12));
     }
+
+
 
 });
