@@ -26,7 +26,11 @@ angular
               ttcard: "summary"
           }
         ],
-        id: 1
+        id: 1,
+        ops: [
+            "website",
+            "blog"
+        ]
     };
     return Seo;
 

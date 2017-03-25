@@ -170,7 +170,9 @@
           <div class="box-form">
             <label for="nome">Tipo</label>
             <br>
-            <input type="text" name="type" ng-model="seo.type" ng-minlength="1" placeholder="Ex: website">
+            <select name="type" ng-model="seo.type">
+                <option ng-repeat="x in ops">{{x}}</option>
+            </select>
           </div>
           <div class="box-form">
             <label for="nome">APP ID</label>
@@ -262,7 +264,9 @@
           <div class="box-form">
             <label for="nome">Tipo</label>
             <br>
-            <input type="text" name="type" ng-model="seo.type" ng-minlength="1" placeholder="Ex: website">
+            <select>
+                <option ng-repeat="x in ops">{{x}}</option>
+            </select>
           </div>
           <div class="box-form">
             <label for="nome">APP ID</label>

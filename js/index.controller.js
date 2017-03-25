@@ -42,4 +42,6 @@ angular
     }
 
     $scope.seos = Seo.seos;
+    
+    $scope.ops = Seo.ops;
 })
