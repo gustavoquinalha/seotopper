@@ -1,10 +1,10 @@
-# seotopper
-gerador de SEO [Confira](http://quinalha.me/seotopper/)
+# Seotopper
+Gerador de SEO mais TOP do momento, com meta tags do facebook, twitter, google+ entre outras. [Confira](http://quinalha.me/seotopper/)
 
-## Novidade
+# Novidade
 JSON-LD - structured data markup Google Search
 
-# meta-tags
+# Meta-tags
 - title
 - description
 - author
