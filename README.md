@@ -1,6 +1,8 @@
 # seotopper
 gerador de SEO [Confira](http://quinalha.me/seotopper/)
 
+## Novidade - JSON-LD - structured data markup Google Search
+
 # meta-tags
 - title
 - description
