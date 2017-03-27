@@ -342,7 +342,6 @@
 <span class="ff">&lt;meta</span> name="<span class="resul">theme-color</span>" content="<span class="resul">{{x.color}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> name="<span class="resul">msapplication-navbutton-color</span>" content="<span class="resul">{{x.color}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> name="<span class="resul">apple-mobile-web-app-status-bar-style</span>" content="<span class="resul">{{x.color}}</span>"<span class="ff">/&gt;</span>
-
 <span class="comment">&lt;!-- Schema.org markup for Google+ --&gt;</span>
 <span class="ff">&lt;meta</span> itemprop="<span class="resul">name</span>" content="<span class="resul">{{x.title}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> itemprop="<span class="resul">description</span>" content="<span class="resul">{{x.description}}</span>"<span class="ff">/&gt;</span>
@@ -363,6 +362,17 @@
 <span class="ff">&lt;meta</span> name="<span class="resul">twitter:description</span>" content="<span class="resul">{{x.description}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> name="<span class="resul">twitter:creator</span>" content="<span class="resul">{{x.author}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> name="<span class="resul">twitter:image</span>" content="<span class="resul">{{x.image}}</span>"<span class="ff">/&gt;</span>
+<span class="comment">&lt;!-- JSON-LD - structured data markup Google Search --&gt;</span>
+<span class="ff">&lt;script</span> type="<span class="resul">application/ld+json</span>"<span class="ff">/&gt;</span>
+{
+  "<span class="ff">@context</span>": "<span class="resul">http://schema.org</span>",
+  "<span class="ff">@type</span>": "<span class="resul">WebSite</span>",
+  "<span class="ff">name</span>": "<span class="resul">{{x.name}}</span>",
+  "<span class="ff">alternateName</span>": "<span class="resul">{{x.description}}</span>",
+  "<span class="ff">url</span>": "<span class="resul">{{x.canonical}}</span>"
+}
+<span class="ff">&lt;/script</span><span class="ff">/&gt;</span>
+
               </pre>
       <div class="cc">
         <button class="btn" data-clipboard-target="#foo">
