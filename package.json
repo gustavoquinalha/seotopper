@@ -9,7 +9,7 @@
   "scripts": {
     "precommit": "npm test",
     "prepush": "npm run precommit",
-    "test": "xo && ava"
+    "test": "xo --fix && ava -v"
   },
   "xo": {
     "space": true,

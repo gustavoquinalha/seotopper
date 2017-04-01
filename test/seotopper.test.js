@@ -68,3 +68,123 @@ test('main funcionality', t => {
 
   t.is(actual, expected, 'should return a valid html snippet')
 })
+
+test('base should be optional', t => {
+  const actual = seotopper({
+    title: 'Título da minha página',
+    description: 'Descrição da minha página',
+    author: 'Eu',
+    canonical: 'https://sua-url.com.br',
+    sitemap: 'https://sua-url.com.br/sitemap.xml',
+    robots: 'index/follow',
+    themeColor: '#f00',
+    image: 'https://sua-url.com.br/images/intro.jpg',
+    facebook: {
+      type: 'website',
+      siteName: 'Exemplo',
+      locale: 'pt_BR',
+      id: '5349',
+      admins: '123456789'
+    },
+    twitter: {
+      card: 'summary'
+    }
+  })
+
+  t.notRegex(actual, /rel="base"/)
+})
+
+test('sitemap should be optional', t => {
+  const actual = seotopper({
+    title: 'Título da minha página',
+    description: 'Descrição da minha página',
+    author: 'Eu',
+    canonical: 'https://sua-url.com.br',
+    robots: 'index/follow',
+    themeColor: '#f00',
+    image: 'https://sua-url.com.br/images/intro.jpg',
+    facebook: {
+      type: 'website',
+      siteName: 'Exemplo',
+      locale: 'pt_BR',
+      id: '5349',
+      admins: '123456789'
+    },
+    twitter: {
+      card: 'summary'
+    }
+  })
+
+  t.notRegex(actual, /rel="sitemap"/)
+})
+
+test('themeColor should be optional', t => {
+  const actual = seotopper({
+    title: 'Título da minha página',
+    description: 'Descrição da minha página',
+    author: 'Eu',
+    canonical: 'https://sua-url.com.br',
+    robots: 'index/follow',
+    image: 'https://sua-url.com.br/images/intro.jpg',
+    facebook: {
+      type: 'website',
+      siteName: 'Exemplo',
+      locale: 'pt_BR',
+      id: '5349',
+      admins: '123456789'
+    },
+    twitter: {
+      card: 'summary'
+    }
+  })
+
+  t.notRegex(actual, /name="theme-color"/)
+  t.notRegex(actual, /name="msapplication-navbutton-color"/)
+  t.notRegex(actual, /name="apple-mobile-web-app-status-bar-style"/)
+})
+
+test('facebook should be optional', t => {
+  const actual = seotopper({
+    title: 'Título da minha página',
+    description: 'Descrição da minha página',
+    author: 'Eu',
+    canonical: 'https://sua-url.com.br',
+    robots: 'index/follow',
+    image: 'https://sua-url.com.br/images/intro.jpg',
+    twitter: {
+      card: 'summary'
+    }
+  })
+  t.notRegex(actual, /property="og:type"/)
+  t.notRegex(actual, /property="og:title"/)
+  t.notRegex(actual, /property="og:url"/)
+  t.notRegex(actual, /property="og:site_name"/)
+  t.notRegex(actual, /property="og:image"/)
+  t.notRegex(actual, /property="og:description"/)
+  t.notRegex(actual, /property="og:locale"/)
+  t.notRegex(actual, /property="fb:app_id"/)
+  t.notRegex(actual, /property="fb:admins"/)
+})
+
+test('twitter should be optional', t => {
+  const actual = seotopper({
+    title: 'Título da minha página',
+    description: 'Descrição da minha página',
+    author: 'Eu',
+    canonical: 'https://sua-url.com.br',
+    robots: 'index/follow',
+    image: 'https://sua-url.com.br/images/intro.jpg',
+    facebook: {
+      type: 'website',
+      siteName: 'Exemplo',
+      locale: 'pt_BR',
+      id: '5349',
+      admins: '123456789'
+    }
+  })
+  t.notRegex(actual, /name="twitter:card"/)
+  t.notRegex(actual, /name="twitter:title"/)
+  t.notRegex(actual, /name="twitter:description"/)
+  t.notRegex(actual, /name="twitter:creator"/)
+  t.notRegex(actual, /name="twitter:image"/)
+})
