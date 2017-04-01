@@ -1,0 +1,37 @@
+{
+  "name": "seotopper",
+  "description": "SEO generator",
+  "version": "0.0.1",
+  "author": "Gustavo Quinalha",
+  "keywords": [],
+  "license": "MIT",
+  "main": "lib/seotopper.js",
+  "scripts": {
+    "precommit": "npm test",
+    "prepush": "npm run precommit",
+    "test": "xo && ava"
+  },
+  "xo": {
+    "space": true,
+    "semicolon": false
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gustavoquinalha/seotopper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gustavoquinalha/seotopper/issues"
+  },
+  "homepage": "https://github.com/gustavoquinalha/seotopper#readme",
+  "devDependencies": {
+    "ava": "^0.18.2",
+    "husky": "^0.13.3",
+    "xo": "^0.18.1"
+  },
+  "engines" : {
+    "node": ">=4"
+  }
+}
