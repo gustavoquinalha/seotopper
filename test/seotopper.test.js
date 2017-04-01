@@ -270,3 +270,94 @@ test('should give feedback for more than one required property', t => {
     })
   }, 'The following properties are required: author, description, title')
 })
+
+test('title cannot be empty', t => {
+  t.throws(() => {
+    seotopper({
+      title: '',
+      description: 'Descrição da minha página',
+      author: 'Eu',
+      canonical: 'https://sua-url.com.br',
+      robots: 'index/follow',
+      image: 'https://sua-url.com.br/images/intro.jpg'
+    })
+  }, 'The following property cannot be empty: title')
+})
+
+test('description cannot be empty', t => {
+  t.throws(() => {
+    seotopper({
+      title: 'Título da minha página',
+      description: '',
+      author: 'Eu',
+      canonical: 'https://sua-url.com.br',
+      robots: 'index/follow',
+      image: 'https://sua-url.com.br/images/intro.jpg'
+    })
+  }, 'The following property cannot be empty: description')
+})
+
+test('author cannot be empty', t => {
+  t.throws(() => {
+    seotopper({
+      title: 'Título da minha página',
+      description: 'Descrição da minha página',
+      author: '',
+      canonical: 'https://sua-url.com.br',
+      robots: 'index/follow',
+      image: 'https://sua-url.com.br/images/intro.jpg'
+    })
+  }, 'The following property cannot be empty: author')
+})
+
+test('canonical cannot be empty', t => {
+  t.throws(() => {
+    seotopper({
+      title: 'Título da minha página',
+      author: 'Eu',
+      description: 'Descrição da minha página',
+      canonical: '',
+      robots: 'index/follow',
+      image: 'https://sua-url.com.br/images/intro.jpg'
+    })
+  }, 'The following property cannot be empty: canonical')
+})
+
+test('robots cannot be empty', t => {
+  t.throws(() => {
+    seotopper({
+      title: 'Título da minha página',
+      author: 'Eu',
+      description: 'Descrição da minha página',
+      canonical: 'https://sua-url.com.br',
+      robots: '',
+      image: 'https://sua-url.com.br/images/intro.jpg'
+    })
+  }, 'The following property cannot be empty: robots')
+})
+
+test('image cannot be empty', t => {
+  t.throws(() => {
+    seotopper({
+      title: 'Título da minha página',
+      author: 'Eu',
+      description: 'Descrição da minha página',
+      canonical: 'https://sua-url.com.br',
+      robots: 'index/follow',
+      image: ''
+    })
+  }, 'The following property cannot be empty: image')
+})
+
+test('should give feedback for more than one empty property', t => {
+  t.throws(() => {
+    seotopper({
+      title: '',
+      description: '',
+      author: '',
+      canonical: 'https://sua-url.com.br',
+      robots: 'index/follow',
+      image: 'https://sua-url.com.br/images/intro.jpg'
+    })
+  }, 'The following properties cannot be empty: author, description, title')
+})

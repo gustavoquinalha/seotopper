@@ -2,7 +2,9 @@ const test = require('ava')
 const {
   requiredProperties,
   checkMissingKeys,
-  createErrorMessage
+  createMissingKeysErrorMessage,
+  checkEmptyKeys,
+  createEmptyKeysErrorMessage
 } = require('../lib/utils')
 
 test('requiredProperties should be an array', t => {
@@ -18,16 +20,44 @@ test('checkMissingKeys', t => {
   t.deepEqual(actual, expected, 'should return the missing keys')
 })
 
-test('createErrorMessage missing one key', t => {
-  const actual = createErrorMessage(['title'])
+test('createMissingKeysErrorMessage missing one key', t => {
+  const actual = createMissingKeysErrorMessage(['title'])
   const expected = 'The following property is required: title'
 
   t.is(actual, expected)
 })
 
-test('createErrorMessage missign more than one key', t => {
-  const actual = createErrorMessage(['title', 'author'])
-  const expected = 'The following properties are required: title, author'
+test('createMissingKeysErrorMessage missing more than one key', t => {
+  const actual = createMissingKeysErrorMessage(['title', 'author'])
+  const expected = 'The following properties are required: author, title'
+
+  t.is(actual, expected)
+})
+
+test('checkEmptyKeys', t => {
+  const actual = checkEmptyKeys(
+    ['title', 'author'],
+    ['title', 'author'],
+    {
+      title: '',
+      author: 'me'
+    }
+  )
+  const expected = ['title']
+
+  t.deepEqual(actual, expected)
+})
+
+test('createEmptyKeysErrorMessage with one empty key', t => {
+  const actual = createEmptyKeysErrorMessage(['title'])
+  const expected = 'The following property cannot be empty: title'
+
+  t.is(actual, expected)
+})
+
+test('createEmptyKeysErrorMessage with more than one empty key', t => {
+  const actual = createEmptyKeysErrorMessage(['title', 'author'])
+  const expected = 'The following properties cannot be empty: author, title'
 
   t.is(actual, expected)
 })
