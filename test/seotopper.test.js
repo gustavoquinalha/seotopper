@@ -188,3 +188,85 @@ test('twitter should be optional', t => {
   t.notRegex(actual, /name="twitter:creator"/)
   t.notRegex(actual, /name="twitter:image"/)
 })
+
+test('title should be required', t => {
+  t.throws(() => {
+    seotopper({
+      description: 'Descrição da minha página',
+      author: 'Eu',
+      canonical: 'https://sua-url.com.br',
+      robots: 'index/follow',
+      image: 'https://sua-url.com.br/images/intro.jpg'
+    })
+  }, 'The following property is required: title')
+})
+
+test('description should be required', t => {
+  t.throws(() => {
+    seotopper({
+      title: 'Título da minha página',
+      author: 'Eu',
+      canonical: 'https://sua-url.com.br',
+      robots: 'index/follow',
+      image: 'https://sua-url.com.br/images/intro.jpg'
+    })
+  }, 'The following property is required: description')
+})
+
+test('author should be required', t => {
+  t.throws(() => {
+    seotopper({
+      title: 'Título da minha página',
+      description: 'Descrição da minha página',
+      canonical: 'https://sua-url.com.br',
+      robots: 'index/follow',
+      image: 'https://sua-url.com.br/images/intro.jpg'
+    })
+  }, 'The following property is required: author')
+})
+
+test('canonical should be required', t => {
+  t.throws(() => {
+    seotopper({
+      title: 'Título da minha página',
+      author: 'Eu',
+      description: 'Descrição da minha página',
+      robots: 'index/follow',
+      image: 'https://sua-url.com.br/images/intro.jpg'
+    })
+  }, 'The following property is required: canonical')
+})
+
+test('robots should be required', t => {
+  t.throws(() => {
+    seotopper({
+      title: 'Título da minha página',
+      author: 'Eu',
+      description: 'Descrição da minha página',
+      canonical: 'https://sua-url.com.br',
+      image: 'https://sua-url.com.br/images/intro.jpg'
+    })
+  }, 'The following property is required: robots')
+})
+
+test('image should be required', t => {
+  t.throws(() => {
+    seotopper({
+      title: 'Título da minha página',
+      author: 'Eu',
+      description: 'Descrição da minha página',
+      canonical: 'https://sua-url.com.br',
+      robots: 'index/follow'
+    })
+  }, 'The following property is required: image')
+})
+
+test('should give feedback for more than one required property', t => {
+  t.throws(() => {
+    seotopper({
+      canonical: 'https://sua-url.com.br',
+      robots: 'index/follow',
+      image: 'https://sua-url.com.br/images/intro.jpg'
+    })
+  }, 'The following properties are required: author, description, title')
+})
