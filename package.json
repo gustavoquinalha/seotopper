@@ -5,6 +5,9 @@
   "author": "Gustavo Quinalha",
   "keywords": [],
   "license": "MIT",
+  "bin": {
+    "seotopper": "bin/seotopper.js"
+  },
   "main": "lib/seotopper.js",
   "scripts": {
     "precommit": "npm test",
@@ -31,7 +34,10 @@
     "husky": "^0.13.3",
     "xo": "^0.18.1"
   },
-  "engines" : {
+  "engines": {
     "node": ">=4"
+  },
+  "dependencies": {
+    "inquirer": "^3.0.6"
   }
 }
