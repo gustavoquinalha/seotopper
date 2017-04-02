@@ -12,16 +12,14 @@ test('main funcionality', t => {
     robots: 'index/follow',
     themeColor: '#f00',
     image: 'https://sua-url.com.br/images/intro.jpg',
-    facebook: {
-      type: 'website',
-      siteName: 'Exemplo',
-      locale: 'pt_BR',
-      id: '5349',
-      admins: '123456789'
-    },
-    twitter: {
-      card: 'summary'
-    }
+    facebook: true,
+    facebookType: 'website',
+    facebookSiteName: 'Exemplo',
+    facebookLocale: 'pt_BR',
+    facebookId: '5349',
+    facebookAdmins: '123456789',
+    twitter: true,
+    twitterCard: 'summary'
   })
 
   const expected = `<title>Título da minha página</title>
@@ -42,7 +40,7 @@ test('main funcionality', t => {
 <!-- markup for facebook -->
 <meta property="og:type" content="website"/>
 <meta property="og:title" content="Título da minha página"/>
-<meta property="og:url" content="http://meusite.com.br"/>
+<meta property="og:url" content="https://sua-url.com.br"/>
 <meta property="og:site_name" content="Exemplo"/>
 <meta property="og:image" content="https://sua-url.com.br/images/intro.jpg"/>
 <meta property="og:description" content="Descrição da minha página"/>
@@ -79,16 +77,14 @@ test('base should be optional', t => {
     robots: 'index/follow',
     themeColor: '#f00',
     image: 'https://sua-url.com.br/images/intro.jpg',
-    facebook: {
-      type: 'website',
-      siteName: 'Exemplo',
-      locale: 'pt_BR',
-      id: '5349',
-      admins: '123456789'
-    },
-    twitter: {
-      card: 'summary'
-    }
+    facebook: true,
+    facebookType: 'website',
+    facebookSiteName: 'Exemplo',
+    facebookLocale: 'pt_BR',
+    facebookId: '5349',
+    facebookAdmins: '123456789',
+    twitter: true,
+    twitterCard: 'summary'
   })
 
   t.notRegex(actual, /rel="base"/)
@@ -103,16 +99,14 @@ test('sitemap should be optional', t => {
     robots: 'index/follow',
     themeColor: '#f00',
     image: 'https://sua-url.com.br/images/intro.jpg',
-    facebook: {
-      type: 'website',
-      siteName: 'Exemplo',
-      locale: 'pt_BR',
-      id: '5349',
-      admins: '123456789'
-    },
-    twitter: {
-      card: 'summary'
-    }
+    facebook: true,
+    facebookType: 'website',
+    facebookSiteName: 'Exemplo',
+    facebookLocale: 'pt_BR',
+    facebookId: '5349',
+    facebookAdmins: '123456789',
+    twitter: true,
+    twitterCard: 'summary'
   })
 
   t.notRegex(actual, /rel="sitemap"/)
@@ -126,16 +120,14 @@ test('themeColor should be optional', t => {
     canonical: 'https://sua-url.com.br',
     robots: 'index/follow',
     image: 'https://sua-url.com.br/images/intro.jpg',
-    facebook: {
-      type: 'website',
-      siteName: 'Exemplo',
-      locale: 'pt_BR',
-      id: '5349',
-      admins: '123456789'
-    },
-    twitter: {
-      card: 'summary'
-    }
+    facebook: true,
+    facebookType: 'website',
+    facebookSiteName: 'Exemplo',
+    facebookLocale: 'pt_BR',
+    facebookId: '5349',
+    facebookAdmins: '123456789',
+    twitter: true,
+    twitterCard: 'summary'
   })
 
   t.notRegex(actual, /name="theme-color"/)
@@ -151,9 +143,8 @@ test('facebook should be optional', t => {
     canonical: 'https://sua-url.com.br',
     robots: 'index/follow',
     image: 'https://sua-url.com.br/images/intro.jpg',
-    twitter: {
-      card: 'summary'
-    }
+    twitter: true,
+    twitterCard: 'summary'
   })
   t.notRegex(actual, /property="og:type"/)
   t.notRegex(actual, /property="og:title"/)
@@ -174,13 +165,12 @@ test('twitter should be optional', t => {
     canonical: 'https://sua-url.com.br',
     robots: 'index/follow',
     image: 'https://sua-url.com.br/images/intro.jpg',
-    facebook: {
-      type: 'website',
-      siteName: 'Exemplo',
-      locale: 'pt_BR',
-      id: '5349',
-      admins: '123456789'
-    }
+    facebook: true,
+    facebookType: 'website',
+    facebookSiteName: 'Exemplo',
+    facebookLocale: 'pt_BR',
+    facebookId: '5349',
+    facebookAdmins: '123456789'
   })
   t.notRegex(actual, /name="twitter:card"/)
   t.notRegex(actual, /name="twitter:title"/)

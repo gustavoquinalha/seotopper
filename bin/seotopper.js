@@ -7,7 +7,7 @@ const questions = [
   {
     type: 'input',
     name: 'title',
-    message: 'What\'s the title of your page (required)',
+    message: 'What\'s the title of your page',
     validate: value => {
       if (value === '') {
         return 'Please enter a title'
@@ -95,11 +95,104 @@ const questions = [
     type: 'input',
     name: 'themeColor',
     message: 'What\'s the theme-color of your page'
+  },
+  {
+    type: 'confirm',
+    name: 'facebook',
+    message: 'Do you wanna seo for facebook'
+  },
+  {
+    type: 'list',
+    name: 'facebookType',
+    message: 'What\'s the type of your page',
+    choices: [
+      'website',
+      'blog',
+      'article',
+      'activity',
+      'sport',
+      'company',
+      'restaurant',
+      'hotel',
+      'cause',
+      'band',
+      'government',
+      'non_profit',
+      'school',
+      'university',
+      'actor',
+      'athlete',
+      'city',
+      'country',
+      'album',
+      'book',
+      'drink',
+      'game',
+      'product',
+      'song',
+      'movie'
+    ],
+    when: answers => {
+      return answers.facebook
+    }
+  },
+  {
+    type: 'input',
+    name: 'facebookSiteName',
+    message: 'What\'s the name of your page on facebook',
+    when: answers => {
+      return answers.facebook
+    }
+  },
+  {
+    type: 'input',
+    name: 'facebookLocale',
+    message: 'What\'s the locale of your page on facebook',
+    when: answers => {
+      return answers.facebook
+    }
+  },
+  {
+    type: 'input',
+    name: 'facebookId',
+    message: 'What\'s the id of your page on facebook',
+    when: answers => {
+      return answers.facebook
+    }
+  },
+  {
+    type: 'input',
+    name: 'facebookAdmins',
+    message: 'What are the admins of your page on facebook',
+    when: answers => {
+      return answers.facebook
+    }
+  },
+  {
+    type: 'confirm',
+    name: 'twitter',
+    message: 'Do you wanna seo for twitter'
+  },
+  {
+    type: 'list',
+    name: 'twitterCard',
+    message: 'Which twitter do you want',
+    choices: [
+      'Summary',
+      'Product',
+      'Photo',
+      'Summary Large Image',
+      'Player',
+      'App',
+      'Gallery'
+    ],
+    when: answers => {
+      return answers.twitter
+    }
   }
 ]
 
 inquirer.prompt(questions).then(answers => {
   const generatedSEO = seotopper(answers)
-  // Process.stdout.write(generatedSEO)
-  console.log(generatedSEO)
+  process.stdout.write(generatedSEO)
 })
