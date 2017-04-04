@@ -222,6 +222,286 @@
           </div>
         </div>
       </div>
+      <div class="bg tamanho margin">
+        <div class="esp">
+          <h2>Schema - JSON-LD</h2>
+          <div class="container-form">
+            <div class="box-form">
+              <select 
+                ng-change="selectJsonLd(jsonLdType)"
+                ng-model="jsonLdType" 
+                ng-options="opts.name for opts in jsonLdOptions">
+                <option value="">Selecione a categoria do seu site</option>
+              </select>
+            </div>
+
+          </div>
+            <div class="container-form" ng-if="jsonLdBusiness">
+              <div class="box-form">
+                <label for="name">Nome do negócio:</label>
+                <input class="name" name="name" type="text" ng-change="inputChange(person)" ng-model="person.name">
+              </div>
+              <div class="box-form">
+                <label for="url">URL do seu negócio:</label>
+                <input class="url" name="url" type="text" ng-model="person.url" ng-change="inputChange(person)">
+              </div>
+
+              <div class="box-form">
+                <label for="logo">Logo (Use a URL da imagem do seu logo):</label>
+                <input class="logo" name="logo" type="text" ng-model="person.logo" ng-change="inputChange(person)">
+              </div>
+              <div class="box-form">
+                <label for="image">Image (Use a URL da imagem do seu negócio):</label>
+                <input class="image" name="image" ng-model="person.image" type="text" ng-change="inputChange(person)" data-path="image">
+              </div>
+              <div class="box-form">
+                <label for="desription">Descrição:</label>
+                <textarea rows="5" cols="50" name="description" ng-change="inputChange(person)" ng-model="person.description" data-path="description"></textarea>
+              </div>
+              <div class="box-form">
+                <label for="address">Endereço:</label>
+                <input class="address" name="address"  ng-change="inputChange(person)" ng-model="person.address.streetAddress" type="text">
+              </div>
+              <div class="box-form">
+                <label for="addressLocality">Cidade:</label>
+                <input class="addressLocality" name="addressLocality" ng-model="person.address.addressLocality"  ng-change="inputChange(person)" type="text">
+              </div>
+              <div class="box-form">
+                <label for="addressRegion">Estado:</label>
+                <input class="addressRegion" ng-model="person.address.addressRegion" name="addressRegion" type="text" ng-change="inputChange(person)" data-path="address.addressRegion">
+              </div>
+              <div class="box-form">
+                <label for="postalCode">CEP:</label>
+                <input class="postalCode" name="postalCode"  ng-change="inputChange(person)" ng-model="person.address.postalCode" type="text" data-path="address.postalCode">
+              </div>
+              <div class="box-form">
+                <label for="addressCountry">País:</label>
+                <input class="addressCountry"  ng-change="inputChange(person)" ng-model="person.address.addressCountry" name="addressCountry" type="text" data-path="address.addressCountry">
+              </div>
+
+              <div class="box-form">
+                <label for="addressCountry">Latitude:</label>
+                <input class="addressCountry"  ng-change="inputChange(person)" ng-model="person.geo.latitude" type="text">
+              </div>
+
+              <div class="box-form">
+                <label for="addressCountry">Longitude:</label>
+                <input class="addressCountry"  ng-change="inputChange(person)" ng-model="person.geo.longitude" type="text">
+              </div>
+
+              <div class="box-form">
+                <label for="addressCountry">Inclua o mapa:</label>
+                <input class="addressCountry"  ng-change="inputChange(person)" ng-model="person.hasMap" type="text">
+              </div>
+
+               <div class="box-form">
+              <label for="telephone">Telefone:</label>
+              <input class="telephone" name="telephone"  ng-change="inputChange(person)" ng-model="person.contactPoint.telephone" type="text" data-path="contactPoint.telephone" placeholder="+1(XXX) XXX-XXXX">
+              </div>
+            </div>
+            <div class="container-form" ng-if="jsonLdPerson">
+              <div class="box-form">
+                <label for="name">Nome:</label>
+                <input class="name" name="name" type="text" ng-change="inputChange(person)" ng-model="person.name">
+              </div>
+              <div class="box-form">
+                <label for="url">Profissão:</label>
+                <input type="text" ng-model="person.jobTitle" ng-change="inputChange(person)">
+              </div>
+
+              <div class="box-form">
+                <label for="logo">URL:</label>
+                <input class="logo" name="logo" type="text" ng-model="person.url" ng-change="inputChange(person)">
+              </div>
+              <div class="box-form">
+                <label for="address">Endereço:</label>
+                <input class="address" name="address"  ng-change="inputChange(person)" ng-model="person.address.streetAddress" type="text">
+              </div>
+              <div class="box-form">
+                <label for="addressLocality">Cidade:</label>
+                <input class="addressLocality" name="addressLocality" ng-model="person.address.addressLocality"  ng-change="inputChange(person)" type="text">
+              </div>
+              <div class="box-form">
+                <label for="addressRegion">Estado:</label>
+                <input class="addressRegion" ng-model="person.address.addressRegion" name="addressRegion" type="text" ng-change="inputChange(person)" data-path="address.addressRegion">
+              </div>
+              <div class="box-form">
+                <label for="postalCode">CEP:</label>
+                <input class="postalCode" name="postalCode"  ng-change="inputChange(person)" ng-model="person.address.postalCode" type="text" data-path="address.postalCode">
+              </div>
+              <div class="box-form">
+                <label for="addressCountry">País:</label>
+                <input class="addressCountry"  ng-change="inputChange(person)" ng-model="person.address.addressCountry" name="addressCountry" type="text" data-path="address.addressCountry">
+              </div>
+              <div class="box-form">
+                <label for="telephone">Telefone:</label>
+                <input ng-change="inputChange(person)" ng-model="person.telephone" type="text" placeholder="+1(XXX) XXX-XXXX">
+              </div>
+              <div class="box-form">
+                <label for="email">E-mail:</label>
+                <input ng-change="inputChange(person)" ng-model="person.email" type="text" >
+              </div>
+              <div class="box-form">
+                <label for="Nascimento">Data de nascimento (YYYY-MM-DD):</label>
+                <input ng-change="inputChange(person)" ng-model="person.birthDate" type="text" placeholder="YYYY-MM-DD">
+              </div>
+            </div>
+            <div class="container-form" ng-if="jsonLdProduct">
+              <div class="box-form">
+                <label for="name">Marca:</label>
+                <input class="name" name="name" type="text" ng-change="inputChange(person)" ng-model="person.brand">
+              </div>
+              <div class="box-form">
+                <label for="url">Nome:</label>
+                <input type="text" ng-model="person.name" ng-change="inputChange(person)">
+              </div>
+
+              <div class="box-form">
+                <label for="logo">Imagem do produto:</label>
+                <input class="logo" name="logo" type="text" ng-model="person.image" ng-change="inputChange(person)">
+              </div>
+              <div class="box-form">
+                <label for="address">Descrição:</label>
+                <input class="address" name="address"  ng-change="inputChange(person)" ng-model="person.description" type="text">
+              </div>
+              <div class="box-form">
+                <label for="addressLocality">Avaliação:</label>
+                <input class="addressLocality" name="addressLocality" ng-model="person.aggregateRating.ratingValue"  ng-change="inputChange(person)" type="text">
+              </div>
+              <div class="box-form">
+                <label for="addressRegion">Baseado em quantos reviews?</label>
+                <input class="addressRegion" ng-model="person.aggregateRating.reviewCount" name="addressRegion" type="text" ng-change="inputChange(person)" data-path="address.addressRegion">
+              </div>
+            </div>
+            <div class="container-form" ng-if="jsonLdEvent">
+              <div class="box-form">
+                <label for="url">Nome:</label>
+                <input type="text" ng-model="person.name" ng-change="inputChange(person)">
+              </div>
+              <div class="box-form">
+                <label for="logo">URL do Evento:</label>
+                <input class="logo" name="logo" type="text" ng-model="person.url" ng-change="inputChange(person)">
+              </div>
+              <div class="box-form">
+                <label for="address">Descrição:</label>
+                <input class="address" name="address"  ng-change="inputChange(person)" ng-model="person.description" type="text">
+              </div>
+              <div class="box-form">
+                <label>Início:</label>
+                <input ng-model="person.startDate"  ng-change="inputChange(person)" type="datetime-local">
+              </div>
+              <div class="box-form">
+                <label>Fim:</label>
+                <input ng-model="person.endDate"  ng-change="inputChange(person)" type="datetime-local">
+              </div>
+              <div class="box-form">
+                <label for="address">Nome do Local:</label>
+                <input class="address" name="address"  ng-change="inputChange(person)" ng-model="person.location.name" type="text">
+              </div>
+              <div class="box-form">
+                <label for="address">URL do Local:</label>
+                <input class="address" name="address"  ng-change="inputChange(person)" ng-model="person.location.sameAs" type="text">
+              </div>
+              <div class="box-form">
+                <label for="address">Endereço:</label>
+                <input class="address" name="address"  ng-change="inputChange(person)" ng-model="person.address.streetAddress" type="text">
+              </div>
+              <div class="box-form">
+                <label for="addressLocality">Cidade:</label>
+                <input class="addressLocality" name="addressLocality" ng-model="person.address.addressLocality"  ng-change="inputChange(person)" type="text">
+              </div>
+              <div class="box-form">
+                <label for="addressRegion">Estado:</label>
+                <input class="addressRegion" ng-model="person.address.addressRegion" name="addressRegion" type="text" ng-change="inputChange(person)" data-path="address.addressRegion">
+              </div>
+              <div class="box-form">
+                <label for="postalCode">CEP:</label>
+                <input class="postalCode" name="postalCode"  ng-change="inputChange(person)" ng-model="person.address.postalCode" type="text" data-path="address.postalCode">
+              </div>
+              <div class="box-form">
+                <label for="addressCountry">País:</label>
+                <input ng-change="inputChange(person)" ng-model="person.address.addressCountry" type="text">
+              </div>
+
+              <div class="box-form">
+                <label>Oferta Descrição:</label>
+                <input ng-change="inputChange(person)" ng-model="person.offers.description" type="text">
+              </div>
+
+              <div class="box-form">
+                <label>Oferta URL:</label>
+                <input ng-change="inputChange(person)" ng-model="person.offers.url" type="text">
+              </div>
+
+              <div class="box-form">
+                <label>Valor da Oferta:</label>
+                <input ng-change="inputChange(person)" ng-model="person.offers.price" type="text">
+              </div>
+            </div>
+            <div class="container-form" ng-if="jsonLdOrganization">
+              <div class="box-form">
+                <label for="name">Nome da organização:</label>
+                <input class="name" name="name" type="text" ng-change="inputChange(person)" ng-model="person.name">
+              </div>
+              <div class="box-form">
+                <label for="url">URL da organização:</label>
+                <input class="url" name="url" type="text" ng-model="person.url" ng-change="inputChange(person)">
+              </div>
+
+              <div class="box-form">
+                <label for="logo">Logo (Use a URL da imagem do seu logo):</label>
+                <input class="logo" name="logo" type="text" ng-model="person.logo" ng-change="inputChange(person)">
+              </div>
+              <div class="box-form">
+                <label for="image">Image (Use a URL da imagem da organização):</label>
+                <input class="image" name="image" ng-model="person.image" type="text" ng-change="inputChange(person)" data-path="image">
+              </div>
+              <div class="box-form">
+                <label for="desription">Descrição:</label>
+                <textarea rows="5" cols="50" name="description" ng-change="inputChange(person)" ng-model="person.description" data-path="description"></textarea>
+              </div>
+              <div class="box-form">
+                <label for="address">Endereço:</label>
+                <input class="address" name="address"  ng-change="inputChange(person)" ng-model="person.address.streetAddress" type="text">
+              </div>
+              <div class="box-form">
+                <label for="addressLocality">Cidade:</label>
+                <input class="addressLocality" name="addressLocality" ng-model="person.address.addressLocality"  ng-change="inputChange(person)" type="text">
+              </div>
+              <div class="box-form">
+                <label for="addressRegion">Estado:</label>
+                <input class="addressRegion" ng-model="person.address.addressRegion" name="addressRegion" type="text" ng-change="inputChange(person)" data-path="address.addressRegion">
+              </div>
+              <div class="box-form">
+                <label for="postalCode">CEP:</label>
+                <input class="postalCode" name="postalCode"  ng-change="inputChange(person)" ng-model="person.address.postalCode" type="text" data-path="address.postalCode">
+              </div>
+              <div class="box-form">
+                <label for="addressCountry">País:</label>
+                <input class="addressCountry"  ng-change="inputChange(person)" ng-model="person.address.addressCountry" name="addressCountry" type="text" data-path="address.addressCountry">
+              </div>
+               <div class="box-form">
+              <label for="telephone">Telefone:</label>
+              <input class="telephone" name="telephone"  ng-change="inputChange(person)" ng-model="person.contactPoint.telephone" type="text" data-path="contactPoint.telephone" placeholder="+1(XXX) XXX-XXXX">
+              </div>
+            </div>
+            <div class="container-form" ng-if="jsonLdWebsite">
+              <div class="box-form">
+                <label for="url">Nome:</label>
+                <input type="text" ng-model="person.name" ng-change="inputChange(person)">
+              </div>
+
+              <div class="box-form">
+                <label for="logo">Nome Alternativo:</label>
+                <input class="logo" name="logo" type="text" ng-model="person.alternateName" ng-change="inputChange(person)">
+              </div>
+              <div class="box-form">
+                <label for="address">URL:</label>
+                <input class="address" name="address"  ng-change="inputChange(person)" ng-model="person.url" type="text">
+              </div>
+            </div>
+        </div>
+      </div>
       <div class="margin tamanho text-center">
         <button class="box-form-button" type="submit" ng-disabled="seoForm.$invalid" ng-show="sv">Generate SEO</button>
       </div>
@@ -363,15 +643,9 @@
 <span class="ff">&lt;meta</span> name="<span class="resul">twitter:creator</span>" content="<span class="resul">{{x.author}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> name="<span class="resul">twitter:image</span>" content="<span class="resul">{{x.image}}</span>"<span class="ff">/&gt;</span>
 <span class="comment">&lt;!-- JSON-LD - structured data markup Google Search --&gt;</span>
-<span class="ff">&lt;script</span> type="<span class="resul">application/ld+json</span>"<span class="ff">/&gt;</span>
-{
-  "<span class="ff">@context</span>": "<span class="resul">http://schema.org</span>",
-  "<span class="ff">@type</span>": "<span class="resul">WebSite</span>",
-  "<span class="ff">name</span>": "<span class="resul">{{x.name}}</span>",
-  "<span class="ff">alternateName</span>": "<span class="resul">{{x.description}}</span>",
-  "<span class="ff">url</span>": "<span class="resul">{{x.canonical}}</span>"
-}
-<span class="ff">&lt;/script</span><span class="ff">/&gt;</span>
+<span class="ff">&lt;script <span style="color: #55cc66;">type="</span><span class="resul">application/ld+json</span><span style="color: #55cc66;">"</span>></span>
+<span class="resul">{{jsonFormated}}</span>
+<span class="ff">&lt;/script></span>
 
               </pre>
       <div class="cc">
