@@ -176,7 +176,7 @@ const questions = [
   {
     type: 'list',
     name: 'twitterCard',
-    message: 'Which twitter do you want',
+    message: 'Which twitter card do you want',
     choices: [
       'Summary',
       'Product',
