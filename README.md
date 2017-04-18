@@ -1,10 +1,104 @@
 # Seotopper
-Gerador de SEO mais TOP do momento, com meta tags do facebook, twitter, google+ entre outras. [Confira](http://quinalha.me/seotopper/)
 
-# Novidade
-JSON-LD - structured data markup Google Search
+[![Travis](https://img.shields.io/travis/thiamsantos/seotopper.svg)](https://travis-ci.org/thiamsantos/seotopper)
+[![npm (scoped)](https://img.shields.io/npm/v/seotopper.svg)](https://www.npmjs.com/package/seotopper)
+[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 
-# Meta-tags
+> Short description.
+
+Long description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam facilisis sem eros, vitae pellentesque sapien ultrices nec. Quisque accumsan nulla id mauris faucibus dictum. Curabitur eu ligula tellus. Phasellus volutpat ex augue. Pellentesque dictum auctor sem, ac semper diam fermentum et.
+
+*This README is also available in [Portuguese (Português)](README.pt.md).*
+
+## Table of Contents
+- [Install](#install)
+- [Usage](#usage)
+- [Supported Tags](#supported-tags)
+- [API](#api)
+- [Contribute](#contribute)
+- [License](#license)
+
+## Install
+
+This project uses [node](http://nodejs.org) and [npm](https://npmjs.com). Go check them out if you don't have them locally installed.
+
+```sh
+$ npm install --save seotopper
+
+# To use the CLI is recommended to install it globally
+$ npm install -g seotopper
+```
+
+## Usage
+
+```js
+const seo = seotopper({
+  title: 'Title of my page',
+  description: 'Description of my page',
+  author: 'Me',
+  base: 'https://your-url.com.br',
+  canonical: 'https://your-url.com.br',
+  sitemap: 'https://your-url.com.br/sitemap.xml',
+  robots: 'index, follow',
+  themeColor: '#f00',
+  image: 'https://your-url.com.br/images/intro.jpg',
+  facebook: true,
+  facebookType: 'website',
+  facebookSiteName: 'Example',
+  facebookLocale: 'en',
+  facebookId: '5349',
+  facebookAdmins: '123456789',
+  twitter: true,
+  twitterCard: 'summary'
+})
+// <title>Title of my page</title>
+// <meta name="description" content="Description of your page"/>
+// <meta name="author" content="Me"/>
+// <link rel="base" href="https://your-url.com.br"
+// <link rel="canonical" href="https://your-url.com.br"/>
+// <meta rel="sitemap" type="application/xml" content="https://your-url.com.br/sitemap.xml"/>
+// <meta name="robots" content="index, follow"/>
+// <meta name="googlebot" content="index, follow"/>
+// <meta name="theme-color" content="#f00"/>
+// <meta name="msapplication-navbutton-color" content="#f00"/>
+// <meta name="apple-mobile-web-app-status-bar-style" content="#f00"/>
+// <!-- Schema.org markup for Google+ -->
+// <meta itemprop="name" content="Title of my page"/>
+// <meta itemprop="description" content="Description of your page"/>
+// <meta itemprop="image" content="https://your-url.com.br/images/intro.jpg"/>
+// <!-- markup for facebook -->
+// <meta property="og:type" content="website"/>
+// <meta property="og:title" content="Title of my page"/>
+// <meta property="og:url" content="https://your-url.com.br"/>
+// <meta property="og:site_name" content="Exemplo"/>
+// <meta property="og:image" content="https://your-url.com.br/images/intro.jpg"/>
+// <meta property="og:description" content="Description of your page"/>
+// <meta property="og:locale" content="pt_BR"/>
+// <meta property="fb:app_id" content="5349"/>
+// <meta property="fb:admins" content="123456789"/>
+// <!-- markup for twitter -->
+// <meta name="twitter:card" content="summary"/>
+// <meta name="twitter:title" content="Title of my page"/>
+// <meta name="twitter:description" content="Description of your page"/>
+// <meta name="twitter:creator" content="Me"/>
+// <meta name="twitter:image" content="https://your-url.com.br/images/intro.jpg"/>
+// <!-- JSON-LD - structured data markup Google Search -->
+// <script type="application/ld+json"/>
+// {
+// "@context": "http://schema.org",
+// "@type": "WebSite",
+// "name": "Title of my page",
+// "alternateName": "Description of your page",
+// "url": "https://your-url.com.br"
+// }
+// </script/>
+```
+
+### CLI
+Interactive cli.
+
+## Supported Tags
+
 - title
 - description
 - author
@@ -35,78 +129,32 @@ JSON-LD - structured data markup Google Search
 - twitter:image
 - application/ld+json
 
-# v0.5
-```html
-<title>Título da minha página</title>
-<meta name="description" content="Descrição da minha página"/>
-<meta name="author" content="Autor da minha página"/>
-<link rel="base" href="http://meusite.com.br"/>
-<link rel="canonical" href="http://meusite.com.br"/>
-<meta rel="sitemap" type="application/xml" content="http://meusite.com.br/sitemap.xml"/>
-<meta name="robots" content="index/follow"/>
-<meta name="googlebot" content="index/follow"/>
-<meta name="theme-color" content="#FF4455"/>
-<meta name="msapplication-navbutton-color" content="#FF4455"/>
-<meta name="apple-mobile-web-app-status-bar-style" content="#FF4455"/>
-<!-- Schema.org markup for Google+ -->
-<meta itemprop="name" content="Título da minha página"/>
-<meta itemprop="description" content="Descrição da minha página"/>
-<meta itemprop="image" content="http://meusite.com.br/image.png"/>
-<!-- markup for facebook -->
-<meta property="og:type" content="website"/>
-<meta property="og:title" content="Título da minha página"/>
-<meta property="og:url" content="http://meusite.com.br"/>
-<meta property="og:site_name" content="Exemplo"/>
-<meta property="og:image" content="http://meusite.com.br/image.png"/>
-<meta property="og:description" content="Descrição da minha página"/>
-<meta property="og:locale" content="pt_BR"/>
-<meta property="fb:app_id" content="5349"/>
-<meta property="fb:admins" content="123456789"/>
-<!-- markup for twitter -->
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Título da minha página"/>
-<meta name="twitter:description" content="Descrição da minha página"/>
-<meta name="twitter:creator" content="Autor da minha página"/>
-<meta name="twitter:image" content="http://meusite.com.br/image.png"/>
-<!-- JSON-LD - structured data markup Google Search -->
-<script type="application/ld+json"/>
-{
-  "@context": "http://schema.org",
-  "@type": "WebSite",
-  "name": "Exemplo",
-  "alternateName": "Descrição da minha página",
-  "url": "http://meusite.com.br"
-}
-</script/>
-```
+## API
 
-# v0.1
-```html
-<title>Título da minha página</title>
-<meta name="description" content="Descrição da minha página"/>
-<meta name="author" content="Autor da minha página"/>
-<link rel="base" href="http://meusite.com.br"/>
-<link rel="canonical" href="http://meusite.com.br"/>
-<meta rel="sitemap" type="application/xml" content="http://meusite.com.br/sitemap.xml"/>
-<meta name="robots" content="index/follow"/>
-<!-- Schema.org markup for Google+ -->
-<meta itemprop="name" content="Título da minha página"/>
-<meta itemprop="description" content="Descrição da minha página"/>
-<meta itemprop="image" content="http://meusite.com.br/image.png"/>
-<!-- markup for facebook -->
-<meta property="og:type" content="website"/>
-<meta property="og:title" content="Título da minha página"/>
-<meta property="og:url" content="http://meusite.com.br"/>
-<meta property="og:site_name" content="Exemplo"/>
-<meta property="og:image" content="http://meusite.com.br/image.png"/>
-<meta property="og:description" content="Descrição da minha página"/>
-<meta property="og:locale" content="pt_BR"/>
-<meta property="fb:app_id" content="5349"/>
-<meta property="fb:admins" content="123456789"/>
-<!-- markup for twitter -->
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Título da minha página"/>
-<meta name="twitter:description" content="Descrição da minha página"/>
-<meta name="twitter:creator" content="Autor da minha página"/>
-<meta name="twitter:image" content="http://meusite.com.br/image.png"/>
-```
+## Contribute
+
+First off, thanks for taking the time to contribute!
+Now, take a moment to be sure your contributions make sense to everyone else.
+
+### Reporting Issues
+
+Found a problem? Want a new feature? First of all see if your issue or idea has [already been reported](../../issues).
+If don't, just open a [new clear and descriptive issue](../../issues/new).
+
+### Submitting pull requests
+
+Pull requests are the greatest contributions, so be sure they are focused in scope, and do avoid unrelated commits.
+
+- Fork it!
+- Clone your fork: `git clone https://github.com/<your-username>/seotopper`
+- Navigate to the newly cloned directory: `cd seotopper`
+- Create a new branch for the new feature: `git checkout -b my-new-feature`
+- Install the tools necessary for development: `npm install`
+- Make your changes.
+- Commit your changes: `git commit -am 'Add some feature'`
+- Push to the branch: `git push origin my-new-feature`
+- Submit a pull request with full remarks documenting your changes.
+
+## License
+
+[MIT license](LICENSE.md) &copy; [Gustavo Quinalha](http://quinalha.me/)
