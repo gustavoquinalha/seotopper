@@ -4,9 +4,9 @@
 [![npm (scoped)](https://img.shields.io/npm/v/seotopper.svg)](https://www.npmjs.com/package/seotopper)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 
-> Short description.
+> Build the SEO of your site in seconds.
 
-Long description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam facilisis sem eros, vitae pellentesque sapien ultrices nec. Quisque accumsan nulla id mauris faucibus dictum. Curabitur eu ligula tellus. Phasellus volutpat ex augue. Pellentesque dictum auctor sem, ac semper diam fermentum et.
+Get visible on the internet in seconds and share your pages in a more beautiful way with complete a SEO generator, it supports all meta-tags and [JSON-LD](http://json-ld.org/).
 
 *This README is also available in [Portuguese (Português)](README.pt.md).*
 
