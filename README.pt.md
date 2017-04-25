@@ -8,8 +8,6 @@
 
 Fique visível na internet em segundos e compartilhe as suas páginas de uma maneira mais fácil com um gerador de SEO completo, ele tem suporte a todas as meta-tags e ao [JSON-LD](http://json-ld.org/).
 
-Long description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam facilisis sem eros, vitae pellentesque sapien ultrices nec. Quisque accumsan nulla id mauris faucibus dictum. Curabitur eu ligula tellus. Phasellus volutpat ex augue. Pellentesque dictum auctor sem, ac semper diam fermentum et.
-
 *Este README também está disponpivel em [Inglês (English).](README.md)*
 
 ## Índice
