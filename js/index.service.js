@@ -10,20 +10,71 @@ angular
         seos: [
           {
               id: 0,
-              name: "teste",
-              title: "titulo da minha pagina",
-              description: "descricao da minha pagina",
-              author: "autor da minha pagina",
-              canonical: "canonicallll",
+              name: "Exemple",
+              title: "Page title",
+              description: "Page description",
+              author: "Page author",
+              canonical: "http://mywebsite.com",
               robots: "index/follow",
-              image: "http://meusite.com.br/image.png",
-              fbadmins: 99999,
+              image: "http://mywebsite.com/image.png",
+              fbadmins: 123456789,
+              base: "http://mywebsite.com",
+              sitemap: "http://mywebsite.com/sitemap.xml",
+              locale: "pt_BR",
               type: "website",
-              appid: 12321312323,
-              ttcard: "summary"
+              appid: 012345,
+              ttcard: "summary",
+              color: "#FF4455"
           }
         ],
-        id: 1
+        id: 1,
+        ops: [
+            "website",
+            "blog",
+            "article",
+            "activity",
+            "sport",
+            "company",
+            "restaurant",
+            "hotel",
+            "cause",
+            "band",
+            "government",
+            "non_profit",
+            "school",
+            "university",
+            "actor",
+            "athlete",
+            "city",
+            "country",
+            "album",
+            "book",
+            "drink",
+            "game",
+            "product",
+            "song",
+            "movie",
+        ],
+        rops: [
+            "index/follow",
+            "noindex/follow",
+            "index/nofollow",
+            "noarchive",
+            "nosnippet",
+            "noodp",
+            "notranslate",
+            "noimageindex",
+            "none"
+        ],
+        tt: [
+            "Summary",
+            "Product",
+            "Photo",
+            "Summary Large Image",
+            "Player",
+            "App",
+            "Gallery"
+        ]
     };
     return Seo;
 
@@ -35,17 +86,22 @@ angular
                 description: seo.description,
                 author: seo.author,
                 image: seo.image,
+                base: seo.base,
+                sitemap: seo.sitemap,
                 canonical: seo.canonical,
                 robots: seo.robots,
+                locale: seo.locale,
                 name: seo.name,
                 type: seo.type,
                 appid: seo.appid,
                 fbadmins: seo.fbadmins,
-                ttcard: seo.ttcard
+                ttcard: seo.ttcard,
+                color: seo.color
             }
         );
         Seo.id++;
         console.log(JSON.stringify(seo, null, 12)+" --Inserido--> "+JSON.stringify(Seo.seos, null, 12)+"===============");
+        location.href = '#seo'
     }
 
     function getSeos(x) {
@@ -70,7 +126,7 @@ angular
         Seo.seos[n].appid = x.appid;  
         Seo.seos[n].fbadmins = x.fbadmins;
         Seo.seos[n].ttcard = x.ttcard;
+        location.href = '#seo'
         console.log("LOG EDIT ========= "+JSON.stringify(Seo.seos, null, 12));
     }
-
 });
