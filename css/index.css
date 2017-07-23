@@ -181,6 +181,7 @@ footer {
     margin-top: 0;
     padding-bottom: 10px;
 }
+
 .box-form textarea,
 .box-form input,
 .box-form select {
@@ -194,22 +195,7 @@ footer {
     color: rgba(0, 0, 0, 0.5);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
-.sky {
-    border: 1px solid #5f72bd;
-    padding: 10px;
-}
-.tomato {
-    background-color:coral;
-    padding:40px;
-    font-family:Verdana;
-}
-.facee {
-background: red!important
-}
-.some {
-display: none;
-}
-.box-form input:focus {
+.box-form input, select:focus {
     border-bottom: 1px solid #5f72bd;
 }
 .cl {

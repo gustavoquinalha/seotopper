@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+          <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+          <title>SeoTopper - O gerador de SEO mais TOP que existe.</title>
+          <meta name="description" content="Gerador de SEO mais TOP do momento, com meta tags do facebook, twitter, google+ entre outras. github: https://github.com/gustavoquinalha/seotopper" />
+          <meta name="author" content="Quinalha e Japa" />
+          <link rel="base" href="http://quinalha.me/seotopper/" />
+          <link rel="canonical" href="http://quinalha.me/seotopper/" />
+          <meta rel="sitemap" type="application/xml" content="http://quinalha.me/seotopper/sitemap.xml" />
+          <meta name="robots" content="index/follow" />
+          <!-- Schema.org markup for Google+ -->
+          <meta itemprop="name" content="SeoTopper - O gerador de SEO mais TOP que existe." />
+          <meta itemprop="description" content="Gerador de SEO mais TOP do momento, com meta tags do facebook, twitter, google+ entre outras. github: https://github.com/gustavoquinalha/seotopper" />
+          <meta itemprop="image" content="http://quinalha.me/seotopper/img/intro.png" />
+          <!-- markup for facebook -->
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content="SeoTopper - O gerador de SEO mais TOP que existe." />
+          <meta property="og:url" content="http://quinalha.me/seotopper/" />
+          <meta property="og:site_name" content="SeoTopper" />
+          <meta property="og:image" content="http://quinalha.me/seotopper/img/intro.png" />
+          <meta property="og:description" content="Gerador de SEO mais TOP do momento, com meta tags do facebook, twitter, google+ entre outras. github: https://github.com/gustavoquinalha/seotopper" />
+          <meta property="og:locale" content="pt_BR" />
+          <meta property="fb:app_id" content="1154262757941899" />
+          <meta property="fb:admins" content="100002787447461" />
+          <!-- markup for twitter -->
+          <meta name="twitter:card" content="summary" />
+          <meta name="twitter:title" content="SeoTopper - O gerador de SEO mais TOP que existe." />
+          <meta name="twitter:description" content="Gerador de SEO mais TOP do momento, com meta tags do facebook, twitter, google+ entre outras. github: https://github.com/gustavoquinalha/seotopper" />
+          <meta name="twitter:creator" content="Quinalha e Japa" />
+          <meta name="twitter:image" content="http://quinalha.me/seotopper/img/intro.png" />
+          <link rel="stylesheet" type="text/css" href="css/index.css">
+
+    </head>
+    <body ng-controller="IndexController">
+        <new-window ng-repeat="x in seos | orderBy : '-id' " class="tamanho margin">
+      <h2>{{x.name}}</h2>
+      <pre id="foo">
+<span class="ff">&lt;title&gt;</span>{{x.title}}<span class="ff">&lt;/title&gt;</span>
+<span class="ff">&lt;meta</span> name="<span class="resul">description</span>" content="<span class="resul">{{x.description}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> name="<span class="resul">author</span>" content="<span class="resul">{{x.author}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;link</span> rel="<span class="resul">base</span>" href="<span class="resul">{{x.base}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;link</span> rel="<span class="resul">canonical</span>" href="<span class="resul">{{x.canonical}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> rel="<span class="resul">sitemap</span>" type="<span class="resul">application/xml</span>" content="<span class="resul">{{x.sitemap}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> name="<span class="resul">robots</span>" content="<span class="resul">{{x.robots}}</span>"<span class="ff">/&gt;</span>
+<span class="comment">&lt;!-- Schema.org markup for Google+ --&gt;</span>
+<span class="ff">&lt;meta</span> itemprop="<span class="resul">name</span>" content="<span class="resul">{{x.title}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> itemprop="<span class="resul">description</span>" content="<span class="resul">{{x.description}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> itemprop="<span class="resul">image</span>" content="<span class="resul">{{x.image}}</span>"<span class="ff">/&gt;</span>
+<span class="comment">&lt;!-- markup for facebook --&gt;</span>
+<span class="ff">&lt;meta</span> property="<span class="resul">og:type</span>" content="<span class="resul">{{x.type}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> property="<span class="resul">og:title</span>" content="<span class="resul">{{x.title}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> property="<span class="resul">og:url</span>" content="<span class="resul">{{x.canonical}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> property="<span class="resul">og:site_name</span>" content="<span class="resul">{{x.name}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> property="<span class="resul">og:image</span>" content="<span class="resul">{{x.image}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> property="<span class="resul">og:description</span>" content="<span class="resul">{{x.description}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> property="<span class="resul">og:locale</span>" content="<span class="resul">{{x.locale}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> property="<span class="resul">fb:app_id</span>" content="<span class="resul">{{x.appid}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> property="<span class="resul">fb:admins</span>" content="<span class="resul">{{x.fbadmins}}</span>"<span class="ff">/&gt;</span>
+<span class="comment">&lt;!-- markup for twitter --&gt;</span>
+<span class="ff">&lt;meta</span> name="<span class="resul">twitter:card</span>" content="<span class="resul">{{x.ttcard}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> name="<span class="resul">twitter:title</span>" content="<span class="resul">{{x.title}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> name="<span class="resul">twitter:description</span>" content="<span class="resul">{{x.description}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> name="<span class="resul">twitter:creator</span>" content="<span class="resul">{{x.author}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> name="<span class="resul">twitter:image</span>" content="<span class="resul">{{x.image}}</span>"<span class="ff">/&gt;</span>
+              </pre>
+      <div class="cc">
+        <button class="btn" data-clipboard-target="#foo">
+          copy to clipboard
+        </button>
+
+        <button class="btn btn-remover" ng-click="remover(x)" ng-hide="editor">remove</button>
+
+        <button class="btn" ng-click="editando(x)">edit</button>
+      </div>
+    </new-window>
+        <script type="text/javascript" src="js/assets/angular.min.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/index.controller.js"></script>
+        <script type="text/javascript" src="js/index.service.js"></script>
+        <script type="text/javascript" src="js/index.directive.js"></script>
+    </body>
+</html>
