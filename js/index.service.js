@@ -10,27 +10,71 @@ angular
         seos: [
           {
               id: 0,
-              name: "Exemplo",
-              title: "Título da minha página",
-              description: "Descrição da minha página",
-              author: "Autor da minha página",
-              canonical: "http://meusite.com.br",
-              title: "titulo da minha pagina",
-              description: "descricao da minha pagina",
-              author: "autor da minha pagina",
-              canonical: "canonicallll",
+              name: "Exemple",
+              title: "Page title",
+              description: "Page description",
+              author: "Page author",
+              canonical: "http://mywebsite.com",
               robots: "index/follow",
-              image: "http://meusite.com.br/image.png",
+              image: "http://mywebsite.com/image.png",
               fbadmins: 123456789,
-              base: "http://meusite.com.br",
-              sitemap: "http://meusite.com.br/sitemap.xml",
+              base: "http://mywebsite.com",
+              sitemap: "http://mywebsite.com/sitemap.xml",
               locale: "pt_BR",
               type: "website",
               appid: 012345,
-              ttcard: "summary"
+              ttcard: "summary",
+              color: "#FF4455"
           }
         ],
-        id: 1
+        id: 1,
+        ops: [
+            "website",
+            "blog",
+            "article",
+            "activity",
+            "sport",
+            "company",
+            "restaurant",
+            "hotel",
+            "cause",
+            "band",
+            "government",
+            "non_profit",
+            "school",
+            "university",
+            "actor",
+            "athlete",
+            "city",
+            "country",
+            "album",
+            "book",
+            "drink",
+            "game",
+            "product",
+            "song",
+            "movie",
+        ],
+        rops: [
+            "index/follow",
+            "noindex/follow",
+            "index/nofollow",
+            "noarchive",
+            "nosnippet",
+            "noodp",
+            "notranslate",
+            "noimageindex",
+            "none"
+        ],
+        tt: [
+            "Summary",
+            "Product",
+            "Photo",
+            "Summary Large Image",
+            "Player",
+            "App",
+            "Gallery"
+        ]
     };
     return Seo;
 
@@ -51,23 +95,25 @@ angular
                 type: seo.type,
                 appid: seo.appid,
                 fbadmins: seo.fbadmins,
-                ttcard: seo.ttcard
+                ttcard: seo.ttcard,
+                color: seo.color
             }
         );
         Seo.id++;
         console.log(JSON.stringify(seo, null, 12)+" --Inserido--> "+JSON.stringify(Seo.seos, null, 12)+"===============");
+        location.href = '#seo'
     }
 
     function getSeos(x) {
         console.log("LOG LISTA ====== "+JSON.stringify(Seo.seos, null, 12)+" ===============");
         return Seo.seos;
     }
-
+    
     function remover(x) {
         Seo.seos.splice(Seo.seos.indexOf(x),1);
         console.log("LOG REMOVER ====== "+JSON.stringify(Seo.seos, null, 12)+" ===============");
     }
-
+    
     function editar(x,n) {
         Seo.seos[n].title = x.title;
         Seo.seos[n].description = x.description;
@@ -75,15 +121,12 @@ angular
         Seo.seos[n].image = x.image;
         Seo.seos[n].canonical = x.canonical;
         Seo.seos[n].robots = x.robots;
-        Seo.seos[n].locale = x.locale;
-        Seo.seos[n].base = x.base;
-        Seo.seos[n].sitemap = x.sitemap;
         Seo.seos[n].name = x.name;
         Seo.seos[n].type = x.type;
-        Seo.seos[n].appid = x.appid;
+        Seo.seos[n].appid = x.appid;  
         Seo.seos[n].fbadmins = x.fbadmins;
         Seo.seos[n].ttcard = x.ttcard;
+        location.href = '#seo'
         console.log("LOG EDIT ========= "+JSON.stringify(Seo.seos, null, 12));
     }
-
 });
