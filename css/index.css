@@ -247,6 +247,7 @@ width: 100px!important;
     transition: 1s;
     cursor: pointer;
 }
+
 .counter {
     font-size: 14px;
     opacity: 0.8;
@@ -292,10 +293,10 @@ margin-left: -3px;;
     cursor: pointer;
 }
 .btn-remover {
-    background: #cc5555
+    background: #cc5555 !important
 }
 .btn-remover:hover {
-    background: #ad4848
+    background: #ad4848 !important
 }
 .logo {
     width: 100%;
