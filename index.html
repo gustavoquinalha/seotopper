@@ -107,6 +107,44 @@
     <form name="seoForm" ng-submit="salvar(seo)" ng-show="sv">
       <div class="bg tamanho margin">
         <div class="esp">
+          <h2>Configurações</h2>
+          <div class="container-form">
+            <div class="box-form">
+              <form class="">
+                 <br>
+                  <div class="cp" >
+                    <div class="">
+                    <label for="showFace">Facebook</label>
+                    </div>
+                    <div class="cpp">
+                      <input type="checkbox" id="showFace" ng-model="showFace" aria-label="Toggle ngShow">
+                    </div>
+                  </div>
+                  <div class="cp" >
+                    <div class="">
+                      <label for="showTwitter">Twitter</label>
+                    </div>
+                    <div class="cpp">
+                      <input type="checkbox" id="showTwitter" ng-model="showTwitter" aria-label="Toggle ngShow">
+                    </div>
+                  </div>
+                  <div class="cp" >
+                    <div class="">
+                      <label for="showJson">JSON-LD</label>
+                    </div>
+                    <div class="cpp">
+                      <input type="checkbox" id="showJson" ng-model="showJson" aria-label="Toggle ngShow">
+                    </div>
+                  </div>
+                  <br />
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bg tamanho margin">
+        <div class="esp">
           <h2>Geral</h2>
           <div class="container-form">
             <div class="box-form">
@@ -178,7 +216,7 @@
           </div>
         </div>
       </div>
-      <div class="bg margin tamanho">
+      <div class="bg margin tamanho" ng-hide="showFace" >
         <h2>Facebook</h2>
         <div class="container-form ">
           <div class="box-form">
@@ -210,7 +248,7 @@
           </div>
         </div>
       </div>
-      <div class="bg margin tamanho">
+      <div class="bg margin tamanho" ng-hide="showTwitter">
         <h2>Twitter</h2>
         <div class="container-form">
           <div class="box-form">
@@ -346,7 +384,7 @@
 <span class="ff">&lt;meta</span> itemprop="<span class="resul">name</span>" content="<span class="resul">{{x.title}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> itemprop="<span class="resul">description</span>" content="<span class="resul">{{x.description}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> itemprop="<span class="resul">image</span>" content="<span class="resul">{{x.image}}</span>"<span class="ff">/&gt;</span>
-<span class="comment">&lt;!-- markup for facebook --&gt;</span>
+<div ng-hide="showFace"><span class="comment">&lt;!-- markup for facebook --&gt;</span>
 <span class="ff">&lt;meta</span> property="<span class="resul">og:type</span>" content="<span class="resul">{{x.type}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> property="<span class="resul">og:title</span>" content="<span class="resul">{{x.title}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> property="<span class="resul">og:url</span>" content="<span class="resul">{{x.canonical}}</span>"<span class="ff">/&gt;</span>
@@ -356,13 +394,13 @@
 <span class="ff">&lt;meta</span> property="<span class="resul">og:locale</span>" content="<span class="resul">{{x.locale}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> property="<span class="resul">fb:app_id</span>" content="<span class="resul">{{x.appid}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> property="<span class="resul">fb:admins</span>" content="<span class="resul">{{x.fbadmins}}</span>"<span class="ff">/&gt;</span>
-<span class="comment">&lt;!-- markup for twitter --&gt;</span>
+</div><div ng-hide="showTwitter"><span class="comment">&lt;!-- markup for twitter --&gt;</span>
 <span class="ff">&lt;meta</span> name="<span class="resul">twitter:card</span>" content="<span class="resul">{{x.ttcard}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> name="<span class="resul">twitter:title</span>" content="<span class="resul">{{x.title}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> name="<span class="resul">twitter:description</span>" content="<span class="resul">{{x.description}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> name="<span class="resul">twitter:creator</span>" content="<span class="resul">{{x.author}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> name="<span class="resul">twitter:image</span>" content="<span class="resul">{{x.image}}</span>"<span class="ff">/&gt;</span>
-<span class="comment">&lt;!-- JSON-LD - structured data markup Google Search --&gt;</span>
+<div ng-hide="showJson"></div><span class="comment">&lt;!-- JSON-LD - structured data markup Google Search --&gt;</span>
 <span class="ff">&lt;script</span> type="<span class="resul">application/ld+json</span>"<span class="ff">/&gt;</span>
 {
   "<span class="ff">@context</span>": "<span class="resul">http://schema.org</span>",
@@ -372,8 +410,7 @@
   "<span class="ff">url</span>": "<span class="resul">{{x.canonical}}</span>"
 }
 <span class="ff">&lt;/script</span><span class="ff">/&gt;</span>
-
-              </pre>
+</div></pre>
       <div class="cc">
         <button class="btn" data-clipboard-target="#foo">
           copy to clipboard
