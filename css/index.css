@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700');
+* {
+    margin: 0;
+    padding: 0;
+}
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: 'PT Sans', sans-serif;
+}
+button:hover {
+  transform: scale(1.2, 1.2);
+}
+a {
+    text-decoration: none;
+    color: #5f72bd;
+    font-weight: bold;
+    opacity: 0.8
+}
+a:hover {
+    opacity: 1
+}
+form {
+    padding-bottom: 20px
+}
+.cc {
+    text-align: right;
+    padding-bottom: 20px;
+}
+::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.2);
+  font-style: italic;
+}
+:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.2);
+  font-style: italic;
+}
+::placeholder {
+  color: rgba(0, 0, 0, 0.2);
+  font-style: italic;
+}
+
+pre {
+    color: #55cc66;
+    background: #001800!important;
+    width: 99%;
+    overflow: auto;
+    overflow-y: hidden;
+    text-align: left;
+    padding: 10px;
+    border-radius: 3px;
+    margin: 0 auto;
+}
+pre::-webkit-scrollbar {
+    width: 1em;
+    height: 5px
+}
+pre::-webkit-scrollbar-track {
+    -webkit-box-shadow: none;
+}
+pre::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+}
+.resul {
+    color: #cc5555
+}
+.ff {
+    color: #865700
+}
+.comment {
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+}
+.formulario {
+    background: #f4f4f4;
+    padding-bottom: 50px;
+    padding-top: 10px;
+    overflow: hidden;
+}
+.tamanho {
+    width: 1100px;
+    max-width: 90%
+}
+.margin {
+    margin: 0 auto
+}
+.bg-intro {
+background: #5f72bd;
+height: 90%;
+}
+.intro {
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    background: #5f72bd;
+    background-color: #5f72bd;
+    background: url(../img/bg-teste.svg);
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: bottom;
+    -webkit-animation-name: anima;
+            animation-name: anima;
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+}
+@-webkit-keyframes anima {
+      0% {background-position: bottom;}
+      100% {background-position: center;}
+}
+@keyframes anima {
+      0% {background-position: bottom;}
+      100% {background-position: center;}
+}
+
+.flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center
+}
+.box {
+    width: 500px;
+    max-width: 90%;
+padding-top: 0px;
+}
+.ex {
+    padding-top: 20px;
+}
+footer {
+    padding-top: 50px;
+    padding-bottom: 30px;
+    font-size: 20px;
+}
+.bg {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border-left: 5px solid #5f72bd;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 4px
+}
+.bg h2 {
+    margin-left: 10px;
+    color: #5f72bd;
+    padding-top: 10px
+}
+.container-form {
+    margin: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.box-form {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -ms-flex-preferred-size: 350px;
+    flex-basis: 350px;
+    margin: 10px;
+    margin-top: 0;
+    padding-bottom: 10px;
+}
+.box-form textarea,
+.box-form input,
+.box-form select {
+    width: 100%;
+    height: 30px;
+    font-size: 14px;
+    outline: none;
+    border: none;
+    -webkit-transition: 2s;
+    transition: 2s;
+    color: rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.box-form input:focus {
+    border-bottom: 1px solid #5f72bd;
+}
+.cl {
+width: 50px!important;
+}
+.clr {
+width: 100px!important;
+}
+.box-form label {
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 20px
+}
+.box-form span {
+    color: rgba(0, 0, 0, .5);
+    font-size: 12px;
+}
+.text-center {
+  text-align:
+}
+.box-form-button {
+  background: #5f72bd;
+    color: #fff;
+    min-width: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    border: none;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 900;
+    border-radius: 3px;
+    -webkit-transition: 1s;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.counter {
+    font-size: 14px;
+    opacity: 0.8;
+}
+.box-form-button[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+.ttt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.flex1 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1
+}
+.carac {
+  width: 100%;
+  text-align: right;
+}
+.box-form label i {
+color: #cc5555;
+margin-left: -3px;;
+}
+.btn {
+    background: #5f72bd;
+    color: #fff;
+    margin-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: none;
+    height: 30px;
+    font-size: 14px;
+    font-weight: 900;
+    border-radius: 3px;
+    -webkit-transition: 1s;
+    transition: 1s;
+    cursor: pointer;
+}
+.btn-remover {
+    background: #cc5555 !important
+}
+.btn-remover:hover {
+    background: #ad4848 !important
+}
+.logo {
+    width: 100%;
+    max-width: 90%;
+}
+.t h2 {
+    color: #5f72bd;
+    font-size: 18px;
+}
+.btn:hover {
+    background: #9b23ea;
+}
+.texto-intro {
+    text-align: center;
+    width: 300px;
+    max-width: 90%;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    line-height: 25px;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px
+}
+.lolo {
+  color: #FFDD67
+}
+.gt {
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #5f72bd;
+  color: #fff;
+  transition: 1s
+}
+.git {
+  max-width: 90%;
+  transition: 1s;
+  text-align: center;
+}
+.gt:hover .git {
+  transform: scale(1.2, 1.2);
+}
+@media only screen and (max-width: 400px) {
+    .some {
+        display: none
+    }
+    pre {
+        width: 80%
+    }
+    .container-form {
+      margin: 10px
+    }
+}

@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <title>SeoTopper - The TOPiest SEO generator that exists. </title>
+    <meta name="description" content="Gerador de SEO mais TOP do momento, com meta tags do facebook, twitter, google+ entre outras. github: https://github.com/gustavoquinalha/seotopper" />
+    <meta name="author" content="Quinalha e Japa" />
+    <link rel="base" href="http://quinalha.me/seotopper/" />
+    <link rel="canonical" href="http://quinalha.me/seotopper/" />
+    <meta rel="sitemap" type="application/xml" content="http://quinalha.me/seotopper/sitemap.xml" />
+    <meta name="robots" content="index/follow" />
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="SeoTopper - O gerador de SEO mais TOP que existe." />
+    <meta itemprop="description" content="Gerador de SEO mais TOP do momento, com meta tags do facebook, twitter, google+ entre outras. github: https://github.com/gustavoquinalha/seotopper" />
+    <meta itemprop="image" content="http://quinalha.me/seotopper/img/intro.png" />
+    <!-- markup for facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="SeoTopper - O gerador de SEO mais TOP que existe." />
+    <meta property="og:url" content="http://quinalha.me/seotopper/" />
+    <meta property="og:site_name" content="SeoTopper" />
+    <meta property="og:image" content="http://quinalha.me/seotopper/img/intro.png" />
+    <meta property="og:description" content="Gerador de SEO mais TOP do momento, com meta tags do facebook, twitter, google+ entre outras. github: https://github.com/gustavoquinalha/seotopper" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="fb:app_id" content="1154262757941899" />
+    <meta property="fb:admins" content="100002787447461" />
+    <!-- markup for twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="SeoTopper - O gerador de SEO mais TOP que existe." />
+    <meta name="twitter:description" content="Gerador de SEO mais TOP do momento, com meta tags do facebook, twitter, google+ entre outras. github: https://github.com/gustavoquinalha/seotopper" />
+    <meta name="twitter:creator" content="Quinalha e Japa" />
+    <meta name="twitter:image" content="http://quinalha.me/seotopper/img/intro.png" />
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+    <!-- ****** favicons do faviconit.com ****** -->
+    <link rel="shortcut icon" href="img/favicon/favicon.ico">
+    <link rel="icon" sizes="16x16 32x32 64x64" href="img/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="196x196" href="img/favicon/favicon-192.png">
+    <link rel="icon" type="image/png" sizes="160x160" href="img/favicon/favicon-160.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="img/favicon/favicon-64.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16.png">
+    <link rel="apple-touch-icon" href="img/favicon/favicon-57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/favicon-114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/favicon-72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/favicon-144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/favicon-60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/favicon-120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/favicon-76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/favicon-152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/favicon-180.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="img/favicon/favicon-144.png">
+    <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+    <!-- ****** favicons do faviconit.com ****** -->
+
+</head>
+
+<body ng-controller="IndexController">
+    <div class="bg-intro">
+        <div class="intro">
+            <div class="flex">
+                <div class="box tamanho">
+                    <div class="logo-logo">
+                        <img src="img/logo-branca-01.svg" class="logo" alt="seo topper">
+                        <!--img src="img/seotopp.svg" class="logo" alt="seo topper"-->
+                    </div>
+
+                    <div class="ex">
+                        <pre>
+<!--span class="lolo">
+ ____           _____
+/ ___|  ___  __|_   _|__  _ __  _ __   ___ _ __
+\___ \ / _ \/ _ \| |/ _ \| '_ \| '_ \ / _ \ '__|
+ ___) |  __/ (_) | | (_) | |_) | |_) |  __/ |
+|____/ \___|\___/|_|\___/| .__/| .__/ \___|_|
+                         |_|   |_|
+</span-->
+<span class="comment">&lt;!-- a simple exemple --&gt;</span>
+<span class="ff">&lt;title&gt;</span>my website title<span class="ff">&lt;/title&gt;</span>
+<span class="ff">&lt;meta</span> name="<span class="resul">description</span>" content="<span class="resul">page description</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> name="<span class="resul">author</span>" content="<span class="resul">me</span>"<span class="ff">/&gt;</span>
+<span class="comment">&lt;!-- and much more! --&gt;</span>
+          </pre>
+                        <br>
+                        <!-- Place this tag where you want the button to render. -->
+                        <a class="github-button" href="https://github.com/gustavoquinalha/seotopper" data-style="mega" data-count-href="/gustavoquinalha/seotopper/stargazers" data-count-api="/repos/gustavoquinalha/seotopper#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star gustavoquinalha/seotopper on GitHub">Star</a>
+                        <!-- Place this tag where you want the button to render. -->
+                        <a class="github-button" href="https://github.com/gustavoquinalha/seotopper/fork" data-style="mega" data-count-href="/gustavoquinalha/seotopper/network" data-count-api="/repos/gustavoquinalha/seotopper#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork gustavoquinalha/seotopper on GitHub">Fork</a>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="formulario" id="form">
+        <div class="texto-intro tamanho margin">
+            <h2>Just type the data and generate the meta tags for your website</h2>
+        </div>
+        <form name="seoForm" ng-submit="salvar(seo)" ng-show="sv">
+            <div class="bg tamanho margin">
+                <div class="esp">
+                    <h2>General</h2>
+                    <div class="container-form">
+                        <div class="box-form">
+                            <label for="title">Your website title<i>*</i></label>
+                            <br>
+                            <div class="ttt">
+                                <div class="flex1">
+                                    <input type="text" name="title" ng-model="seo.title" placeholder="Ex: Website title" ng-minlength="1" ng-trim="false" maxlength="57" required>
+                                </div>
+                                <div class="">
+                                    <i><span class="counter">0{{seo.title.length}}/57</span></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-form">
+                            <label for="nome">Page description<i>*</i></label>
+                            <br>
+                            <div class="ttt">
+                                <div class="flex1">
+                                    <input type="text" name="description" ng-model="seo.description" placeholder="Ex: My website do a lot of funny stuff" ng-minlength="1" ng-trim="false" required>
+                                </div>
+                                <div class="">
+                                    <div class="carac">
+                                        <i><span class="counter">0{{seo.description.length}}/160</span></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="box-form">
+                            <label for="nome">Website author<i>*</i></label>
+                            <br>
+                            <input type="text" name="author" ng-model="seo.author" ng-minlength="1" placeholder="Ex: Little John" required>
+                        </div>
+                        <div class="box-form">
+                            <label for="nome">Image<i>*</i></label>
+                            <br>
+                            <input type="text" name="image" ng-model="seo.image" ng-minlength="1" placeholder="Ex: http://your-url.com.br/img/intro.png" required>
+                            <span>The image must have at most <strong>8 MB</strong>.</span>
+                        </div>
+                        <div class="box-form">
+                            <label for="nome">Canonical<i>*</i></label>
+                            <br>
+                            <input type="text" name="canonical" ng-model="seo.canonical" placeholder="Ex: http://your-url.com.br" ng-minlength="1" required>
+                        </div>
+                        <div class="box-form">
+                            <label for="nome">Robots<i>*</i></label>
+                            <br>
+                            <select name="type" ng-model="seo.robots">
+                <option selected ng-repeat="x in rops">{{x}}</option selected>
+              </select>
+                        </div>
+                        <div class="box-form">
+                            <label for="nome">Base</label>
+                            <br>
+                            <input type="text" name="base" ng-model="seo.base" ng-minlength="1" placeholder="Ex: http://your-url.com.br" required>
+                        </div>
+                        <div class="box-form">
+                            <label for="nome">Site Map</label>
+                            <br>
+                            <input type="text" name="sitemap" ng-model="seo.sitemap" ng-minlength="1" placeholder="Ex: http://your-url.com.br/sitemap.xml" required>
+                        </div>
+                        <div class="box-form">
+                            <label for="nome">Theme color</label>
+                            <br>
+                            <input type="color" class="cl" name="color" ng-model="seo.color" value="#5f72bd">
+                            <input type="text" class="clr" name="color" ng-model="seo.color" value="#5f72bd">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg margin tamanho">
+                <h2>Facebook</h2>
+                <div class="container-form ">
+                    <div class="box-form">
+                        <label for="title">Site name</label>
+                        <br>
+                        <input type="text" name="name" ng-model="seo.name" placeholder="Ex: Website title" ng-minlength="1">
+                    </div>
+                    <div class="box-form">
+                        <label for="nome">Type</label>
+                        <br>
+                        <select name="type" ng-model="seo.type">
+              <option selected ng-repeat="x in ops">{{x}}</option selected>
+            </select>
+                    </div>
+                    <div class="box-form">
+                        <label for="nome">APP ID</label>
+                        <br>
+                        <input type="text" name="appid" ng-model="seo.appid" ng-minlength="1" placeholder="Ex: 99989797">
+                    </div>
+                    <div class="box-form">
+                        <label for="nome">fb-admins</label>
+                        <br>
+                        <input type="text" name="fbadmins" ng-model="seo.fbadmins" ng-minlength="1" placeholder="Ex: 111111111111">
+                    </div>
+                    <div class="box-form">
+                        <label for="nome">Locale</label>
+                        <br>
+                        <input type="text" name="locale" ng-model="seo.locale" ng-minlength="1" placeholder="Ex: pt_BR">
+                    </div>
+                </div>
+            </div>
+            <div class="bg margin tamanho">
+                <h2>Twitter</h2>
+                <div class="container-form">
+                    <div class="box-form">
+                        <label for="nome">Twitter card</label>
+                        <br>
+                        <select name="type" ng-model="seo.ttcard">
+              <option selected ng-repeat="x in tt">{{x}}</option selected>
+            </select>
+                    </div>
+                </div>
+            </div>
+            <div class="bg tamanho margin">
+                <div class="esp">
+                    <h2>Schema - JSON-LD</h2>
+                    <div class="container-form">
+                        <div class="box-form">
+                            <select ng-change="selectJsonLd(jsonLdType)" ng-model="jsonLdType" ng-options="opts.name for opts in jsonLdOptions">
+                <option value="">Select your website type/category</option>
+              </select>
+                        </div>
+
+                    </div>
+                    <div class="container-form" ng-if="jsonLdBusiness">
+                        <div class="box-form">
+                            <label for="name">Business name:</label>
+                            <input class="name" name="name" type="text" ng-change="inputChange(person)" ng-model="person.name">
+                        </div>
+                        <div class="box-form">
+                            <label for="url">Business URL:</label>
+                            <input class="url" name="url" type="text" ng-model="person.url" ng-change="inputChange(person)">
+                        </div>
+
+                        <div class="box-form">
+                            <label for="logo">Logo (Use the URL image from your logo):</label>
+                            <input class="logo" name="logo" type="text" ng-model="person.logo" ng-change="inputChange(person)">
+                        </div>
+                        <div class="box-form">
+                            <label for="image">Image (Use the URL image from your business):</label>
+                            <input class="image" name="image" ng-model="person.image" type="text" ng-change="inputChange(person)" data-path="image">
+                        </div>
+                        <div class="box-form">
+                            <label for="desription">Description:</label>
+                            <textarea rows="5" cols="50" name="description" ng-change="inputChange(person)" ng-model="person.description" data-path="description"></textarea>
+                        </div>
+                        <div class="box-form">
+                            <label for="address">Address:</label>
+                            <input class="address" name="address" ng-change="inputChange(person)" ng-model="person.address.streetAddress" type="text">
+                        </div>
+                        <div class="box-form">
+                            <label for="addressLocality">City:</label>
+                            <input class="addressLocality" name="addressLocality" ng-model="person.address.addressLocality" ng-change="inputChange(person)" type="text">
+                        </div>
+                        <div class="box-form">
+                            <label for="addressRegion">State:</label>
+                            <input class="addressRegion" ng-model="person.address.addressRegion" name="addressRegion" type="text" ng-change="inputChange(person)" data-path="address.addressRegion">
+                        </div>
+                        <div class="box-form">
+                            <label for="postalCode">CEP:</label>
+                            <input class="postalCode" name="postalCode" ng-change="inputChange(person)" ng-model="person.address.postalCode" type="text" data-path="address.postalCode">
+                        </div>
+                        <div class="box-form">
+                            <label for="addressCountry">Country:</label>
+                            <input class="addressCountry" ng-change="inputChange(person)" ng-model="person.address.addressCountry" name="addressCountry" type="text" data-path="address.addressCountry">
+                        </div>
+                        <div class="box-form">
+                            <label for="addressCountry">Latitude:</label>
+                            <input class="addressCountry" ng-change="inputChange(person)" ng-model="person.geo.latitude" type="text">
+                        </div>
+
+                        <div class="box-form">
+                            <label for="addressCountry">Longitude:</label>
+                            <input class="addressCountry" ng-change="inputChange(person)" ng-model="person.geo.longitude" type="text">
+                        </div>
+
+                        <div class="box-form">
+                            <label for="addressCountry">Include the map:</label>
+                            <input class="addressCountry" ng-change="inputChange(person)" ng-model="person.hasMap" type="text">
+                        </div>
+
+                        <div class="box-form">
+                            <label for="telephone">Fone:</label>
+                            <input class="telephone" name="telephone" ng-change="inputChange(person)" ng-model="person.contactPoint.telephone" type="text" data-path="contactPoint.telephone" placeholder="+1(XXX) XXX-XXXX">
+                        </div>
+                    </div>
+                    <div class="container-form" ng-if="jsonLdPerson">
+                        <div class="box-form">
+                            <label for="name">Name:</label>
+                            <input class="name" name="name" type="text" ng-change="inputChange(person)" ng-model="person.name">
+                        </div>
+                        <div class="box-form">
+                            <label for="url">Profession:</label>
+                            <input type="text" ng-model="person.jobTitle" ng-change="inputChange(person)">
+                        </div>
+
+                        <div class="box-form">
+                            <label for="logo">URL:</label>
+                            <input class="logo" name="logo" type="text" ng-model="person.url" ng-change="inputChange(person)">
+                        </div>
+                        <div class="box-form">
+                            <label for="address">Address:</label>
+                            <input class="address" name="address" ng-change="inputChange(person)" ng-model="person.address.streetAddress" type="text">
+                        </div>
+                        <div class="box-form">
+                            <label for="addressLocality">City:</label>
+                            <input class="addressLocality" name="addressLocality" ng-model="person.address.addressLocality" ng-change="inputChange(person)" type="text">
+                        </div>
+                        <div class="box-form">
+                            <label for="addressRegion">State:</label>
+                            <input class="addressRegion" ng-model="person.address.addressRegion" name="addressRegion" type="text" ng-change="inputChange(person)" data-path="address.addressRegion">
+                        </div>
+                        <div class="box-form">
+                            <label for="postalCode">CEP:</label>
+                            <input class="postalCode" name="postalCode" ng-change="inputChange(person)" ng-model="person.address.postalCode" type="text" data-path="address.postalCode">
+                        </div>
+                        <div class="box-form">
+                            <label for="addressCountry">Country:</label>
+                            <input class="addressCountry" ng-change="inputChange(person)" ng-model="person.address.addressCountry" name="addressCountry" type="text" data-path="address.addressCountry">
+                        </div>
+                        <div class="box-form">
+                            <label for="telephone">Fone:</label>
+                            <input ng-change="inputChange(person)" ng-model="person.telephone" type="text" placeholder="+1(XXX) XXX-XXXX">
+                        </div>
+                        <div class="box-form">
+                            <label for="email">E-mail:</label>
+                            <input ng-change="inputChange(person)" ng-model="person.email" type="text">
+                        </div>
+                        <div class="box-form">
+                            <label for="Nascimento">Born date (YYYY-MM-DD):</label>
+                            <input ng-change="inputChange(person)" ng-model="person.birthDate" type="text" placeholder="YYYY-MM-DD">
+                        </div>
+                    </div>
+                    <div class="container-form" ng-if="jsonLdProduct">
+                        <div class="box-form">
+                            <label for="name">Brand:</label>
+                            <input class="name" name="name" type="text" ng-change="inputChange(person)" ng-model="person.brand">
+                        </div>
+                        <div class="box-form">
+                            <label for="url">Name:</label>
+                            <input type="text" ng-model="person.name" ng-change="inputChange(person)">
+                        </div>
+
+                        <div class="box-form">
+                            <label for="logo">Product image:</label>
+                            <input class="logo" name="logo" type="text" ng-model="person.image" ng-change="inputChange(person)">
+                        </div>
+                        <div class="box-form">
+                            <label for="address">Description:</label>
+                            <input class="address" name="address" ng-change="inputChange(person)" ng-model="person.description" type="text">
+                        </div>
+                        <div class="box-form">
+                            <label for="addressLocality">Rating:</label>
+                            <input class="addressLocality" name="addressLocality" ng-model="person.aggregateRating.ratingValue" ng-change="inputChange(person)" type="text">
+                        </div>
+                        <div class="box-form">
+                            <label for="addressRegion">Based on how many reviews?</label>
+                            <input class="addressRegion" ng-model="person.aggregateRating.reviewCount" name="addressRegion" type="text" ng-change="inputChange(person)" data-path="address.addressRegion">
+                        </div>
+                    </div>
+                    <div class="container-form" ng-if="jsonLdEvent">
+                        <div class="box-form">
+                            <label for="url">Name:</label>
+                            <input type="text" ng-model="person.name" ng-change="inputChange(person)">
+                        </div>
+                        <div class="box-form">
+                            <label for="logo">Event URL:</label>
+                            <input class="logo" name="logo" type="text" ng-model="person.url" ng-change="inputChange(person)">
+                        </div>
+                        <div class="box-form">
+                            <label for="address">Description:</label>
+                            <input class="address" name="address" ng-change="inputChange(person)" ng-model="person.description" type="text">
+                        </div>
+                        <div class="box-form">
+                            <label>Outset:</label>
+                            <input ng-model="person.startDate" ng-change="inputChange(person)" type="datetime-local">
+                        </div>
+                        <div class="box-form">
+                            <label>End:</label>
+                            <input ng-model="person.endDate" ng-change="inputChange(person)" type="datetime-local">
+                        </div>
+                        <div class="box-form">
+                            <label for="address">Local name:</label>
+                            <input class="address" name="address" ng-change="inputChange(person)" ng-model="person.location.name" type="text">
+                        </div>
+                        <div class="box-form">
+                            <label for="address">Local URL:</label>
+                            <input class="address" name="address" ng-change="inputChange(person)" ng-model="person.location.sameAs" type="text">
+                        </div>
+                        <div class="box-form">
+                            <label for="address">Address:</label>
+                            <input class="address" name="address" ng-change="inputChange(person)" ng-model="person.address.streetAddress" type="text">
+                        </div>
+                        <div class="box-form">
+                            <label for="addressLocality">City:</label>
+                            <input class="addressLocality" name="addressLocality" ng-model="person.address.addressLocality" ng-change="inputChange(person)" type="text">
+                        </div>
+                        <div class="box-form">
+                            <label for="addressRegion">State:</label>
+                            <input class="addressRegion" ng-model="person.address.addressRegion" name="addressRegion" type="text" ng-change="inputChange(person)" data-path="address.addressRegion">
+                        </div>
+                        <div class="box-form">
+                            <label for="postalCode">CEP:</label>
+                            <input class="postalCode" name="postalCode" ng-change="inputChange(person)" ng-model="person.address.postalCode" type="text" data-path="address.postalCode">
+                        </div>
+                        <div class="box-form">
+                            <label for="addressCountry">Country:</label>
+                            <input ng-change="inputChange(person)" ng-model="person.address.addressCountry" type="text">
+                        </div>
+
+                        <div class="box-form">
+                            <label>Offer Description:</label>
+                            <input ng-change="inputChange(person)" ng-model="person.offers.description" type="text">
+                        </div>
+
+                        <div class="box-form">
+                            <label>Offer URL:</label>
+                            <input ng-change="inputChange(person)" ng-model="person.offers.url" type="text">
+                        </div>
+
+                        <div class="box-form">
+                            <label>Offer price:</label>
+                            <input ng-change="inputChange(person)" ng-model="person.offers.price" type="text">
+                        </div>
+                    </div>
+                    <div class="container-form" ng-if="jsonLdOrganization">
+                        <div class="box-form">
+                            <label for="name">Organization name:</label>
+                            <input class="name" name="name" type="text" ng-change="inputChange(person)" ng-model="person.name">
+                        </div>
+                        <div class="box-form">
+                            <label for="url">Organization URL:</label>
+                            <input class="url" name="url" type="text" ng-model="person.url" ng-change="inputChange(person)">
+                        </div>
+
+                        <div class="box-form">
+                            <label for="logo">Logo (Use the URL image from your logo):</label>
+                            <input class="logo" name="logo" type="text" ng-model="person.logo" ng-change="inputChange(person)">
+                        </div>
+                        <div class="box-form">
+                            <label for="image">Image (Use the URL image from your organization):</label>
+                            <input class="image" name="image" ng-model="person.image" type="text" ng-change="inputChange(person)" data-path="image">
+                        </div>
+                        <div class="box-form">
+                            <label for="desription">Description:</label>
+                            <textarea rows="5" cols="50" name="description" ng-change="inputChange(person)" ng-model="person.description" data-path="description"></textarea>
+                        </div>
+                        <div class="box-form">
+                            <label for="address">Address:</label>
+                            <input class="address" name="address" ng-change="inputChange(person)" ng-model="person.address.streetAddress" type="text">
+                        </div>
+                        <div class="box-form">
+                            <label for="addressLocality">City:</label>
+                            <input class="addressLocality" name="addressLocality" ng-model="person.address.addressLocality" ng-change="inputChange(person)" type="text">
+                        </div>
+                        <div class="box-form">
+                            <label for="addressRegion">State:</label>
+                            <input class="addressRegion" ng-model="person.address.addressRegion" name="addressRegion" type="text" ng-change="inputChange(person)" data-path="address.addressRegion">
+                        </div>
+                        <div class="box-form">
+                            <label for="postalCode">CEP:</label>
+                            <input class="postalCode" name="postalCode" ng-change="inputChange(person)" ng-model="person.address.postalCode" type="text" data-path="address.postalCode">
+                        </div>
+                        <div class="box-form">
+                            <label for="addressCountry">Country:</label>
+                            <input class="addressCountry" ng-change="inputChange(person)" ng-model="person.address.addressCountry" name="addressCountry" type="text" data-path="address.addressCountry">
+                        </div>
+                        <div class="box-form">
+                            <label for="telephone">Fone:</label>
+                            <input class="telephone" name="telephone" ng-change="inputChange(person)" ng-model="person.contactPoint.telephone" type="text" data-path="contactPoint.telephone" placeholder="+1(XXX) XXX-XXXX">
+                        </div>
+                    </div>
+                    <div class="container-form" ng-if="jsonLdWebsite">
+                        <div class="box-form">
+                            <label for="url">Name:</label>
+                            <input type="text" ng-model="person.name" ng-change="inputChange(person)">
+                        </div>
+
+                        <div class="box-form">
+                            <label for="logo">Nickname:</label>
+                            <input class="logo" name="logo" type="text" ng-model="person.alternateName" ng-change="inputChange(person)">
+                        </div>
+                        <div class="box-form">
+                            <label for="address">URL:</label>
+                            <input class="address" name="address" ng-change="inputChange(person)" ng-model="person.url" type="text">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="margin tamanho text-center">
+                <button class="box-form-button" type="submit" ng-disabled="seoForm.$invalid" ng-show="sv">Generate SEO</button>
+            </div>
+        </form>
+        <form name="seoForm" ng-submit="editar(seo)" ng-show="editor">
+            <div class="bg tamanho margin">
+                <h2>General</h2>
+                <div class="container-form">
+                    <div class="box-form">
+                        <label for="title">Page title</label>
+                        <br>
+                        <input type="text" name="title" ng-model="seo.title" placeholder="Ex: Website title" ng-minlength="1" required>
+                        <span>To be cool use at most 57 characters.</span>
+                    </div>
+                    <div class="box-form">
+                        <label for="nome">Page description</label>
+                        <br>
+                        <input type="text" name="description" ng-model="seo.description" placeholder="Ex: My website do a lot of funny stuff" ng-minlength="1" required>
+                        <span>To be cool use at most 160 characters.</span>
+                    </div>
+                    <div class="box-form">
+                        <label for="nome">Autor da página</label>
+                        <br>
+                        <input type="text" name="author" ng-model="seo.author" ng-minlength="1" placeholder="Ex: Joaozinho" required>
+                    </div>
+                    <div class="box-form">
+                        <label for="nome">Image</label>
+                        <br>
+                        <input type="text" name="image" ng-model="seo.image" ng-minlength="1" placeholder="Ex: http://your-url.com.br/image.jpg" required>
+                    </div>
+                    <div class="box-form">
+                        <label for="nome">Canonical</label>
+                        <br>
+                        <input type="text" name="canonical" ng-model="seo.canonical" placeholder="Ex: http://your-url.com.br" ng-minlength="1" required>
+                    </div>
+                    <div class="box-form">
+                        <label for="nome">Robots</label>
+                        <br>
+                        <select name="type" ng-model="seo.robots">
+              <option selected ng-repeat="x in rops">{{x}}</option selected>
+            </select>
+                    </div>
+                    <div class="box-form">
+                        <label for="nome">Base</label>
+                        <br>
+                        <input type="text" name="base" ng-model="seo.base" ng-minlength="1" placeholder="Ex: My URL" required>
+                    </div>
+                    <div class="box-form">
+                        <label for="nome">Site Map</label>
+                        <br>
+                        <input type="text" name="sitemap" ng-model="seo.sitemap" ng-minlength="1" placeholder="Ex:site map" required>
+                    </div>
+                    <div class="box-form">
+                        <label for="nome">Theme color</label>
+                        <br>
+                        <input type="color" class="cl" name="color" ng-model="seo.color" value="#5f72bd">
+                        <input type="text" class="clr" name="color" ng-model="seo.color" value="#5f72bd">
+                    </div>
+                </div>
+            </div>
+            <div class="bg margin tamanho">
+                <h2>Facebook</h2>
+                <div class="container-form ">
+                    <div class="box-form">
+                        <label for="title">Site name</label>
+                        <br>
+                        <input type="text" name="name" ng-model="seo.name" placeholder="Ex: Website title" ng-minlength="1">
+                    </div>
+                    <div class="box-form">
+                        <label for="nome">Type</label>
+                        <br>
+                        <select name="type" ng-model="seo.type">
+                <option selected ng-repeat="x in ops">{{x}}</option selected>
+            </select>
+                    </div>
+                    <div class="box-form">
+                        <label for="nome">APP ID</label>
+                        <br>
+                        <input type="text" name="appid" ng-model="seo.appid" ng-minlength="1" placeholder="Ex: 99989797">
+                    </div>
+                    <div class="box-form">
+                        <label for="nome">fb-admins</label>
+                        <br>
+                        <input type="text" name="fbadmins" ng-model="seo.fbadmins" ng-minlength="1" placeholder="Ex: 111111111111">
+                    </div>
+                    <div class="box-form">
+                        <label for="nome">Locale</label>
+                        <br>
+                        <input type="text" name="locale" ng-model="seo.locale" ng-minlength="1" placeholder="Ex: pt_BR">
+                    </div>
+                </div>
+            </div>
+            <div class="bg margin tamanho">
+                <h2>Twitter</h2>
+                <div class="container-form">
+                    <div class="box-form">
+                        <label for="nome">Twitter card</label>
+                        <br>
+                        <input type="text" name="ttcard" ng-model="seo.ttcard" ng-minlength="1" placeholder="Ex: Summary">
+                    </div>
+                </div>
+            </div>
+            <div class="margin tamanho">
+                <button class="box-form-button" ng-show="editor" style="background-color: cornflowerblue" ng-disabled="seoForm.$invalid" type="submit">Save </button>
+                <button class="box-form-button btn-remover" ng-show="editor" style="background-color: cornflowerblue" type="button" ng-click="cancel()">Cancel </button>
+            </div>
+        </form>
+        <div id="seo">
+            <div ng-repeat="x in seos | orderBy : '-id' " class="tamanho margin">
+                <h2>{{x.name}}</h2>
+                <pre id="foo">
+<span class="ff">&lt;title&gt;</span>{{x.title}}<span class="ff">&lt;/title&gt;</span>
+<span class="ff">&lt;meta</span> name="<span class="resul">description</span>" content="<span class="resul">{{x.description}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> name="<span class="resul">author</span>" content="<span class="resul">{{x.author}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;link</span> rel="<span class="resul">base</span>" href="<span class="resul">{{x.base}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;link</span> rel="<span class="resul">canonical</span>" href="<span class="resul">{{x.canonical}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> rel="<span class="resul">sitemap</span>" type="<span class="resul">application/xml</span>" content="<span class="resul">{{x.sitemap}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> name="<span class="resul">robots</span>" content="<span class="resul">{{x.robots}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> name="<span class="resul">googlebot</span>" content="<span class="resul">{{x.robots}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> name="<span class="resul">theme-color</span>" content="<span class="resul">{{x.color}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> name="<span class="resul">msapplication-navbutton-color</span>" content="<span class="resul">{{x.color}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> name="<span class="resul">apple-mobile-web-app-status-bar-style</span>" content="<span class="resul">{{x.color}}</span>"<span class="ff">/&gt;</span>
+<span class="comment">&lt;!-- Schema.org markup for Google+ --&gt;</span>
+<span class="ff">&lt;meta</span> itemprop="<span class="resul">name</span>" content="<span class="resul">{{x.title}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> itemprop="<span class="resul">description</span>" content="<span class="resul">{{x.description}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> itemprop="<span class="resul">image</span>" content="<span class="resul">{{x.image}}</span>"<span class="ff">/&gt;</span>
+<span class="comment">&lt;!-- markup for facebook --&gt;</span>
+<span class="ff">&lt;meta</span> property="<span class="resul">og:type</span>" content="<span class="resul">{{x.type}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> property="<span class="resul">og:title</span>" content="<span class="resul">{{x.title}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> property="<span class="resul">og:url</span>" content="<span class="resul">{{x.canonical}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> property="<span class="resul">og:site_name</span>" content="<span class="resul">{{x.name}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> property="<span class="resul">og:image</span>" content="<span class="resul">{{x.image}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> property="<span class="resul">og:description</span>" content="<span class="resul">{{x.description}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> property="<span class="resul">og:locale</span>" content="<span class="resul">{{x.locale}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> property="<span class="resul">fb:app_id</span>" content="<span class="resul">{{x.appid}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> property="<span class="resul">fb:admins</span>" content="<span class="resul">{{x.fbadmins}}</span>"<span class="ff">/&gt;</span>
+<span class="comment">&lt;!-- markup for twitter --&gt;</span>
+<span class="ff">&lt;meta</span> name="<span class="resul">twitter:card</span>" content="<span class="resul">{{x.ttcard}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> name="<span class="resul">twitter:title</span>" content="<span class="resul">{{x.title}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> name="<span class="resul">twitter:description</span>" content="<span class="resul">{{x.description}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> name="<span class="resul">twitter:creator</span>" content="<span class="resul">{{x.author}}</span>"<span class="ff">/&gt;</span>
+<span class="ff">&lt;meta</span> name="<span class="resul">twitter:image</span>" content="<span class="resul">{{x.image}}</span>"<span class="ff">/&gt;</span>
+<span class="comment">&lt;!-- JSON-LD - structured data markup Google Search --&gt;</span>
+<span class="ff">&lt;script <span style="color: #55cc66;">type="</span><span class="resul">application/ld+json</span><span style="color: #55cc66;">"</span>></span>
+<span class="resul">{{jsonFormated}}</span>
+<span class="ff">&lt;/script></span>
+
+              </pre>
+                <div class="cc">
+                    <button class="btn" data-clipboard-target="#foo">
+          copy to clipboard
+        </button>
+
+                    <button class="btn btn-remover" ng-click="remover(x)" ng-hide="editor">Remove</button>
+
+                    <button class="btn" ng-click="editando(x)">Edit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer>
+        <div class="tamanho margin">
+            <p>created by <a href="https://github.com/gustavoquinalha" target="_blank">Quinalha</a> and <a href="https://github.com/usuarioJapa" target="_blank">Japa</a>.</p>
+        </div>
+    </footer>
+
+    <div class="gt">
+        <div class="git">
+            <h2>SeoTopper was usefull for you? How about contribute?</h2>
+            <br>
+            <!-- Place this tag where you want the button to render. -->
+            <a class="github-button" href="https://github.com/gustavoquinalha/seotopper" data-style="mega" data-count-href="/gustavoquinalha/seotopper/stargazers" data-count-api="/repos/gustavoquinalha/seotopper#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star gustavoquinalha/seotopper on GitHub">Star</a>
+            <!-- Place this tag where you want the button to render. -->
+            <a class="github-button" href="https://github.com/gustavoquinalha/seotopper/fork" data-style="mega" data-count-href="/gustavoquinalha/seotopper/network" data-count-api="/repos/gustavoquinalha/seotopper#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork gustavoquinalha/seotopper on GitHub">Fork</a> </div>
+    </div>
+    <script type="text/javascript" src="js/assets/angular.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/index.controller.js"></script>
+    <script type="text/javascript" src="js/index.service.js"></script>
+    <script type="text/javascript" src="js/assets/clipboard.min.js"></script>
+    <script type="text/javascript">
+        new Clipboard('.btn');
+    </script>
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-96118424-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+
+</html>
