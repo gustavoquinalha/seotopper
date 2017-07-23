@@ -194,6 +194,21 @@ footer {
     color: rgba(0, 0, 0, 0.5);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
+.sky {
+    border: 1px solid #5f72bd;
+    padding: 10px;
+}
+.tomato {
+    background-color:coral;
+    padding:40px;
+    font-family:Verdana;
+}
+.facee {
+background: red!important
+}
+.some {
+display: none;
+}
 .box-form input:focus {
     border-bottom: 1px solid #5f72bd;
 }
@@ -323,6 +338,17 @@ margin-left: -3px;;
 }
 .gt:hover .git {
   transform: scale(1.2, 1.2);
+}
+.cp {
+display: flex;
+}
+.cpp {
+  margin-left: 5px;
+}
+.inline {
+display: inline-flex;
+background: red;
+width: 100%;
 }
 @media only screen and (max-width: 400px) {
     .some {

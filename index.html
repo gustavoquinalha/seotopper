@@ -87,13 +87,76 @@
 <span class="ff">&lt;meta</span> name="<span class="resul">author</span>" content="<span class="resul">me</span>"<span class="ff">/&gt;</span>
 <span class="comment">&lt;!-- and much more! --&gt;</span>
           </pre>
-                        <br>
-                        <!-- Place this tag where you want the button to render. -->
-                        <a class="github-button" href="https://github.com/gustavoquinalha/seotopper" data-style="mega" data-count-href="/gustavoquinalha/seotopper/stargazers" data-count-api="/repos/gustavoquinalha/seotopper#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star gustavoquinalha/seotopper on GitHub">Star</a>
-                        <!-- Place this tag where you want the button to render. -->
-                        <a class="github-button" href="https://github.com/gustavoquinalha/seotopper/fork" data-style="mega" data-count-href="/gustavoquinalha/seotopper/network" data-count-api="/repos/gustavoquinalha/seotopper#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork gustavoquinalha/seotopper on GitHub">Fork</a>
-                        <br>
+            <br>
+            <!-- Place this tag where you want the button to render. -->
+            <a class="github-button" href="https://github.com/gustavoquinalha/seotopper" data-style="mega" data-count-href="/gustavoquinalha/seotopper/stargazers" data-count-api="/repos/gustavoquinalha/seotopper#stargazers_count" data-count-aria-label="# stargazers on GitHub"
+            aria-label="Star gustavoquinalha/seotopper on GitHub">Star</a>
+            <!-- Place this tag where you want the button to render. -->
+            <a class="github-button" href="https://github.com/gustavoquinalha/seotopper/fork" data-style="mega" data-count-href="/gustavoquinalha/seotopper/network" data-count-api="/repos/gustavoquinalha/seotopper#forks_count" data-count-aria-label="# forks on GitHub"
+            aria-label="Fork gustavoquinalha/seotopper on GitHub">Fork</a>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="formulario">
+    <div class="texto-intro tamanho margin">
+      <h2>Apenas digite os dados e gere as meta tags para seu site</h2>
+    </div>
+    <form name="seoForm" ng-submit="salvar(seo)" ng-show="sv">
+      <div class="bg tamanho margin">
+        <div class="esp">
+          <h2>Configurações</h2>
+          <div class="container-form">
+            <div class="box-form">
+              <form class="">
+                 <br>
+                  <div class="cp" >
+                    <div class="">
+                    <label for="showFace">Facebook</label>
                     </div>
+                    <div class="cpp">
+                      <input type="checkbox" id="showFace" ng-model="showFace" aria-label="Toggle ngShow">
+                    </div>
+                  </div>
+                  <div class="cp" >
+                    <div class="">
+                      <label for="showTwitter">Twitter</label>
+                    </div>
+                    <div class="cpp">
+                      <input type="checkbox" id="showTwitter" ng-model="showTwitter" aria-label="Toggle ngShow">
+                    </div>
+                  </div>
+                  <div class="cp" >
+                    <div class="">
+                      <label for="showJson">JSON-LD</label>
+                    </div>
+                    <div class="cpp">
+                      <input type="checkbox" id="showJson" ng-model="showJson" aria-label="Toggle ngShow">
+                    </div>
+                  </div>
+                  <br />
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bg tamanho margin">
+        <div class="esp">
+          <h2>Geral</h2>
+          <div class="container-form">
+            <div class="box-form">
+              <label for="title">Título da sua página<i>*</i></label>
+              <br>
+              <div class="ttt">
+                <div class="flex1">
+                  <input type="text" name="title" ng-model="seo.title" placeholder="Ex: Titulo do meu site" ng-minlength="1" ng-trim="false" maxlength="57" required>
+                </div>
+                <div class="">
+                  <i><span class="counter">0{{seo.title.length}}/57</span></i>
+
                 </div>
             </div>
         </div>
@@ -176,6 +239,82 @@
                     </div>
                 </div>
             </div>
+
+            <div class="box-form">
+              <label for="nome">Base</label>
+              <br>
+              <input type="text" name="base" ng-model="seo.base" ng-minlength="1" placeholder="Ex: http://sua-url.com.br" required>
+            </div>
+            <div class="box-form">
+              <label for="nome">Site Map</label>
+              <br>
+              <input type="text" name="sitemap" ng-model="seo.sitemap" ng-minlength="1" placeholder="Ex: http://sua-url.com.br/sitemap.xml" required>
+            </div>
+            <div class="box-form">
+              <label for="nome">Theme color</label>
+              <br>
+              <input type="color" class="cl" name="color" ng-model="seo.color" value="#5f72bd" ng-value="#5f72bd">
+              <input type="text" class="clr" name="color" ng-model="seo.color" value="#5f72bd">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bg margin tamanho" ng-hide="showFace" >
+        <h2>Facebook</h2>
+        <div class="container-form ">
+          <div class="box-form">
+            <label for="title">Site name</label>
+            <br>
+            <input type="text" name="name" ng-model="seo.name" placeholder="Ex: Titulo do meu site" ng-minlength="1">
+          </div>
+          <div class="box-form">
+            <label for="nome">Tipo</label>
+            <br>
+            <select name="type" ng-model="seo.type">
+              <option selected ng-repeat="x in ops">{{x}}</option selected>
+            </select>
+          </div>
+          <div class="box-form">
+            <label for="nome">APP ID</label>
+            <br>
+            <input type="text" name="appid" ng-model="seo.appid" ng-minlength="1" placeholder="Ex: 99989797">
+          </div>
+          <div class="box-form">
+            <label for="nome">fb-admins</label>
+            <br>
+            <input type="text" name="fbadmins" ng-model="seo.fbadmins" ng-minlength="1" placeholder="Ex: 111111111111">
+          </div>
+          <div class="box-form">
+            <label for="nome">Locale</label>
+            <br>
+            <input type="text" name="locale" ng-model="seo.locale" ng-minlength="1" placeholder="Ex: pt_BR">
+          </div>
+        </div>
+      </div>
+      <div class="bg margin tamanho" ng-hide="showTwitter">
+        <h2>Twitter</h2>
+        <div class="container-form">
+          <div class="box-form">
+            <label for="nome">Twitter card</label>
+            <br>
+            <select name="type" ng-model="seo.ttcard">
+              <option selected ng-repeat="x in tt">{{x}}</option selected>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="bg tamanho margin">
+        <div class="esp">
+          <h2>Schema - JSON-LD</h2>
+          <div class="container-form">
+            <div class="box-form">
+              <select
+                ng-change="selectJsonLd(jsonLdType)"
+                ng-model="jsonLdType"
+                ng-options="opts.name for opts in jsonLdOptions">
+                <option value="">Selecione a categoria do seu site</option>
+              </select>
+
             <div class="bg margin tamanho">
                 <h2>Facebook</h2>
                 <div class="container-form ">
@@ -219,6 +358,7 @@
             </select>
                     </div>
                 </div>
+>>>>>>> 54dcb87bec85608a92ad0ea077c1167297559ffd
             </div>
             <div class="bg tamanho margin">
                 <div class="esp">
@@ -622,7 +762,7 @@
 <span class="ff">&lt;meta</span> itemprop="<span class="resul">name</span>" content="<span class="resul">{{x.title}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> itemprop="<span class="resul">description</span>" content="<span class="resul">{{x.description}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> itemprop="<span class="resul">image</span>" content="<span class="resul">{{x.image}}</span>"<span class="ff">/&gt;</span>
-<span class="comment">&lt;!-- markup for facebook --&gt;</span>
+<div ng-hide="showFace"><span class="comment">&lt;!-- markup for facebook --&gt;</span>
 <span class="ff">&lt;meta</span> property="<span class="resul">og:type</span>" content="<span class="resul">{{x.type}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> property="<span class="resul">og:title</span>" content="<span class="resul">{{x.title}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> property="<span class="resul">og:url</span>" content="<span class="resul">{{x.canonical}}</span>"<span class="ff">/&gt;</span>
@@ -632,7 +772,7 @@
 <span class="ff">&lt;meta</span> property="<span class="resul">og:locale</span>" content="<span class="resul">{{x.locale}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> property="<span class="resul">fb:app_id</span>" content="<span class="resul">{{x.appid}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> property="<span class="resul">fb:admins</span>" content="<span class="resul">{{x.fbadmins}}</span>"<span class="ff">/&gt;</span>
-<span class="comment">&lt;!-- markup for twitter --&gt;</span>
+</div><div ng-hide="showTwitter"><span class="comment">&lt;!-- markup for twitter --&gt;</span>
 <span class="ff">&lt;meta</span> name="<span class="resul">twitter:card</span>" content="<span class="resul">{{x.ttcard}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> name="<span class="resul">twitter:title</span>" content="<span class="resul">{{x.title}}</span>"<span class="ff">/&gt;</span>
 <span class="ff">&lt;meta</span> name="<span class="resul">twitter:description</span>" content="<span class="resul">{{x.description}}</span>"<span class="ff">/&gt;</span>
