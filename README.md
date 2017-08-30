@@ -1,5 +1,7 @@
 [![Stories in Ready](https://badge.waffle.io/gustavoquinalha/seotopper.png?label=ready&title=Ready)](https://waffle.io/gustavoquinalha/seotopper?utm_source=badge)
 # Seotopper
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/gustavoquinalha/seotopper.svg)](https://greenkeeper.io/)
 Gerador de SEO mais TOP do momento, com meta tags do facebook, twitter, google+ entre outras. [Confira](https://gustavoquinalha.github.io/seotopper)
 
 # Novidade
