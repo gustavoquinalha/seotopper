@@ -1,6 +1,6 @@
 [![Stories in Ready](https://badge.waffle.io/gustavoquinalha/seotopper.png?label=ready&title=Ready)](https://waffle.io/gustavoquinalha/seotopper?utm_source=badge)
 # Seotopper
-Gerador de SEO mais TOP do momento, com meta tags do facebook, twitter, google+ entre outras. [Confira](http://quinalha.me/seotopper/)
+Gerador de SEO mais TOP do momento, com meta tags do facebook, twitter, google+ entre outras. [Confira](https://gustavoquinalha.github.io/seotopper)
 
 # Novidade
 JSON-LD - structured data markup Google Search
