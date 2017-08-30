@@ -5,6 +5,9 @@
 
 Gerador de SEO mais TOP do momento, com meta tags do facebook, twitter, google+ entre outras. [Confira](https://gustavoquinalha.github.io/seotopper)
 
+# Canal para discussão
+[Slack Seotopper](https://seotopper.slack.com/messages)
+
 # Novidade
 JSON-LD - structured data markup Google Search
 
