@@ -1,14 +1,7 @@
-[![Stories in Ready](https://badge.waffle.io/gustavoquinalha/seotopper.png?label=ready&title=Ready)](https://waffle.io/gustavoquinalha/seotopper?utm_source=badge)
 # Seotopper
+> Generator of SEO more TOP of the moment, with meta tags of facebook, twitter, google + among others. [Check out] (https://gustavoquinalha.github.io/seotopper)
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/gustavoquinalha/seotopper.svg)](https://greenkeeper.io/)
-
-Gerador de SEO mais TOP do momento, com meta tags do facebook, twitter, google+ entre outras. [Confira](https://gustavoquinalha.github.io/seotopper)
-
-# Canal para discussão
-[Slack Seotopper](https://seotopper.slack.com/messages)
-
-# Novidade
+# News
 JSON-LD - structured data markup Google Search
 
 # Meta-tags
