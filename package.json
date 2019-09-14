@@ -4,7 +4,8 @@
   "description": "SEO generator",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\""
+    "test": "echo \"Error: no test specified\"",
+    "postinstall": "opencollective-postinstall || true"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,12 @@
   "bugs": {
     "url": "https://github.com/gustavoquinalha/seotopper/issues"
   },
-  "homepage": "https://github.com/gustavoquinalha/seotopper#readme"
+  "homepage": "https://github.com/gustavoquinalha/seotopper#readme",
+  "dependencies": {
+    "opencollective-postinstall": "^2.0.2"
+  },
+  "collective": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/seotopper"
+  }
 }
