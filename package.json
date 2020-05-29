@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/gustavoquinalha/seotopper#readme",
   "dependencies": {
-    "opencollective-postinstall": "^2.0.2"
+    "opencollective-postinstall": "^2.0.3"
   },
   "collective": {
     "type": "opencollective",
