@@ -2,6 +2,8 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+@import '~assets/dracula.css';
+
 :root {
   color-scheme: dark;
 }
@@ -23,6 +25,8 @@ html {
   overflow-scrolling: touch;
   scroll-behavior: smooth;
   overflow-x: hidden;
+  height: 100vh;
+  overflow: hidden;
 }
 
 #menu::-webkit-scrollbar,
