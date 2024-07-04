@@ -1,142 +1,27 @@
-# Seotopper
-> Generator of SEO more TOP of the moment, with meta tags of facebook, twitter, google + among others. [Check out] (https://gustavoquinalha.github.io/seotopper)
+# Teste
 
-# News
-JSON-LD - structured data markup Google Search
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
 
-# Meta-tags
-- title
-- description
-- author
-- base
-- canonical
-- sitemap
-- robots
-- googlebot
-- theme-color
-- msapplication-navbutton-color
-- apple-mobile-web-app-status-bar-style
-- name
-- description
-- image
-- og:type
-- og:title
-- og:url
-- og:site_name
-- og:image
-- og:description
-- og:locale
-- fb:app_id
-- fb:admins
-- twitter:card
-- twitter:title
-- twitter:description
-- twitter:creator
-- twitter:image
-- application/ld+json
+## Development server
 
-# v0.5
-```html
-<title>Título da minha página</title>
-<meta name="description" content="Descrição da minha página"/>
-<meta name="author" content="Autor da minha página"/>
-<link rel="base" href="http://meusite.com.br"/>
-<link rel="canonical" href="http://meusite.com.br"/>
-<meta rel="sitemap" type="application/xml" content="http://meusite.com.br/sitemap.xml"/>
-<meta name="robots" content="index/follow"/>
-<meta name="googlebot" content="index/follow"/>
-<meta name="theme-color" content="#FF4455"/>
-<meta name="msapplication-navbutton-color" content="#FF4455"/>
-<meta name="apple-mobile-web-app-status-bar-style" content="#FF4455"/>
-<!-- Schema.org markup for Google+ -->
-<meta itemprop="name" content="Título da minha página"/>
-<meta itemprop="description" content="Descrição da minha página"/>
-<meta itemprop="image" content="http://meusite.com.br/image.png"/>
-<!-- markup for facebook -->
-<meta property="og:type" content="website"/>
-<meta property="og:title" content="Título da minha página"/>
-<meta property="og:url" content="http://meusite.com.br"/>
-<meta property="og:site_name" content="Exemplo"/>
-<meta property="og:image" content="http://meusite.com.br/image.png"/>
-<meta property="og:description" content="Descrição da minha página"/>
-<meta property="og:locale" content="pt_BR"/>
-<meta property="fb:app_id" content="5349"/>
-<meta property="fb:admins" content="123456789"/>
-<!-- markup for twitter -->
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Título da minha página"/>
-<meta name="twitter:description" content="Descrição da minha página"/>
-<meta name="twitter:creator" content="Autor da minha página"/>
-<meta name="twitter:image" content="http://meusite.com.br/image.png"/>
-<!-- JSON-LD - structured data markup Google Search -->
-<script type="application/ld+json"/>
-{
-  "@context": "http://schema.org",
-  "@type": "WebSite",
-  "name": "Exemplo",
-  "alternateName": "Descrição da minha página",
-  "url": "http://meusite.com.br"
-}
-</script/>
-```
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-# v0.1
-```html
-<title>Título da minha página</title>
-<meta name="description" content="Descrição da minha página"/>
-<meta name="author" content="Autor da minha página"/>
-<link rel="base" href="http://meusite.com.br"/>
-<link rel="canonical" href="http://meusite.com.br"/>
-<meta rel="sitemap" type="application/xml" content="http://meusite.com.br/sitemap.xml"/>
-<meta name="robots" content="index/follow"/>
-<!-- Schema.org markup for Google+ -->
-<meta itemprop="name" content="Título da minha página"/>
-<meta itemprop="description" content="Descrição da minha página"/>
-<meta itemprop="image" content="http://meusite.com.br/image.png"/>
-<!-- markup for facebook -->
-<meta property="og:type" content="website"/>
-<meta property="og:title" content="Título da minha página"/>
-<meta property="og:url" content="http://meusite.com.br"/>
-<meta property="og:site_name" content="Exemplo"/>
-<meta property="og:image" content="http://meusite.com.br/image.png"/>
-<meta property="og:description" content="Descrição da minha página"/>
-<meta property="og:locale" content="pt_BR"/>
-<meta property="fb:app_id" content="5349"/>
-<meta property="fb:admins" content="123456789"/>
-<!-- markup for twitter -->
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Título da minha página"/>
-<meta name="twitter:description" content="Descrição da minha página"/>
-<meta name="twitter:creator" content="Autor da minha página"/>
-<meta name="twitter:image" content="http://meusite.com.br/image.png"/>
-```
+## Code scaffolding
 
-## Contributors
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-### Code Contributors
+## Build
 
-This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
-<a href="https://github.com/gustavoquinalha/seotopper/graphs/contributors"><img src="https://opencollective.com/seotopper/contributors.svg?width=890&button=false" /></a>
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-### Financial Contributors
+## Running unit tests
 
-Become a financial contributor and help us sustain our community. [[Contribute](https://opencollective.com/seotopper/contribute)]
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-#### Individuals
+## Running end-to-end tests
 
-<a href="https://opencollective.com/seotopper"><img src="https://opencollective.com/seotopper/individuals.svg?width=890"></a>
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-#### Organizations
+## Further help
 
-Support this project with your organization. Your logo will show up here with a link to your website. [[Contribute](https://opencollective.com/seotopper/contribute)]
-
-<a href="https://opencollective.com/seotopper/organization/0/website"><img src="https://opencollective.com/seotopper/organization/0/avatar.svg"></a>
-<a href="https://opencollective.com/seotopper/organization/1/website"><img src="https://opencollective.com/seotopper/organization/1/avatar.svg"></a>
-<a href="https://opencollective.com/seotopper/organization/2/website"><img src="https://opencollective.com/seotopper/organization/2/avatar.svg"></a>
-<a href="https://opencollective.com/seotopper/organization/3/website"><img src="https://opencollective.com/seotopper/organization/3/avatar.svg"></a>
-<a href="https://opencollective.com/seotopper/organization/4/website"><img src="https://opencollective.com/seotopper/organization/4/avatar.svg"></a>
-<a href="https://opencollective.com/seotopper/organization/5/website"><img src="https://opencollective.com/seotopper/organization/5/avatar.svg"></a>
-<a href="https://opencollective.com/seotopper/organization/6/website"><img src="https://opencollective.com/seotopper/organization/6/avatar.svg"></a>
-<a href="https://opencollective.com/seotopper/organization/7/website"><img src="https://opencollective.com/seotopper/organization/7/avatar.svg"></a>
-<a href="https://opencollective.com/seotopper/organization/8/website"><img src="https://opencollective.com/seotopper/organization/8/avatar.svg"></a>
-<a href="https://opencollective.com/seotopper/organization/9/website"><img src="https://opencollective.com/seotopper/organization/9/avatar.svg"></a>
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

@@ -1,0 +1,32 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+html {
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+#menu::-webkit-scrollbar,
+#menu2::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
