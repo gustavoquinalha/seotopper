@@ -109,7 +109,7 @@ export class AppComponent {
       <meta property="twitter:domain" content="${this.form.get('url')?.value}">
       <meta property="twitter:url" content="${this.form.get('url')?.value}">
       <meta name="twitter:title" content="${this.form.get('title')?.value}">
-      <meta name="twitter:site" content="@gustavoquinalha">
+      <meta name="twitter:site" content="${this.form.get('site')?.value}">
       <meta name="twitter:description" content="${this.form.get('description')?.value}">
       <meta name="twitter:image" content="${this.form.get('image')?.value}">
       <meta name="twitter:image:alt" content="${this.form.get('imageAlt')?.value}">
