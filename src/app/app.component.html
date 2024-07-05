@@ -54,7 +54,7 @@
               [formControlName]="field.name"
               class="h-10 w-full bg-zinc-800 rounded border border-zinc-700 focus:border-zinc-500 focus:ring-2 focus:ring-zinc-200 text-sm outline-none text-zinc-200 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
             />
-            <span class="text-xs text-zinc-500 leading-4 mt-1">{{
+            <span class="text-xs text-zinc-400 leading-4 mt-1">{{
               field.description
             }}</span>
           </ng-container>
@@ -83,7 +83,7 @@
     <div
       class="text-left w-full py-4 px-4 md:px-10 border-t border-zinc-800 sticky top-full"
     >
-      <div class="text-zinc-500 text-xs md:text-sm leading-4">
+      <div class="text-zinc-400 text-xs md:text-sm leading-4">
         ©2024 •
         <a
           href="https://github.com/gustavoquinalha"
@@ -154,7 +154,7 @@
               <div class="text-sm text-zinc-400">
                 {{ form.get("description")?.value || "Website description" }}
               </div>
-              <div class="text-xs text-zinc-500 mt-2">
+              <div class="text-xs text-zinc-400 mt-2">
                 {{ form.get("url")?.value || "https://url.com" }}
               </div>
             </div>
@@ -174,7 +174,7 @@
               />
             </div>
             <div class="w-full flex flex-col gap-1 p-4">
-              <div class="text-xs text-zinc-500 uppercase">
+              <div class="text-xs text-zinc-400 uppercase">
                 {{ form.get("url")?.value || "https://url.com" }}
               </div>
               <div class="text-base text-zinc-200 font-medium">
@@ -203,7 +203,7 @@
               <div class="text-sm text-zinc-200 font-medium">
                 {{ form.get("title")?.value || "Website title" }}
               </div>
-              <div class="text-xs text-zinc-500">
+              <div class="text-xs text-zinc-400">
                 {{ form.get("url")?.value || "https://url.com" }}
               </div>
             </div>
