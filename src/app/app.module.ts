@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
+import {provideHttpClient} from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 import { ReactiveFormsModule } from '@angular/forms';
+import { GithubButtonModule } from 'ng-github-button';
 
 @NgModule({
   declarations: [
@@ -11,9 +13,11 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     HighlightModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    GithubButtonModule
   ],
   providers: [
+    provideHttpClient(),
     {
       provide: HIGHLIGHT_OPTIONS,
       useValue: {

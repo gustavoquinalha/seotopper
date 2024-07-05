@@ -30,12 +30,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "//cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/atom-one-dark.min.css"
+              "src/styles.scss"
             ],
-            "scripts": [
-              "//cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {

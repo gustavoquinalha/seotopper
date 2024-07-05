@@ -1,123 +1,217 @@
-  <div class="bg-zinc-950 border-b border-zinc-800 h-14 w-full flex gap-2 items-center justify-between px-4 overflow-x-auto overflow-y-hidden" id="menu">
-    <div class="flex gap-1 items-center h-full">
-      <span class="text-xl font-medium">SeoTopper</span>
-      <div class="w-px bg-zinc-800 h-full mx-4"></div>
-      <a href="" class="bg-zinc-900 text-zinc-200 rounded-lg text-sm px-4 py-1 flex items-center justify-center gap-2">Create</a>
-      <a href="" class=" text-zinc-400 rounded-lg text-sm px-4 py-1 flex items-center justify-center gap-2">Preview</a>
-      <a href="" class=" text-zinc-400 rounded-lg text-sm px-4 py-1 flex items-center justify-center gap-2">Github</a>
-    </div>
-    <div class="flex gap-2 items-center">
-      <a href="" class="bg-zinc-300 hover:bg-zinc-50 text-zinc-900  rounded-lg text-sm px-4 py-1.5 flex items-center justify-center gap-2">Export</a>
+<div
+  class="bg-zinc-950 border-b border-zinc-800 h-14 w-full flex items-center justify-between px-4 gap-4"
+  id="menu"
+>
+  <div class="flex items-center h-full">
+    <div class="flex items-center gap-3">
+      <img src="assets/top.svg" class="max-w-full w-6" alt="Logo SeoTopper" />
+      <span class="hidden md:block text-sm md:text-base font-medium"
+        >SeoTopper</span
+      >
     </div>
 
+    <div class="w-px bg-zinc-800 h-full mx-4"></div>
+    <a
+      href="#"
+      class="bg-zinc-900 border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-800 text-zinc-200 hover:text-zinc-50 rounded text-xs px-2 md:px-4 py-2 flex items-center justify-center"
+      >Create</a
+    >
   </div>
-  <div class="bg-zinc-950 border-b border-zinc-800 h-14 w-full flex items-center justify-between px-4 overflow-x-auto overflow-y-hidden" id="menu2">
-    <div class="flex items-center w-full h-full">
-      <a href="#general" class="text-zinc-50 border-b border-zinc-200 h-full text-sm px-5 py-2 flex items-center justify-center gap-2 hover:text-zinc-200">General</a>
-      <a href="#facebook" class="text-zinc-400 border-b border-transparent h-full text-sm px-5 py-2 flex items-center justify-center gap-2 hover:text-zinc-200">Facebook</a>
-      <a href="#twitter" class="text-zinc-400 border-b border-transparent h-full text-sm px-5 py-2 flex items-center justify-center gap-2 hover:text-zinc-200">Twitter</a>
-      <div class="w-px bg-zinc-800 h-full"></div>
-      <a href="#result" class="text-zinc-400 border-b border-transparent h-full text-sm px-5 py-2 flex items-center justify-center gap-2 hover:text-zinc-200">Result</a>
-    </div>
+  <div class="flex">
+    <github-button
+      type="stargazers"
+      namespace="gustavoquinalha"
+      repo="seotopper"
+    ></github-button>
   </div>
+</div>
 
-  <div class="w-full flex bg-zinc-900">
+<div class="w-full flex bg-zinc-950">
+  <div
+    style="width: 50%"
+    class="resize-x flex-grow w-full mx-auto flex flex-col h-[calc(100vh-56px)] overflow-x-hidden overflow-y-scroll border-r border-zinc-800"
+  >
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="p-4 md:p-8 w-full">
+      <div class="w-full max-w-xs">
+        <h1 class="mb-4 md:mb-8 text-sm leading-6 text-zinc-400">
+          Just type the data and generate the meta tags for your website
+        </h1>
+      </div>
+      <div class="w-full grid grid-cols-1 md:grid-cols-2 flex-col gap-4">
+        <div
+          class="relative flex flex-col gap-1"
+          *ngFor="let field of formFields"
+        >
+          <ng-container *ngIf="field.type === 'text' || field.type === 'color'">
+            <label [for]="field.name" class="leading-7 text-sm text-zinc-200">{{
+              field.label
+            }}</label>
+            <input
+              [type]="field.type"
+              [id]="field.name"
+              [name]="field.name"
+              [placeholder]="field.label"
+              [formControlName]="field.name"
+              class="h-10 w-full bg-zinc-800 rounded border border-zinc-700 focus:border-zinc-500 focus:ring-2 focus:ring-zinc-200 text-sm outline-none text-zinc-200 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+            />
+            <span class="text-xs text-zinc-500 leading-4 mt-1">{{
+              field.description
+            }}</span>
+          </ng-container>
 
-    <div style="width: 50%;" class="resize-x flex-grow w-full mx-auto flex flex-col gap-20 h-[calc(100vh-112px)] overflow-x-hidden overflow-y-scroll p-4 md:p-8">
-
-      <form [formGroup]="form" (ngSubmit)="onSubmit()">
-        <div class="w-full grid grid-cols-1 md:grid-cols-2 flex-col gap-4">
-          <div class="relative flex flex-col gap-2" *ngFor="let field of formFields">
-
-            <ng-container *ngIf="field.type === 'text' || field.type === 'color'">
-              <label [for]="field.name" class="leading-7 text-sm text-zinc-200">{{field.label}}</label>
-              <input [type]="field.type" [id]="field.name" [name]="field.name" [placeholder]="field.label" [formControlName]="field.name" class="h-12 w-full bg-zinc-800 rounded border border-zinc-700 focus:border-zinc-500 focus:ring-2 focus:ring-zinc-200 text-sm outline-none text-zinc-200 py-2 px-4 leading-8 transition-colors duration-200 ease-in-out">
-            </ng-container>
-
-            <ng-container *ngIf="field.type === 'select'">
-              <label [for]="field.name" class="leading-7 text-sm text-zinc-200">{{field.label}}</label>
-              <select [id]="field.name" [formControlName]="field.name" class="h-12 w-full bg-zinc-800 rounded border border-zinc-700 focus:border-zinc-500 focus:ring-2 focus:ring-zinc-200 text-sm outline-none text-zinc-200 py-2 px-4 leading-8 transition-colors duration-200 ease-in-out">
-                <option *ngFor="let option of field.options" [value]="option.value">{{ option.label }}</option>
-              </select>
-            </ng-container>
-
-          </div>
-
-          <!-- <div class="relative w-full col-span-2 mt-4">
-            <button type="submit" id="generate" class="w-full bg-zinc-300 hover:bg-zinc-50 text-zinc-900 rounded-lg text-sm py-2 px-4 h-12 flex items-center justify-center gap-2">Generate</button>
-          </div> -->
+          <ng-container *ngIf="field.type === 'select'">
+            <label [for]="field.name" class="leading-7 text-sm text-zinc-200">{{
+              field.label
+            }}</label>
+            <select
+              [id]="field.name"
+              [formControlName]="field.name"
+              class="h-10 w-full bg-zinc-800 rounded border border-zinc-700 focus:border-zinc-500 focus:ring-2 focus:ring-zinc-200 text-sm outline-none text-zinc-200 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+            >
+              <option
+                *ngFor="let option of field.options"
+                [value]="option.value"
+              >
+                {{ option.label }}
+              </option>
+            </select>
+          </ng-container>
         </div>
-      </form>
+      </div>
+    </form>
 
-      <div class="text-center w-full pt-10 flex gap-4 flex-col items-center justify-center border-t border-zinc-800">
-        <div class="text-zinc-500 text-sm">©2024 • <a href="https://github.com/gustavoquinalha" target="_blank" class="text-zinc-300 hover:text-zinc-50 hover:underline underline-offset-1">Gustavo Quinalha</a> — All rights reserved.</div>
+    <div
+      class="text-left w-full py-4 px-4 md:px-10 border-t border-zinc-800 sticky top-full"
+    >
+      <div class="text-zinc-500 text-xs md:text-sm leading-4">
+        ©2024 •
+        <a
+          href="https://github.com/gustavoquinalha"
+          target="_blank"
+          class="text-zinc-300 hover:text-zinc-50 hover:underline underline-offset-1"
+          >Gustavo Quinalha</a
+        >
+        &
+        <a
+          href="https://github.com/userjapa"
+          target="_blank"
+          class="text-zinc-300 hover:text-zinc-50 hover:underline underline-offset-1"
+          >Japa</a
+        >
+        — All rights reserved.
       </div>
     </div>
+  </div>
 
-    <div style="width: 50%;" class="w-full flex-grow bg-zinc-900">
-      <div class="resize-y flex-grow  w-full h-[calc(50vh-56px)]  bg-zinc-900 overflow-auto">
-        <pre class="w-full h-full appearance-none !m-0 !p-0 flex ">
-          <code class="w-full h-full appearance-none !m-0 !p-0 !bg-zinc-900  text-xs" [highlight]="code" [language]="'html'"></code>
+  <div style="width: 50%" class="w-full flex flex-col flex-grow bg-zinc-950">
+    <div
+      class="resize-y border-b border-zinc-800 flex-grow w-full h-[calc(50vh-56px)] bg-zinc-950 overflow-auto"
+    >
+      <pre class="w-full h-full appearance-none !m-0 !p-0 flex">
+          <code class="w-full h-full appearance-none !m-0 !p-4 !bg-zinc-950 text-xs !overflow-scroll" [highlight]="code" [language]="'html'"></code>
         </pre>
-      </div>
-
-      <div class="flex-grow overflow-auto w-full h-[calc(50vh-56px)] bg-zinc-100 overflow-y-scroll overflow-x-hidden p-10">
-        <div class="text-zinc-900 gap-8 h-full flex flex-col mb-10 pb-10">
-          <div class="w-full max-w-xl pb-10">
-            <div class="text-xs text-zinc-400 uppercase mb-4">Google</div>
-            <div class="w-full p-4 border border-zinc-300 rounded-lg overflow-hidden">
-              <div class="text-base text-[#1a0dab]">{{form.get('title')?.value || 'Website title'}}</div>
-              <div class="text-xs text-[#006621]">{{form.get('url')?.value || 'https://url.com'}}</div>
-              <div class="text-sm text-zinc-700">{{form.get('description')?.value || 'Website description'}}</div>
-            </div>
-          </div>
-
-          <div class="w-full max-w-lg pb-10">
-            <div class="text-xs text-zinc-400 uppercase mb-4">Twitter</div>
-            <div class="w-full border border-zinc-300 rounded-lg overflow-hidden">
-              <div class="bg-zinc-200 w-full h-64 min-h-64 overflow-hidden">
-                <img [src]="form.get('image')?.value" class="border-0 outline-none w-full min-h-64 h-64 object-cover object-center" width="100%" [alt]="form.get('imageAlt')?.value">
-              </div>
-             <div class="w-full flex flex-col gap-1 p-4">
-              <div class="text-base text-zinc-900 font-medium">{{form.get('title')?.value || 'Website title'}}</div>
-              <div class="text-sm text-zinc-700">{{form.get('description')?.value || 'Website description'}}</div>
-              <div class="text-xs text-zinc-500 mt-2">{{form.get('url')?.value || 'https://url.com'}}</div>
-             </div>
-            </div>
-          </div>
-
-          <div class="w-full max-w-lg pb-10">
-            <div class="text-xs text-zinc-400 uppercase mb-4">Facebook</div>
-            <div class="w-full border border-zinc-300 rounded-lg overflow-hidden">
-              <div class="bg-zinc-200 w-full h-52 min-h-52 overflow-hidden">
-                <img [src]="form.get('image')?.value" class="border-0 outline-none w-full min-h-52 h-52 object-cover object-center" width="100%" [alt]="form.get('imageAlt')?.value">
-              </div>
-             <div class="w-full flex flex-col gap-0 p-4">
-               <div class="text-xs text-zinc-500 uppercase">{{form.get('url')?.value || 'https://url.com'}}</div>
-              <div class="text-base text-zinc-900 font-medium">{{form.get('title')?.value || 'Website title'}}</div>
-              <div class="text-sm text-zinc-600">{{form.get('description')?.value || 'Website description'}}</div>
-             </div>
-            </div>
-          </div>
-
-          <div class="w-full max-w-xl pb-10">
-            <div class="text-xs text-zinc-400 uppercase mb-4">Linkedin</div>
-            <div class="w-full border border-zinc-300 rounded-lg overflow-hidden">
-              <div class="bg-zinc-200 w-full h-64 min-h-64 overflow-hidden">
-                <img [src]="form.get('image')?.value" class="border-0 outline-none w-full min-h-64 h-64 object-cover object-center" width="100%" [alt]="form.get('imageAlt')?.value">
-              </div>
-             <div class="w-full flex flex-col gap-0 p-4">
-               <div class="text-sm text-zinc-900 font-medium">{{form.get('title')?.value || 'Website title'}}</div>
-               <div class="text-xs text-zinc-500">{{form.get('url')?.value || 'https://url.com'}}</div>
-             </div>
-            </div>
-          </div>
-
-
-        </div>
-      </div>
     </div>
 
+    <div
+      class="flex-grow overflow-auto w-full h-[calc(50vh-56px)] bg-zinc-950 overflow-y-scroll overflow-x-hidden p-4 md:p-8"
+    >
+      <div
+        class="text-zinc-200 gap-4 md:gap-8 h-full flex flex-col mb-4 md:mb-8 lg:mb-10 pb-4 md:pb-8 lg:pb-10"
+      >
+        <div class="w-full max-w-xl">
+          <div class="text-xs text-zinc-400 uppercase mb-2">Google</div>
+          <div
+            class="w-full p-4 border border-zinc-800 rounded overflow-hidden"
+          >
+            <div class="text-base text-[#99c3ff]">
+              {{ form.get("title")?.value || "Website title" }}
+            </div>
+            <div class="text-xs text-zinc-400">
+              {{ form.get("url")?.value || "https://url.com" }}
+            </div>
+            <div class="text-sm text-zinc-300 mt-2">
+              {{ form.get("description")?.value || "Website description" }}
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full max-w-lg">
+          <div class="text-xs text-zinc-400 uppercase mb-2">Twitter</div>
+          <div class="w-full border border-zinc-800 rounded overflow-hidden">
+            <div class="bg-zinc-700 w-full h-64 min-h-64 overflow-hidden">
+              <img
+                *ngIf="form.get('image')?.value"
+                [src]="form.get('image')?.value"
+                class="border-0 outline-none w-full min-h-64 h-64 object-cover object-center"
+                width="100%"
+                [alt]="form.get('imageAlt')?.value"
+              />
+            </div>
+            <div class="w-full flex flex-col gap-1 p-4">
+              <div class="text-base text-zinc-200 font-medium">
+                {{ form.get("title")?.value || "Website title" }}
+              </div>
+              <div class="text-sm text-zinc-400">
+                {{ form.get("description")?.value || "Website description" }}
+              </div>
+              <div class="text-xs text-zinc-500 mt-2">
+                {{ form.get("url")?.value || "https://url.com" }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full max-w-lg">
+          <div class="text-xs text-zinc-400 uppercase mb-2">Facebook</div>
+          <div class="w-full border border-zinc-800 rounded overflow-hidden">
+            <div class="bg-zinc-700 w-full h-52 min-h-52 overflow-hidden">
+              <img
+                *ngIf="form.get('image')?.value"
+                [src]="form.get('image')?.value"
+                class="border-0 outline-none w-full min-h-52 h-52 object-cover object-center"
+                width="100%"
+                [alt]="form.get('imageAlt')?.value"
+              />
+            </div>
+            <div class="w-full flex flex-col gap-1 p-4">
+              <div class="text-xs text-zinc-500 uppercase">
+                {{ form.get("url")?.value || "https://url.com" }}
+              </div>
+              <div class="text-base text-zinc-200 font-medium">
+                {{ form.get("title")?.value || "Website title" }}
+              </div>
+              <div class="text-sm text-zinc-400">
+                {{ form.get("description")?.value || "Website description" }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full max-w-xl">
+          <div class="text-xs text-zinc-400 uppercase mb-2">Linkedin</div>
+          <div class="w-full border border-zinc-800 rounded overflow-hidden">
+            <div class="bg-zinc-700 w-full h-64 min-h-64 overflow-hidden">
+              <img
+                *ngIf="form.get('image')?.value"
+                [src]="form.get('image')?.value"
+                class="border-0 outline-none w-full min-h-64 h-64 object-cover object-center"
+                width="100%"
+                [alt]="form.get('imageAlt')?.value"
+              />
+            </div>
+            <div class="w-full flex flex-col gap-1 p-4">
+              <div class="text-sm text-zinc-200 font-medium">
+                {{ form.get("title")?.value || "Website title" }}
+              </div>
+              <div class="text-xs text-zinc-500">
+                {{ form.get("url")?.value || "https://url.com" }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="min-h-4 md:min-h-8"></div>
+      </div>
+    </div>
   </div>
-
-
+</div>

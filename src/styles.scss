@@ -3,6 +3,7 @@
 @import 'tailwindcss/utilities';
 
 @import '~assets/dracula.css';
+// @import 'highlight.js/styles/dark.css';
 
 :root {
   color-scheme: dark;
@@ -29,8 +30,7 @@ html {
   overflow: hidden;
 }
 
-#menu::-webkit-scrollbar,
-#menu2::-webkit-scrollbar {
+#menu::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
