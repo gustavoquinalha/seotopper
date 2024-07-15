@@ -1,0 +1,16 @@
+<div>
+  <h2>Fetch Page Metadata</h2>
+  <!-- <input [(ngModel)]="url" placeholder="Enter URL" /> -->
+  <button (click)="fetchMetadata()">Fetch Metadata</button>
+
+  <div *ngIf="metadata">
+      <h3>Metadata:</h3>
+      <p><strong>Title:</strong> {{ metadata.title }}</p>
+      <p><strong>Description:</strong> {{ metadata.description }}</p>
+      <p><strong>Image:</strong> <img [src]="metadata.image" alt="Image" /></p>
+  </div>
+
+  <div *ngIf="error">
+      <p>{{ error }}</p>
+  </div>
+</div>
