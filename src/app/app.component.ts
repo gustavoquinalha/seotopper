@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { MetadataService } from './metadata.service';
 import { catchError, of, tap } from 'rxjs';
@@ -42,7 +42,7 @@ export class AppComponent {
   `;
 
   url: string = 'https://gus.vision/';
-
+  loading = signal(false);
   form: FormGroup;
   formFields = [
     {
@@ -165,11 +165,11 @@ export class AppComponent {
   }
 
   fetchMetadata() {
-    console.log('fetchMetadata');
-
+    this.loading.set(true);
     this.metadataService.fetchMetadata(this.url).pipe(
       tap(value => {
         console.log('data', value.data);
+
         this.form.patchValue({
           charset: value.data.charset,
           viewport: value.data.viewport,
@@ -187,9 +187,11 @@ export class AppComponent {
           locale: value.data.locale,
           site: value.data.pageSite,
         });
+        this.loading.set(false);
       }),
       catchError(error => {
         console.log('error', error);
+        this.loading.set(false);
         return of(null);
       })
     ).subscribe();

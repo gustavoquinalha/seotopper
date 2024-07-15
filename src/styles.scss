@@ -1,8 +1,8 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-@import '~assets/dracula.css';
+@import "~assets/dracula.css";
 // @import 'highlight.js/styles/dark.css';
 
 :root {
@@ -16,7 +16,7 @@
 }
 
 body {
-  font-family: 'Inter', monospace;
+  font-family: "Inter", monospace;
   font-optical-sizing: auto;
   font-style: normal;
 }
@@ -31,4 +31,29 @@ html {
 #menu::-webkit-scrollbar {
   width: 0;
   height: 0;
+}
+
+.hljs-comment,
+.hljs-quote,
+.hljs-deletion {
+  @apply text-zinc-700;
+}
+
+.hljs-string,
+.hljs-meta,
+.hljs-name,
+.hljs-type,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-tag,
+.hljs-template-variable {
+  @apply text-white;
+}
+
+.hljs-title,
+.hljs-attr,
+.hljs-meta-keyword {
+  @apply text-zinc-500;
 }

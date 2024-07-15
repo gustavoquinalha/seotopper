@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
-import {provideHttpClient} from '@angular/common/http';
+import { provideHttpClient } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GithubButtonModule } from 'ng-github-button';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +33,6 @@ import { GithubButtonModule } from 'ng-github-button';
       }
     }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, LoaderComponent]
 })
 export class AppModule { }

@@ -4,52 +4,49 @@
 >
   <div class="flex items-center w-full">
     <div class="flex items-center gap-3">
-      <img src="assets/top.svg" class="max-w-full w-6" alt="Logo SeoTopper" />
-      <div class="hidden md:block text-xs md:text-base font-medium">
+      <img src="assets/top.svg" class="max-w-full w-5" alt="Logo SeoTopper" />
+      <div class="hidden md:block text-xs md:text-sm font-medium">
         SeoTopper
       </div>
     </div>
-    <github-button
-      type="stargazers"
-      namespace="gustavoquinalha"
-      repo="seotopper"
-      class="ml-6"
-    ></github-button>
   </div>
 
-  <!-- <div class="w-full">
-    <a
-      href="#"
-      class="h-8 bg-zinc-900 border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-800 text-zinc-200 hover:text-zinc-50 rounded text-xs px-2 md:px-4 py-2 flex items-center justify-center"
-      >Create</a
-    >
-  </div> -->
-
-  <div class="hidden md:flex items-center gap-1 relative">
+  <div class="hidden md:flex items-center gap-1 relative w-full max-w-sm">
     <input
       type="text"
       id="urlfetch"
       name="urlfetch"
       [(ngModel)]="url"
+      (keydown.enter)="fetchMetadata()"
       placeholder="https://gus.vision"
-      class="pr-10 h-8 text-xs bg-zinc-800 rounded border border-zinc-700 focus:border-zinc-500 focus:ring-2 focus:ring-zinc-200 outline-none text-zinc-200 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+      class="w-full pr-14 h-8 text-xs bg-zinc-900 rounded border border-zinc-800 focus:border-zinc-200 focus:ring-2 focus:ring-zinc-200 outline-none text-zinc-200 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
     />
     <button
       (click)="fetchMetadata()"
-      class="absolute top-1 right-1 h-6 bg-zinc-900 border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-800 text-zinc-200 hover:text-zinc-50 rounded text-xs px-2 py-2 flex items-center justify-center"
+      class="absolute top-1 right-1 h-6 bg-zinc-800 hover:bg-zinc-700 text-zinc-200 hover:text-zinc-50 rounded text-xs px-2 py-2 flex items-center justify-center"
     >
       Fetch
     </button>
   </div>
+
+  <div class="w-full flex justify-end items-center">
+    <github-button
+      type="stargazers"
+      namespace="gustavoquinalha"
+      repo="seotopper"
+    ></github-button>
+  </div>
 </div>
+
+<app-loader *ngIf="loading()" />
 
 <div class="w-full flex flex-col md:flex-row bg-zinc-950">
   <div
     class="resize-none md:resize-x w-full md:w-[33.3333%] flex-grow mx-auto flex flex-col h-full md:h-[calc(100vh-56px)] overflow-x-hidden overflow-y-auto md:overflow-y-scroll border-r border-zinc-800"
   >
     <form [formGroup]="form" (ngSubmit)="onSubmit()" class="p-4 md:p-8 w-full">
-      <div class="w-full max-w-xs">
-        <h1 class="mb-4 md:mb-8 text-xs leading-4 text-zinc-300">
+      <div class="w-full max-w-xs text-center mx-auto">
+        <h1 class="mb-4 md:mb-8 text-sm leading-4 text-zinc-300">
           Just type the data and generate the meta tags for your website
         </h1>
       </div>
@@ -68,7 +65,7 @@
               [name]="field.name"
               [placeholder]="field.label"
               [formControlName]="field.name"
-              class="h-8 text-xs w-full bg-zinc-800 rounded border border-zinc-700 focus:border-zinc-500 focus:ring-2 focus:ring-zinc-200 outline-none text-zinc-200 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              class="h-8 text-xs w-full bg-zinc-900 rounded border border-zinc-800 focus:border-zinc-500 focus:ring-2 focus:ring-zinc-200 outline-none text-zinc-200 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
             />
             <span class="text-xs text-zinc-400 leading-4 mt-1">{{
               field.description
@@ -82,7 +79,7 @@
             <select
               [id]="field.name"
               [formControlName]="field.name"
-              class="h-8 text-xs w-full bg-zinc-800 rounded border border-zinc-700 focus:border-zinc-500 focus:ring-2 focus:ring-zinc-200 outline-none text-zinc-200 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              class="h-8 text-xs w-full bg-zinc-900 rounded border border-zinc-800 focus:border-zinc-500 focus:ring-2 focus:ring-zinc-200 outline-none text-zinc-200 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
             >
               <option
                 *ngFor="let option of field.options"
@@ -143,7 +140,7 @@
             {{ form.get("title")?.value || "Website title" }}
           </div>
           <div class="text-xs text-zinc-400">
-            {{ form.get("url")?.value || "https://url.com" }}
+            {{ form.get("canonical")?.value || "https://url.com" }}
           </div>
           <div class="text-xs text-zinc-300 mt-2">
             {{ form.get("description")?.value || "Website description" }}
@@ -171,7 +168,7 @@
               {{ form.get("description")?.value || "Website description" }}
             </div>
             <div class="text-xs text-zinc-400 mt-2">
-              {{ form.get("url")?.value || "https://url.com" }}
+              {{ form.get("canonical")?.value || "https://url.com" }}
             </div>
           </div>
         </div>
@@ -191,7 +188,7 @@
           </div>
           <div class="w-full flex flex-col gap-1 p-4">
             <div class="text-xs text-zinc-400 uppercase">
-              {{ form.get("url")?.value || "https://url.com" }}
+              {{ form.get("canonical")?.value || "https://url.com" }}
             </div>
             <div class="text-base text-zinc-200 font-medium">
               {{ form.get("title")?.value || "Website title" }}
@@ -220,7 +217,7 @@
               {{ form.get("title")?.value || "Website title" }}
             </div>
             <div class="text-xs text-zinc-400">
-              {{ form.get("url")?.value || "https://url.com" }}
+              {{ form.get("canonical")?.value || "https://url.com" }}
             </div>
           </div>
         </div>
