@@ -22,9 +22,9 @@
 
             <div
               *ngIf="field.name === 'image' && form?.get('image')"
-              class="w-full aspect-[1.91/1] rounded bg-zinc-800 border border-zinc-800 overflow-hidden"
+              class="w-full aspect-[1.91/1] rounded bg-zinc-800 border border-zinc-800 overflow-hidden max-w-64"
             >
-              <img *ngIf="form?.get('image')?.value" [src]="form.get('image')?.value" class="aspect-[1.91/1]" width="100%" alt="" />
+              <img *ngIf="form?.get('image')?.value" [src]="form.get('image')?.value" class="aspect-[1.91/1] max-w-64" width="100%" alt="" />
             </div>
 
             <div class="relative w-full">
