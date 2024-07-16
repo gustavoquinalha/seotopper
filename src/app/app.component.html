@@ -1,44 +1,4 @@
-<div
-  class="bg-zinc-950 border-b border-zinc-800 h-14 w-full flex items-center justify-between px-4 gap-4"
-  id="menu"
->
-  <div class="flex items-center w-full">
-    <div class="flex items-center gap-3">
-      <img src="assets/top.svg" class="max-w-full w-5" alt="Logo SeoTopper" />
-      <div class="hidden md:block text-xs md:text-sm font-medium">
-        SeoTopper
-      </div>
-    </div>
-  </div>
-
-  <div class="hidden md:flex items-center gap-1 relative w-full max-w-sm">
-    <input
-      type="text"
-      id="urlfetch"
-      name="urlfetch"
-      [(ngModel)]="url"
-      (keydown.enter)="fetchMetadata()"
-      placeholder="https://gus.vision"
-      class="w-full pr-14 h-8 text-xs bg-zinc-900 rounded border border-zinc-800 focus:border-zinc-200 focus:ring-2 focus:ring-zinc-200 outline-none text-zinc-200 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-    />
-    <button
-      (click)="fetchMetadata()"
-      class="absolute top-1 right-1 h-6 bg-zinc-800 hover:bg-zinc-700 text-zinc-200 hover:text-zinc-50 rounded text-xs px-2 py-2 flex items-center justify-center"
-    >
-      Fetch
-    </button>
-  </div>
-
-  <div class="w-full flex justify-end items-center">
-    <github-button
-      type="stargazers"
-      namespace="gustavoquinalha"
-      repo="seotopper"
-    ></github-button>
-  </div>
-</div>
-
-<app-loader *ngIf="loading()" />
+<app-menu (onFetchValue)="setFetchValue($event)" />
 
 <div class="w-full flex flex-col md:flex-row bg-zinc-950">
   <div
@@ -59,14 +19,35 @@
             <label [for]="field.name" class="leading-4 text-xs text-zinc-200">{{
               field.label
             }}</label>
-            <input
-              [type]="field.type"
-              [id]="field.name"
-              [name]="field.name"
-              [placeholder]="field.label"
-              [formControlName]="field.name"
-              class="h-8 text-xs w-full bg-zinc-900 rounded border border-zinc-800 focus:border-zinc-500 focus:ring-2 focus:ring-zinc-200 outline-none text-zinc-200 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-            />
+
+            <div
+              *ngIf="field.name === 'image' && form?.get('image')"
+              class="w-full min-h-60 rounded bg-zinc-800 border border-zinc-800 overflow-hidden"
+            >
+              <img *ngIf="form?.get('image')?.value" [src]="form.get('image')?.value" width="100%" alt="" />
+            </div>
+
+            <div class="relative w-full">
+              <input
+                [type]="field.type"
+                [id]="field.name"
+                [name]="field.name"
+                [placeholder]="field.label"
+                [formControlName]="field.name"
+                class="h-8 text-xs w-full bg-zinc-900 rounded border border-zinc-800 focus:border-zinc-500 focus:ring-2 focus:ring-zinc-200 outline-none text-zinc-200 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              />
+              <div class="" *ngIf="field.name === 'color'">
+                <input
+                  type="color"
+                  [id]="field.name"
+                  [name]="field.name"
+                  [placeholder]="field.label"
+                  [formControlName]="field.name"
+                  (change)="changeColor($event)"
+                  class="appearance-none w-6 min-w-6 h-6 rounded overflow-hidden absolute bottom-1 right-1 bg-transparent"
+                />
+              </div>
+            </div>
             <span class="text-xs text-zinc-400 leading-4 mt-1">{{
               field.description
             }}</span>
@@ -96,134 +77,18 @@
       </div>
     </form>
 
-    <div
-      class="hidden md:flex text-left w-full py-4 px-4 md:px-10 border-t border-zinc-800 sticky top-full"
-    >
-      <div class="text-zinc-400 md:text-xs leading-4">
-        ©2024 •
-        <a
-          href="https://github.com/gustavoquinalha"
-          target="_blank"
-          class="text-zinc-400 hover:text-zinc-200 hover:underline underline-offset-1"
-          >Gustavo Quinalha</a
-        >
-        &
-        <a
-          href="https://github.com/userjapa"
-          target="_blank"
-          class="text-zinc-400 hover:text-zinc-200 hover:underline underline-offset-1"
-          >Japa</a
-        >
-        — All rights reserved.
-      </div>
-    </div>
+    <app-footer />
   </div>
 
   <div
     class="resize-none md:resize-x w-full md:w-[33.3333%] flex-grow mx-auto flex flex-col h-full md:h-[calc(100vh-56px)] overflow-hidden border-r border-zinc-800"
   >
-    <pre class="w-full h-full appearance-none !m-0 !p-0 flex">
-      <code class="w-full h-full appearance-none !m-0 !p-4 !bg-zinc-950 text-xs overflow-x-auto overflow-y-auto md:overflow-y-scroll" [highlight]="code" [language]="'html'"></code>
-    </pre>
+    <app-code-result [code]="code" class="h-full" />
   </div>
 
   <div
     class="w-full md:w-[33.3333%] flex-grow overflow-auto h-full md:h-[calc(100vh-56px)] bg-zinc-950 overflow-y-auto md:overflow-y-scroll overflow-x-hidden p-4 md:p-8"
   >
-    <div
-      class="text-zinc-200 gap-4 md:gap-8 h-full flex flex-col mb-4 md:mb-8 lg:mb-10 pb-4 md:pb-8 lg:pb-10"
-    >
-      <div class="w-full max-w-xl">
-        <div class="text-xs text-zinc-400 uppercase mb-2">Google</div>
-        <div class="w-full p-4 border border-zinc-800 rounded overflow-hidden">
-          <div class="text-base text-[#99c3ff]">
-            {{ form.get("title")?.value || "Website title" }}
-          </div>
-          <div class="text-xs text-zinc-400">
-            {{ form.get("canonical")?.value || "https://url.com" }}
-          </div>
-          <div class="text-xs text-zinc-300 mt-2">
-            {{ form.get("description")?.value || "Website description" }}
-          </div>
-        </div>
-      </div>
-
-      <div class="w-full max-w-lg">
-        <div class="text-xs text-zinc-400 uppercase mb-2">Twitter</div>
-        <div class="w-full border border-zinc-800 rounded overflow-hidden">
-          <div class="bg-zinc-700 w-full h-64 min-h-64 overflow-hidden">
-            <img
-              *ngIf="form.get('image')?.value"
-              [src]="form.get('image')?.value"
-              class="border-0 outline-none w-full min-h-64 h-64 object-cover object-center"
-              width="100%"
-              [alt]="form.get('imageAlt')?.value"
-            />
-          </div>
-          <div class="w-full flex flex-col gap-1 p-4">
-            <div class="text-base text-zinc-200 font-medium">
-              {{ form.get("title")?.value || "Website title" }}
-            </div>
-            <div class="text-xs text-zinc-400">
-              {{ form.get("description")?.value || "Website description" }}
-            </div>
-            <div class="text-xs text-zinc-400 mt-2">
-              {{ form.get("canonical")?.value || "https://url.com" }}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="w-full max-w-lg">
-        <div class="text-xs text-zinc-400 uppercase mb-2">Facebook</div>
-        <div class="w-full border border-zinc-800 rounded overflow-hidden">
-          <div class="bg-zinc-700 w-full h-52 min-h-52 overflow-hidden">
-            <img
-              *ngIf="form.get('image')?.value"
-              [src]="form.get('image')?.value"
-              class="border-0 outline-none w-full min-h-52 h-52 object-cover object-center"
-              width="100%"
-              [alt]="form.get('imageAlt')?.value"
-            />
-          </div>
-          <div class="w-full flex flex-col gap-1 p-4">
-            <div class="text-xs text-zinc-400 uppercase">
-              {{ form.get("canonical")?.value || "https://url.com" }}
-            </div>
-            <div class="text-base text-zinc-200 font-medium">
-              {{ form.get("title")?.value || "Website title" }}
-            </div>
-            <div class="text-xs text-zinc-400">
-              {{ form.get("description")?.value || "Website description" }}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="w-full max-w-xl">
-        <div class="text-xs text-zinc-400 uppercase mb-2">Linkedin</div>
-        <div class="w-full border border-zinc-800 rounded overflow-hidden">
-          <div class="bg-zinc-700 w-full h-64 min-h-64 overflow-hidden">
-            <img
-              *ngIf="form.get('image')?.value"
-              [src]="form.get('image')?.value"
-              class="border-0 outline-none w-full min-h-64 h-64 object-cover object-center"
-              width="100%"
-              [alt]="form.get('imageAlt')?.value"
-            />
-          </div>
-          <div class="w-full flex flex-col gap-1 p-4">
-            <div class="text-xs text-zinc-200 font-medium">
-              {{ form.get("title")?.value || "Website title" }}
-            </div>
-            <div class="text-xs text-zinc-400">
-              {{ form.get("canonical")?.value || "https://url.com" }}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="min-h-4 md:min-h-8"></div>
-    </div>
+    <app-preview [content]="form.value" />
   </div>
 </div>

@@ -5,19 +5,27 @@ import { AppComponent } from './app.component';
 import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GithubButtonModule } from 'ng-github-button';
-import { LoaderComponent } from './components/loader/loader.component';
+import { CodeResultComponent } from "./components/code-result/code-result.component";
+import { PreviewComponent } from './components/preview/preview.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoaderComponent
+    CodeResultComponent,
+    PreviewComponent,
+    MenuComponent,
+    FooterComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HighlightModule,
     ReactiveFormsModule,
-    GithubButtonModule
+    GithubButtonModule,
   ],
   providers: [
     provideHttpClient(),
@@ -33,6 +41,6 @@ import { LoaderComponent } from './components/loader/loader.component';
       }
     }
   ],
-  bootstrap: [AppComponent, LoaderComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

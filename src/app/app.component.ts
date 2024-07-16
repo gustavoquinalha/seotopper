@@ -1,7 +1,6 @@
 import { Component, signal } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { MetadataService } from './metadata.service';
-import { catchError, of, tap } from 'rxjs';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { MetadataService } from 'src/app/metadata.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +8,7 @@ import { catchError, of, tap } from 'rxjs';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  code = `
+  code? = `
   <!-- HTML Meta Tags -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,9 +39,6 @@ export class AppComponent {
 
   <!-- Meta Tags Generated via https://gustavoquinalha.github.io/seotopper -->
   `;
-
-  url: string = 'https://gus.vision/';
-  loading = signal(false);
   form: FormGroup;
   formFields = [
     {
@@ -88,7 +84,7 @@ export class AppComponent {
     { name: 'image', type: 'text', description: 'Specifies the image displayed when sharing the webpage on platforms like Facebook, enhancing visual appeal.', label: 'Image URL' },
     { name: 'imageAlt', type: 'text', description: 'Provides alternative text for the image specified in og:image, improving accessibility and SEO when shared on platforms supporting Open Graph.', label: 'Image alt text' },
     { name: 'favicon', type: 'text', description: 'Specifies the favicon, enhancing website recognition in browsers and bookmarks.', label: 'Favicon' },
-    { name: 'color', type: 'color', description: 'Defines the color theme for the browsers UI elements when a webpage is viewed on mobile devices, enhancing user experience and brand consistency.', label: 'Theme color' },
+    { name: 'color', type: 'text', description: 'Defines the color theme for the browsers UI elements when a webpage is viewed on mobile devices, enhancing user experience and brand consistency.', label: 'Theme color' },
     { name: 'author', type: 'text', description: 'Specifies the author of the webpage, providing attribution for content creation and ownership.', label: 'Author' },
     {
       name: 'robots', type: 'select', description: 'Controls how search engines index and display content, influencing webpage visibility and accessibility in search results.', label: 'Robots', options: [
@@ -156,44 +152,36 @@ export class AppComponent {
   <meta name="twitter:image:alt" content="${this.form?.get('imageAlt')?.value}">
 
   <!-- Meta Tags Generated via https://gustavoquinalha.github.io/seotopper -->
-  `
-    });
+  `});
   }
 
   onSubmit() {
     console.log(this.form.value);
   }
 
-  fetchMetadata() {
-    this.loading.set(true);
-    this.metadataService.fetchMetadata(this.url).pipe(
-      tap(value => {
-        console.log('data', value.data);
+  setFetchValue(data: any) {
+    this.form.patchValue({
+      charset: data.charset,
+      viewport: data.viewport,
+      title: data.title,
+      description: data.description,
+      canonical: data.canonicalURL,
+      image: data.imageURL,
+      imageAlt: data.imageAltText,
+      favicon: data.favicon,
+      color: data.themeColor,
+      author: data.pageAuthor,
+      robots: data.robots,
+      googlebot: data.googlebot,
+      sitemap: data.sitemap,
+      locale: data.locale,
+      site: data.pageSite,
+    });
+  }
 
-        this.form.patchValue({
-          charset: value.data.charset,
-          viewport: value.data.viewport,
-          title: value.data.title,
-          description: value.data.description,
-          canonical: value.data.canonicalURL,
-          image: value.data.imageURL,
-          imageAlt: value.data.imageAltText,
-          favicon: value.data.favicon,
-          color: value.data.themeColor,
-          author: value.data.pageAuthor,
-          robots: value.data.robots,
-          googlebot: value.data.googlebot,
-          sitemap: value.data.sitemap,
-          locale: value.data.locale,
-          site: value.data.pageSite,
-        });
-        this.loading.set(false);
-      }),
-      catchError(error => {
-        console.log('error', error);
-        this.loading.set(false);
-        return of(null);
-      })
-    ).subscribe();
+  changeColor(value: any) {
+    this.form.patchValue({
+      color: value.target.value
+    })
   }
 }
