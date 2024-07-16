@@ -3,7 +3,9 @@
 >
   <div class="w-full max-w-xl">
     <div class="text-xs text-white uppercase mb-2">Google</div>
-    <div class="w-full p-4 border border-zinc-800 rounded overflow-hidden bg-zinc-900">
+    <div
+      class="w-full p-4 border border-zinc-800 rounded overflow-hidden bg-zinc-900"
+    >
       <div class="text-base text-[#99c3ff]">
         {{ content?.title || "Page title" }}
       </div>
@@ -18,12 +20,16 @@
 
   <div class="w-full max-w-lg">
     <div class="text-xs text-white uppercase mb-2">Twitter</div>
-    <div class="w-full border border-zinc-800 rounded overflow-hidden bg-zinc-900">
-      <div class="bg-zinc-800 w-full h-64 min-h-64 overflow-hidden border-b border-zinc-800">
+    <div
+      class="w-full border border-zinc-800 rounded overflow-hidden bg-zinc-900"
+    >
+      <div
+        class="bg-zinc-800 w-full overflow-hidden border-b border-zinc-800 relative pt-[52.33%]"
+      >
         <img
           *ngIf="content?.image"
           [src]="content?.image"
-          class="border-0 outline-none w-full min-h-64 h-64 object-cover object-center"
+          class="border-0 outline-none w-full h-full absolute top-0 object-cover object-center"
           width="100%"
           [alt]="content?.imageAlt"
         />
@@ -44,12 +50,16 @@
 
   <div class="w-full max-w-lg">
     <div class="text-xs text-white uppercase mb-2">Facebook</div>
-    <div class="w-full border border-zinc-800 rounded overflow-hidden bg-zinc-900">
-      <div class="bg-zinc-800 w-full h-52 min-h-52 overflow-hidden border-b border-zinc-800">
+    <div
+      class="w-full border border-zinc-800 rounded overflow-hidden bg-zinc-900"
+    >
+      <div
+        class="bg-zinc-800 w-full overflow-hidden border-b border-zinc-800 relative pt-[52.5%]"
+      >
         <img
           *ngIf="content?.image"
           [src]="content?.image"
-          class="border-0 outline-none w-full min-h-52 h-52 object-cover object-center"
+          class="border-0 outline-none w-full h-full absolute top-0 object-cover object-center"
           width="100%"
           [alt]="content?.imageAlt"
         />
@@ -70,12 +80,16 @@
 
   <div class="w-full max-w-xl">
     <div class="text-xs text-white uppercase mb-2">Linkedin</div>
-    <div class="w-full border border-zinc-800 rounded overflow-hidden bg-zinc-900">
-      <div class="bg-zinc-800 w-full h-64 min-h-64 overflow-hidden border-b border-zinc-800">
+    <div
+      class="w-full border border-zinc-800 rounded overflow-hidden bg-zinc-900"
+    >
+      <div
+        class="bg-zinc-800 w-full overflow-hidden border-b border-zinc-800 relative pt-[52.25%]"
+      >
         <img
           *ngIf="content?.image"
           [src]="content?.image"
-          class="border-0 outline-none w-full min-h-64 h-64 object-cover object-center"
+          class="border-0 outline-none w-full h-full absolute top-0 object-cover object-center"
           width="100%"
           [alt]="content?.imageAlt"
         />
@@ -86,6 +100,94 @@
         </div>
         <div class="text-xs text-zinc-400">
           {{ content?.canonical || "https://pageurl.com" }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-full max-w-lg">
+    <div class="text-xs text-white uppercase mb-2">Discord</div>
+    <div
+      class="w-full border border-zinc-800 rounded overflow-hidden bg-zinc-900"
+    >
+      <div class="w-full flex flex-col gap-2 p-4 border-l-4 border-zinc-700">
+        <div class="text-sm text-[#99c3ff] font-medium">
+          {{ content?.title || "Page title" }}
+        </div>
+        <div class="text-xs text-zinc-400">
+          {{ content?.description || "Page description" }}
+        </div>
+        <div class="bg-zinc-800 w-full overflow-hidden relative rounded mt-2">
+          <img
+            *ngIf="content?.image"
+            [src]="content?.image"
+            class="border-0 outline-none w-full h-full"
+            width="100%"
+            [alt]="content?.imageAlt"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-full max-w-lg">
+    <div class="text-xs text-white uppercase mb-2">Slack</div>
+    <div
+      class="w-full border border-zinc-800 rounded overflow-hidden bg-zinc-900"
+    >
+      <div class="w-full flex flex-col gap-1 p-4 border-l-4 border-zinc-700">
+        <div class="flex gap-2 items-center">
+          <div
+            class="w-5 min-w-5 h-5 rounded-full bg-zinc-800 border border-zinc-800 overflow-hidden"
+          >
+            <img
+              *ngIf="content.favicon"
+              [src]="content.favicon"
+              width="100%"
+              alt="Favicon"
+              class="w-5 min-w-5 h-5"
+            />
+          </div>
+          <div class="text-xs text-zinc-400">
+            {{ content?.canonical || "https://pageurl.com" }}
+          </div>
+        </div>
+        <div class="text-sm text-[#99c3ff] font-medium">
+          {{ content?.title || "Page title" }}
+        </div>
+        <div class="text-xs text-zinc-400">
+          {{ content?.description || "Page description" }}
+        </div>
+        <div class="bg-zinc-800 w-full overflow-hidden relative rounded mt-2">
+          <img
+            *ngIf="content?.image"
+            [src]="content?.image"
+            class="border-0 outline-none w-full h-full"
+            width="100%"
+            [alt]="content?.imageAlt"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-full max-w-xl">
+    <div class="text-xs text-white uppercase mb-2">Pinterest</div>
+    <div class="w-full max-w-60">
+      <div
+        class="bg-zinc-800 w-full overflow-hidden border rounded border-zinc-800 relative pt-[52.25%]"
+      >
+        <img
+          *ngIf="content?.image"
+          [src]="content?.image"
+          class="border-0 outline-none w-full h-full absolute top-0 object-cover object-center"
+          width="100%"
+          [alt]="content?.imageAlt"
+        />
+      </div>
+      <div class="w-full flex flex-col gap-1 p-2">
+        <div class="text-xs text-white font-medium">
+          {{ content?.title || "Page title" }}
         </div>
       </div>
     </div>

@@ -3,6 +3,7 @@ export function returnCode(data) {
     data = {
       charset: '',
       viewport: '',
+      name: '',
       title: '',
       description: '',
       canonical: '',
@@ -30,6 +31,11 @@ export function returnCode(data) {
   <meta name="description" content="${data.description}">
   <meta name="author" content="${data.author}">
   <meta name="theme-color" content="${data.color}">
+
+  <!-- Google Search Engine -->
+  <meta itemprop="name" content="${data.name}">
+  <meta itemprop="description" content="${data.description}">
+  <meta itemprop="image" content="${data.image}">
 
   <!-- Facebook Meta Tags -->
   <meta property="og:url" content="${data.canonical}">

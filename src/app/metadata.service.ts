@@ -2,25 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-// interface Metadata {
-//   charset?: string,
-//   viewport?: string,
-//   title?: string,
-//   description?: string,
-//   canonical?: string,
-//   canonicalURL?: string,
-//   image?: string,
-//   imageAlt?: string,
-//   favicon?: string,
-//   color?: string,
-//   author?: string,
-//   robots?: string,
-//   googlebot?: string,
-//   sitemap?: string,
-//   locale?: string,
-//   site?: string,
-// }
-
 @Injectable({
   providedIn: 'root'
 })

@@ -9,7 +9,8 @@ import { MetadataService } from 'src/app/metadata.service';
 })
 export class MenuComponent {
   @Output() onFetchValue = new EventEmitter<string>();
-  url: string = 'https://gus.vision/';
+  url: string = 'https://seotopper.netlify.app/';
+  // url: string = 'https://gus.vision/';
   loading = signal(false);
 
   constructor(private metadataService: MetadataService) { }

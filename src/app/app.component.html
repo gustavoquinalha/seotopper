@@ -22,9 +22,9 @@
 
             <div
               *ngIf="field.name === 'image' && form?.get('image')"
-              class="w-full min-h-60 rounded bg-zinc-800 border border-zinc-800 overflow-hidden"
+              class="w-full aspect-[1.91/1] rounded bg-zinc-800 border border-zinc-800 overflow-hidden"
             >
-              <img *ngIf="form?.get('image')?.value" [src]="form.get('image')?.value" width="100%" alt="" />
+              <img *ngIf="form?.get('image')?.value" [src]="form.get('image')?.value" class="aspect-[1.91/1]" width="100%" alt="" />
             </div>
 
             <div class="relative w-full">
@@ -49,7 +49,7 @@
               </ng-container>
               <ng-container class="" *ngIf="field.name === 'favicon'">
                 <div class="w-5 min-w-5 h-5 rounded-full absolute top-1.5 right-1.5 bg-zinc-800 border border-zinc-800 overflow-hidden">
-                  <img *ngIf="form?.get('favicon')?.value" [src]="form.get('favicon')?.value" width="100%" alt="Favicon" class="w-6 min-w-6 h-6" />
+                  <img *ngIf="form?.get('favicon')?.value" [src]="form.get('favicon')?.value" width="100%" alt="Favicon" class="w-5 min-w-5 h-5" />
                 </div>
               </ng-container>
             </div>
