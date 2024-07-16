@@ -3,6 +3,8 @@
   "moduleResolution": "bundler",
   "compileOnSave": false,
   "compilerOptions": {
+    "allowJs": true,
+    "esModuleInterop": true,
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

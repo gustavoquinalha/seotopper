@@ -1,3 +1,13 @@
-<pre class="w-full h-full appearance-none !m-0 !p-0 flex">
-  <code class="w-full h-full appearance-none !m-0 !p-4 !bg-zinc-950 text-xs overflow-x-auto overflow-y-auto md:overflow-y-scroll" [highlight]="code" [language]="'html'"></code>
-</pre>
+<div class="relative h-full">
+  <div class="absolute top-2 right-6 flex justify-center items-center z-10">
+    <button
+      (click)="copy()"
+      class="h-6 bg-zinc-800 hover:bg-zinc-700 text-zinc-200 hover:text-zinc-50 rounded text-xs px-2 py-2 flex justify-center items-center">
+      Copy
+    </button>
+  </div>
+  <pre class="w-full h-full appearance-none !m-0 !p-0 flex relative">
+    <code class="w-full h-full appearance-none !m-0 !p-4 !bg-zinc-950 text-xs overflow-x-auto overflow-y-auto md:overflow-y-scroll" [highlight]="code" [language]="'html'"></code>
+  </pre>
+
+</div>

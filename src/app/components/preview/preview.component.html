@@ -2,8 +2,8 @@
   class="text-zinc-200 gap-4 md:gap-8 h-full flex flex-col mb-4 md:mb-8 lg:mb-10 pb-4 md:pb-8 lg:pb-10"
 >
   <div class="w-full max-w-xl">
-    <div class="text-xs text-zinc-400 uppercase mb-2">Google</div>
-    <div class="w-full p-4 border border-zinc-800 rounded overflow-hidden">
+    <div class="text-xs text-zinc-200 uppercase mb-2">Google</div>
+    <div class="w-full p-4 border border-zinc-800 rounded overflow-hidden bg-zinc-900">
       <div class="text-base text-[#99c3ff]">
         {{ content?.title || "Page title" }}
       </div>
@@ -17,9 +17,9 @@
   </div>
 
   <div class="w-full max-w-lg">
-    <div class="text-xs text-zinc-400 uppercase mb-2">Twitter</div>
-    <div class="w-full border border-zinc-800 rounded overflow-hidden">
-      <div class="bg-zinc-700 w-full h-64 min-h-64 overflow-hidden">
+    <div class="text-xs text-zinc-200 uppercase mb-2">Twitter</div>
+    <div class="w-full border border-zinc-800 rounded overflow-hidden bg-zinc-900">
+      <div class="bg-zinc-800 w-full h-64 min-h-64 overflow-hidden border-b border-zinc-800">
         <img
           *ngIf="content?.image"
           [src]="content?.image"
@@ -43,9 +43,9 @@
   </div>
 
   <div class="w-full max-w-lg">
-    <div class="text-xs text-zinc-400 uppercase mb-2">Facebook</div>
-    <div class="w-full border border-zinc-800 rounded overflow-hidden">
-      <div class="bg-zinc-700 w-full h-52 min-h-52 overflow-hidden">
+    <div class="text-xs text-zinc-200 uppercase mb-2">Facebook</div>
+    <div class="w-full border border-zinc-800 rounded overflow-hidden bg-zinc-900">
+      <div class="bg-zinc-800 w-full h-52 min-h-52 overflow-hidden border-b border-zinc-800">
         <img
           *ngIf="content?.image"
           [src]="content?.image"
@@ -69,9 +69,9 @@
   </div>
 
   <div class="w-full max-w-xl">
-    <div class="text-xs text-zinc-400 uppercase mb-2">Linkedin</div>
-    <div class="w-full border border-zinc-800 rounded overflow-hidden">
-      <div class="bg-zinc-700 w-full h-64 min-h-64 overflow-hidden">
+    <div class="text-xs text-zinc-200 uppercase mb-2">Linkedin</div>
+    <div class="w-full border border-zinc-800 rounded overflow-hidden bg-zinc-900">
+      <div class="bg-zinc-800 w-full h-64 min-h-64 overflow-hidden border-b border-zinc-800">
         <img
           *ngIf="content?.image"
           [src]="content?.image"
