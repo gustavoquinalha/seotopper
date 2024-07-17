@@ -28,8 +28,8 @@
               "src/assets",
               {
                 "glob": "_redirects",
-                "input": "src",
-                "output": "/"
+                "input": "./",
+                "output": "./"
               }
             ],
             "styles": ["src/styles.scss"],
