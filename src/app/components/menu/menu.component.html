@@ -3,12 +3,12 @@
   id="menu"
 >
   <div class="flex items-center w-full">
-    <div class="flex items-center gap-3">
-      <img src="assets/top.svg" class="max-w-full w-5" alt="Logo SeoTopper" />
+    <a routerLink="/" class="flex items-center gap-3">
+      <img src="../../../assets/top.svg" class="max-w-full w-5" alt="Logo SeoTopper" />
       <div class="hidden md:block text-xs md:text-sm font-medium">
         SeoTopper
       </div>
-    </div>
+    </a>
   </div>
 
   <div class="hidden md:flex items-center gap-1 relative w-full max-w-sm">
@@ -18,7 +18,7 @@
       name="urlfetch"
       [(ngModel)]="url"
       (keydown.enter)="fetchMetadata()"
-      placeholder="https://gus.vision"
+      placeholder="Enter your URL"
       class="w-full pr-14 h-8 text-xs bg-zinc-900 rounded border border-zinc-800 focus:border-white focus:ring-2 focus:ring-white outline-none text-white py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
     />
     <button

@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output, signal } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { catchError, finalize, of, tap } from 'rxjs';
-import { MetadataService } from 'src/app/metadata.service';
+import { MetadataService } from 'src/app/services/metadata.service';
 
 @Component({
   selector: 'app-menu',
@@ -9,11 +10,18 @@ import { MetadataService } from 'src/app/metadata.service';
 })
 export class MenuComponent {
   @Output() onFetchValue = new EventEmitter<string>();
-  url: string = 'https://seotopper.netlify.app/';
-  // url: string = 'https://gus.vision/';
+  url: string = '';
   loading = signal(false);
 
-  constructor(private metadataService: MetadataService) { }
+  constructor(private metadataService: MetadataService, private route: ActivatedRoute) { }
+
+  ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      this.url = params.get('urlName')!;
+      this.fetchMetadata();
+    });
+  }
+
   fetchMetadata() {
     this.loading.set(true);
     this.metadataService.fetchMetadata(this.url).pipe(

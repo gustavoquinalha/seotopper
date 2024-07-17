@@ -30,27 +30,43 @@ html {
   height: 0;
 }
 
-.hljs-comment,
-.hljs-quote,
-.hljs-deletion {
-  @apply text-zinc-700;
+::-webkit-scrollbar {
+  @apply w-2 h-2;
 }
 
-.hljs-string,
-.hljs-meta,
-.hljs-name,
-.hljs-type,
-.hljs-symbol,
-.hljs-bullet,
-.hljs-addition,
-.hljs-variable,
-.hljs-template-tag,
-.hljs-template-variable {
-  @apply text-white;
+::-webkit-scrollbar-track {
+  @apply bg-zinc-950;
 }
 
-.hljs-title,
-.hljs-attr,
-.hljs-meta-keyword {
-  @apply text-zinc-500;
+::-webkit-scrollbar-thumb {
+  @apply bg-zinc-700 rounded;
 }
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-zinc-600;
+}
+
+// .hljs-comment,
+// .hljs-quote,
+// .hljs-deletion {
+//   @apply text-zinc-700;
+// }
+
+// .hljs-string,
+// .hljs-meta,
+// .hljs-name,
+// .hljs-type,
+// .hljs-symbol,
+// .hljs-bullet,
+// .hljs-addition,
+// .hljs-variable,
+// .hljs-template-tag,
+// .hljs-template-variable {
+//   @apply text-white;
+// }
+
+// .hljs-title,
+// .hljs-attr,
+// .hljs-meta-keyword {
+//   @apply text-zinc-500;
+// }

@@ -1,10 +1,55 @@
-<div
-  class="text-white gap-4 md:gap-8 h-full flex flex-col mb-4 md:mb-8 lg:mb-10 pb-4 md:pb-8 lg:pb-10"
->
-  <div class="w-full max-w-xl">
-    <div class="text-xs text-white uppercase mb-2">Google</div>
+<div class="w-screen h-screen p-8 pb-0 overflow-x-hidden overflow-y-auto">
+  <div
+    class="w-full max-w-screen-sm rounded flex items-center justify-center text-center flex-col gap-8 mx-auto py-10"
+  >
+    <div class="flex flex-col items-center gap-4">
+      <img src="assets/top.svg" class="max-w-full w-12" alt="Logo SeoTopper" />
+      <div class="text-lg md:text-xl font-medium">SeoTopper</div>
+      <div class="w-full max-w-xs text-center">
+        <h1 class="text-sm text-zinc-400">
+          Just type the data and generate the meta tags for your website.
+        </h1>
+      </div>
+    </div>
+
     <div
-      class="w-full p-4 border border-zinc-800 rounded overflow-hidden bg-zinc-900 flex gap-4"
+      class="flex flex-col items-center justify-center gap-4 w-full max-w-md"
+    >
+      <div class="flex items-center gap-1 relative w-full">
+        <input
+          type="text"
+          id="url"
+          name="url"
+          required
+          [(ngModel)]="url"
+          placeholder="Enter your URL"
+          class="w-full pr-14 h-12 text-sm bg-zinc-900 rounded border border-zinc-800 focus:border-white focus:ring-2 focus:ring-white outline-none text-white py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+        />
+        <a
+          [routerLink]="['/create', url]"
+          class="absolute top-2 right-2 h-8 bg-zinc-800 hover:bg-zinc-700 text-white hover:text-zinc-50 rounded text-xs px-4 py-2 flex items-center justify-center"
+        >
+          Fetch URL
+        </a>
+      </div>
+
+      <span class="text-sm text-zinc-400">Or</span>
+
+      <a
+        [routerLink]="['/create', '']"
+        routerLinkActive="active"
+        class="h-12 bg-white hover:bg-zinc-300 text-zinc-950 rounded text-xs px-4 py-2 flex items-center justify-center whitespace-nowrap w-full max-w-40"
+      >
+        Create my SEO
+      </a>
+    </div>
+  </div>
+
+  <div
+    class="md:columns-1 lg:columns-2 xl:columns-3 w-full max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl mx-auto pb-10"
+  >
+    <div
+      class="w-full p-4 border border-zinc-800 rounded overflow-hidden bg-zinc-900 flex gap-4 mb-4"
     >
       <div class="w-full">
         <div class="flex gap-2 items-center mb-2">
@@ -29,13 +74,14 @@
           </div>
         </div>
 
-        <div class="text-base text-[#99c3ff]">
+        <div class="text-sm text-[#99c3ff]">
           {{ content?.title || "Page title" }}
         </div>
         <div class="text-xs text-zinc-300 mt-2">
           {{ content?.description || "Page description" }}
         </div>
       </div>
+
       <div
         class="w-36 min-w-36 h-24 rounded bg-zinc-800 border border-zinc-800 overflow-hidden"
       >
@@ -43,129 +89,14 @@
           *ngIf="content?.image"
           [src]="content?.image"
           width="100%"
-          [alt]="content?.imageAlt"
+          alt="Favicon"
           class="w-36 min-w-36 h-24 object-cover object-center"
         />
       </div>
     </div>
-  </div>
 
-  <div class="w-full max-w-lg">
-    <div class="text-xs text-white uppercase mb-2">Twitter</div>
     <div
-      class="w-full border border-zinc-800 rounded overflow-hidden bg-zinc-900"
-    >
-      <div
-        class="bg-zinc-800 w-full overflow-hidden border-b border-zinc-800 relative pt-[52.33%]"
-      >
-        <img
-          *ngIf="content?.image"
-          [src]="content?.image"
-          class="border-0 outline-none w-full h-full absolute top-0 object-cover object-center"
-          width="100%"
-          [alt]="content?.imageAlt"
-        />
-      </div>
-      <div class="w-full flex flex-col gap-1 p-4">
-        <div class="text-base text-white font-medium">
-          {{ content?.title || "Page title" }}
-        </div>
-        <div class="text-xs text-zinc-400">
-          {{ content?.description || "Page description" }}
-        </div>
-        <div class="text-xs text-zinc-400 mt-2">
-          {{ content?.canonical || "https://pageurl.com" }}
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="w-full max-w-lg">
-    <div class="text-xs text-white uppercase mb-2">Facebook</div>
-    <div
-      class="w-full border border-zinc-800 rounded overflow-hidden bg-zinc-900"
-    >
-      <div
-        class="bg-zinc-800 w-full overflow-hidden border-b border-zinc-800 relative pt-[52.5%]"
-      >
-        <img
-          *ngIf="content?.image"
-          [src]="content?.image"
-          class="border-0 outline-none w-full h-full absolute top-0 object-cover object-center"
-          width="100%"
-          [alt]="content?.imageAlt"
-        />
-      </div>
-      <div class="w-full flex flex-col gap-1 p-4">
-        <div class="text-xs text-zinc-400 uppercase">
-          {{ content?.canonical || "https://pageurl.com" }}
-        </div>
-        <div class="text-base text-white font-medium">
-          {{ content?.title || "Page title" }}
-        </div>
-        <div class="text-xs text-zinc-400">
-          {{ content?.description || "Page description" }}
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="w-full max-w-xl">
-    <div class="text-xs text-white uppercase mb-2">Linkedin</div>
-    <div
-      class="w-full border border-zinc-800 rounded overflow-hidden bg-zinc-900"
-    >
-      <div
-        class="bg-zinc-800 w-full overflow-hidden border-b border-zinc-800 relative pt-[52.25%]"
-      >
-        <img
-          *ngIf="content?.image"
-          [src]="content?.image"
-          class="border-0 outline-none w-full h-full absolute top-0 object-cover object-center"
-          width="100%"
-          [alt]="content?.imageAlt"
-        />
-      </div>
-      <div class="w-full flex flex-col gap-1 p-4">
-        <div class="text-xs text-white font-medium">
-          {{ content?.title || "Page title" }}
-        </div>
-        <div class="text-xs text-zinc-400">
-          {{ content?.canonical || "https://pageurl.com" }}
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="w-full max-w-lg">
-    <div class="text-xs text-white uppercase mb-2">Discord</div>
-    <div
-      class="w-full border border-zinc-800 rounded overflow-hidden bg-zinc-900"
-    >
-      <div class="w-full flex flex-col gap-2 p-4 border-l-4 border-zinc-700">
-        <div class="text-sm text-[#99c3ff] font-medium">
-          {{ content?.title || "Page title" }}
-        </div>
-        <div class="text-xs text-zinc-400">
-          {{ content?.description || "Page description" }}
-        </div>
-        <div class="bg-zinc-800 w-full overflow-hidden relative rounded mt-2">
-          <img
-            *ngIf="content?.image"
-            [src]="content?.image"
-            class="border-0 outline-none w-full h-full"
-            width="100%"
-            [alt]="content?.imageAlt"
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="w-full max-w-lg">
-    <div class="text-xs text-white uppercase mb-2">Slack</div>
-    <div
-      class="w-full border border-zinc-800 rounded overflow-hidden bg-zinc-900"
+      class="w-full border border-zinc-800 rounded overflow-hidden bg-zinc-900 mb-4"
     >
       <div class="w-full flex flex-col gap-1 p-4 border-l-4 border-zinc-700">
         <div class="flex gap-2 items-center">
@@ -201,18 +132,115 @@
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="w-full max-w-xl">
-    <div class="text-xs text-white uppercase mb-2">Pinterest</div>
-    <div class="w-full max-w-60">
+    <div
+      class="w-full border border-zinc-800 rounded overflow-hidden bg-zinc-900 mb-4"
+    >
       <div
-        class="bg-zinc-800 w-full overflow-hidden border rounded border-zinc-800 relative pt-[52.25%]"
+        class="bg-zinc-800 w-full overflow-hidden border-b border-zinc-800 relative pt-[52.33%]"
       >
         <img
           *ngIf="content?.image"
           [src]="content?.image"
           class="border-0 outline-none w-full h-full absolute top-0 object-cover object-center"
+          width="100%"
+          [alt]="content?.imageAlt"
+        />
+      </div>
+      <div class="w-full flex flex-col gap-1 p-4">
+        <div class="text-sm text-white font-medium">
+          {{ content?.title || "Page title" }}
+        </div>
+        <div class="text-xs text-zinc-400">
+          {{ content?.description || "Page description" }}
+        </div>
+        <div class="text-xs text-zinc-400 mt-2">
+          {{ content?.canonical || "https://pageurl.com" }}
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="w-full border border-zinc-800 rounded overflow-hidden bg-zinc-900 mb-4"
+    >
+      <div
+        class="bg-zinc-800 w-full overflow-hidden border-b border-zinc-800 relative pt-[52.5%]"
+      >
+        <img
+          *ngIf="content?.image"
+          [src]="content?.image"
+          class="border-0 outline-none w-full h-full absolute top-0 object-cover object-center"
+          width="100%"
+          [alt]="content?.imageAlt"
+        />
+      </div>
+      <div class="w-full flex flex-col gap-1 p-4">
+        <div class="text-xs text-zinc-400 uppercase">
+          {{ content?.canonical || "https://pageurl.com" }}
+        </div>
+        <div class="text-sm text-white font-medium">
+          {{ content?.title || "Page title" }}
+        </div>
+        <div class="text-xs text-zinc-400">
+          {{ content?.description || "Page description" }}
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="w-full border border-zinc-800 rounded overflow-hidden bg-zinc-900 mb-4"
+    >
+      <div
+        class="bg-zinc-800 w-full overflow-hidden border-b border-zinc-800 relative pt-[52.25%]"
+      >
+        <img
+          *ngIf="content?.image"
+          [src]="content?.image"
+          class="border-0 outline-none w-full h-full absolute top-0 object-cover object-center"
+          width="100%"
+          [alt]="content?.imageAlt"
+        />
+      </div>
+      <div class="w-full flex flex-col gap-1 p-4">
+        <div class="text-xs text-white font-medium">
+          {{ content?.title || "Page title" }}
+        </div>
+        <div class="text-xs text-zinc-400">
+          {{ content?.canonical || "https://pageurl.com" }}
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="w-full border border-zinc-800 rounded overflow-hidden bg-zinc-900 mb-4"
+    >
+      <div class="w-full flex flex-col gap-2 p-4 border-l-4 border-zinc-700">
+        <div class="text-sm text-[#99c3ff] font-medium">
+          {{ content?.title || "Page title" }}
+        </div>
+        <div class="text-xs text-zinc-400">
+          {{ content?.description || "Page description" }}
+        </div>
+        <div class="bg-zinc-800 w-full overflow-hidden relative rounded mt-2">
+          <img
+            *ngIf="content?.image"
+            [src]="content?.image"
+            class="border-0 outline-none w-full h-full"
+            width="100%"
+            [alt]="content?.imageAlt"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-full w-1/2 flex flex-col gap-1 mb-4">
+      <div
+        class="bg-zinc-800 w-full overflow-hidden border rounded border-zinc-800 relative"
+      >
+        <img
+          *ngIf="content?.image"
+          [src]="content?.image"
+          class="border-0 outline-none w-full h-full object-cover object-center"
           width="100%"
           [alt]="content?.imageAlt"
         />
@@ -225,5 +253,5 @@
     </div>
   </div>
 
-  <div class="hidden md:flex min-h-4 md:min-h-8"></div>
+  <app-footer />
 </div>

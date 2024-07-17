@@ -1,0 +1,99 @@
+<app-menu (onFetchValue)="setFetchValue($event)" />
+
+<div class="w-full flex flex-col md:flex-row bg-zinc-950">
+  <div
+    class="resize-none md:resize-x w-full md:w-[33.3333%] flex-grow mx-auto flex flex-col h-full md:h-[calc(100vh-56px)] overflow-x-hidden overflow-y-auto md:overflow-y-scroll border-r border-zinc-800 bg-zinc-950"
+  >
+    <form [formGroup]="form" class="p-4 md:p-8 w-full">
+      <div class="w-full max-w-xs text-center mx-auto">
+        <h1 class="mb-4 md:mb-8 text-sm leading-4 text-white">
+          Just type the data and generate the meta tags for your website
+        </h1>
+      </div>
+      <div class="w-full grid grid-cols-1 flex-col gap-8">
+        <div
+          class="relative flex flex-col gap-1"
+          *ngFor="let field of metatagsList"
+        >
+          <ng-container *ngIf="field.type === 'text' || field.type === 'color'">
+            <label [for]="field.name" class="leading-4 text-xs text-white">{{
+              field.label
+            }}</label>
+
+            <div
+              *ngIf="field.name === 'image' && form?.get('image')"
+              class="w-full aspect-[1.91/1] max-w-64 rounded bg-zinc-800 border border-zinc-800 overflow-hidden"
+            >
+              <img *ngIf="form?.get('image')?.value" [src]="form.get('image')?.value" class="aspect-[1.91/1] max-w-64 object-cover object-center" width="100%" alt="" />
+            </div>
+
+            <div class="relative w-full">
+              <input
+                [type]="field.type"
+                [id]="field.name"
+                [name]="field.name"
+                [placeholder]="field.label"
+                [formControlName]="field.name"
+                class="h-8 text-xs w-full bg-zinc-900 rounded border placeholder:text-zinc-500 border-zinc-800 focus:border-zinc-500 focus:ring-2 focus:ring-white outline-none text-white py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              />
+              <ng-container class="" *ngIf="field.name === 'color'">
+                <input
+                  type="color"
+                  [id]="field.name"
+                  [name]="field.name"
+                  [placeholder]="field.label"
+                  [formControlName]="field.name"
+                  (change)="changeColor($event)"
+                  class="appearance-none w-6 min-w-6 h-6 rounded overflow-hidden absolute bottom-1 right-1 bg-transparent"
+                />
+              </ng-container>
+              <ng-container class="" *ngIf="field.name === 'favicon'">
+                <div class="w-5 min-w-5 h-5 rounded-full absolute top-1.5 right-1.5 bg-zinc-800 border border-zinc-800 overflow-hidden">
+                  <img *ngIf="form?.get('favicon')?.value" [src]="form.get('favicon')?.value" width="100%" alt="Favicon" class="w-5 min-w-5 h-5" />
+                </div>
+              </ng-container>
+            </div>
+            <span class="text-xs text-zinc-500 leading-4 mt-1">{{
+              field.description
+            }}</span>
+          </ng-container>
+
+          <ng-container *ngIf="field.type === 'select'">
+            <label [for]="field.name" class="leading-4 text-xs text-white">{{
+              field.label
+            }}</label>
+            <select
+              [id]="field.name"
+              [formControlName]="field.name"
+              class="h-8 text-xs w-full bg-zinc-900 rounded border border-zinc-800 focus:border-zinc-500 focus:ring-2 focus:ring-white outline-none text-white py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+            >
+              <option
+                *ngFor="let option of field.options"
+                [value]="option.value"
+              >
+                {{ option.value }}
+              </option>
+            </select>
+            <span class="text-xs text-zinc-500 leading-4 mt-1">{{
+              field.description
+            }}</span>
+          </ng-container>
+        </div>
+      </div>
+    </form>
+
+    <app-footer />
+  </div>
+
+  <div
+    class="resize-none md:resize-x w-full md:w-[33.3333%] flex-grow mx-auto flex flex-col h-full md:h-[calc(100vh-56px)] overflow-hidden border-r border-zinc-800 p-4 md:p-0"
+  >
+    <app-code-result [code]="code" class="h-full" />
+  </div>
+
+  <div
+    class="w-full md:w-[33.3333%] flex-grow overflow-auto h-full md:h-[calc(100vh-56px)] bg-zinc-950 overflow-y-auto md:overflow-y-scroll overflow-x-hidden p-4 md:p-8"
+  >
+    <app-preview [content]="form.value" />
+  </div>
+</div>
