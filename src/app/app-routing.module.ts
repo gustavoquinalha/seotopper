@@ -6,7 +6,7 @@ import { CreateComponent } from './pages/create/create.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'create/:urlName', component: CreateComponent },
-  { path: '**', redirectTo: '/' }
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({
