@@ -4,16 +4,48 @@
   <div class="w-full max-w-xl">
     <div class="text-xs text-white uppercase mb-2">Google</div>
     <div
-      class="w-full p-4 border border-zinc-800 rounded overflow-hidden bg-zinc-900"
+      class="w-full p-4 border border-zinc-800 rounded overflow-hidden bg-zinc-900 flex gap-4"
     >
-      <div class="text-base text-[#99c3ff]">
-        {{ content?.title || "Page title" }}
+      <div class="w-full">
+        <div class="flex gap-2 items-center mb-2">
+          <div
+            class="w-7 min-w-7 h-7 rounded-full bg-zinc-800 border border-zinc-800 overflow-hidden"
+          >
+            <img
+              *ngIf="content.favicon"
+              [src]="content.favicon"
+              width="100%"
+              alt="Favicon"
+              class="w-7 min-w-7 h-7"
+            />
+          </div>
+          <div class="text-xs text-zinc-400 flex flex-col gap-1">
+            <span class="leading-3 text-xs">{{
+              content?.name || content?.name
+            }}</span>
+            <span class="leading-3 text-xs">{{
+              content?.canonical || "https://pageurl.com"
+            }}</span>
+          </div>
+        </div>
+
+        <div class="text-base text-[#99c3ff]">
+          {{ content?.title || "Page title" }}
+        </div>
+        <div class="text-xs text-zinc-300 mt-2">
+          {{ content?.description || "Page description" }}
+        </div>
       </div>
-      <div class="text-xs text-zinc-400">
-        {{ content?.canonical || "https://pageurl.com" }}
-      </div>
-      <div class="text-xs text-zinc-300 mt-2">
-        {{ content?.description || "Page description" }}
+      <div
+        class="w-36 min-w-36 h-24 rounded bg-zinc-800 border border-zinc-800 overflow-hidden"
+      >
+        <img
+          *ngIf="content?.image"
+          [src]="content?.image"
+          width="100%"
+          alt="Favicon"
+          class="w-36 min-w-36 h-24 object-cover object-center"
+        />
       </div>
     </div>
   </div>
