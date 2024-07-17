@@ -23,6 +23,7 @@ export function returnCode(data) {
   <!-- HTML Meta Tags -->
   <meta charset="${data.charset}">
   <meta name="viewport" content="${data.viewport}">
+  <base href="/">
   <title>${data.title}</title>
   <link rel="canonical" href="${data.canonical}">
   <link rel="icon" type="image/x-icon" href="${data.favicon}">
